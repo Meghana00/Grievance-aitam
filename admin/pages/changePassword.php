@@ -1,71 +1,34 @@
-<div class=" card login-form justify-content-center">
-	<div class="card-body">
-		<h3 class="card-title text-center">Change password</h3>
-		
-		<!--Password must contain one lowercase letter, one number, and be at least 7 characters long.-->
-		
-		<div class="card-text text-success">
-			<form>
-                <div class="form-group">
-					<label for="exampleInputEmail1">Your new password</label>
-					<input type="password" class="form-control form-control-sm">
-				</div>
-				<div class="form-group">
-					<label for="exampleInputEmail1">Your new password</label>
-					<input type="password" class="form-control form-control-sm">
-				</div>
-				<div class="form-group">
-					<label for="exampleInputEmail1">Repeat password</label>
-					<input type="password" class="form-control form-control-sm">
-				</div>
-				<button type="submit" class="btn btn-success btn-block submit-btn">Confirm</button>
-			</form>
-		</div>
-	</div>
-</div>
-<style>
-    html,body { height: 100%; }
-
-body{
-	display: -ms-flexbox;
-	display: -webkit-box;
-	display: flex;
-	-ms-flex-align: center;
-	-ms-flex-pack: center;
-	-webkit-box-align: center;
-	align-items: center;
-	-webkit-box-pack: center;
-	justify-content: center;
-	background-color: #f5f5f5;
-}
-
-form{
-	padding-top: 20px;
-	font-size: 13px;
-	margin-top: 30px;
-}
-
-.card-title{ font-weight:300; }
-
-.btn{
-	font-size: 13px;
-}
-
-.login-form{ 
-	width:320px;
-	margin:20px;
-}
-
-.sign-up{
-	text-align:center;
-	padding:20px 0 0;
-}
-
-span{
-	font-size:14px;
-}
-
-.submit-btn{
-	margin-top:20px;
-}
-</style>
+<div class="row mt-5"></div>
+         <div class="container mt-5">
+             <div class="row mt-5">
+                 <div class="col-sm-3"></div>
+                 <div class="col-sm-6">
+                     <div class="card mt-2 border-dark shadow rounded " style="background:#a0f9a0;">
+                         <div class="card-body ">
+                             <div class="row">
+                                 <h3 class="mb-3 text-dark fw-bold p-2 border-bottom border-dark text-center">Change Password</h3>
+                             </div>
+                         <form>
+                           <div class="mb-3">
+					          <label for="oldpassword" class="text-dark">Your Old Password</label>
+					          <input type="password" class="form-control border-dark shadow-none" name="oldpassword">
+				           </div>
+				           <div class="mb-3">
+					          <label for="newpassword" class="text-dark">Your New Password</label>
+					          <input type="password" class="form-control border-dark shadow-none" name="newpassword">
+				           </div>
+				           <div class="mb-3">
+					         <label for="confirmpassword" class="text-dark">Confirm password</label>
+					         <input type="password" class="form-control border-dark shadow-none" name="confirmpassword">
+				           </div>
+                           <div class="mb-3">
+                             <button type="submit" class="btn btn-dark border-light shadow-none mt-2" name="update">Update</button>
+                           </div>
+				          
+			            </form>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="col-sm-3"></div>
+             </div>
+         </div>

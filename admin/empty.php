@@ -13,9 +13,10 @@
     <link rel="stylesheet" href="./assets/style.css">
     <!-- table-->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
-
+    <!-- Font awesome -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -47,9 +48,81 @@
     <!--Container Main start-->
     <!--Container Main end-->
     <!-- table container -->
+    
     <div class="ajax-main-content" >
-
+        <!--grievance request--->
+        <div class="container mt-5">
+            <div class="row mt-5">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8">
+                    <div class="card mt-5 border-dark" style="background:#a0f9a0;">
+                        <div class="card-body">
+                        <div class="row">
+							<div class="col-sm-1"> <i class="far fa-user-circle ms-2" style="font-size: 3rem;"></i> </div>
+							<div class="col-sm-11">
+								<p class="ms-1 fw-lighter text-dark" style="font-size:32px;">Write Your Grievances Here</p>
+							</div>
+						</div>
+                        <form method="POST">
+							<div class="container">
+								<!--row1-->
+								<div class="row mt-3">
+									<div class="col-sm-6 ">
+										<div class=" mb-3 mt-3">
+											<label for="Fullname" class="form-label text-dark">Full Name</label>
+											<input type="text" class="form-control shadow-none border-dark" id="Fullname" name="Fullname" placeholder="Enter Fullname"> </div>
+									</div>
+									<div class="col-sm-6">
+										<div class=" mb-3 mt-3">
+											<label for="Rollno" class="form-label text-dark">RollNumber</label>
+											<input type="text" class="form-control shadow-none border-dark" id="Rollno" name="Rollno" placeholder="Enter Rollno"> </div>
+									</div>
+								</div>
+								<!--end row1-->
+								<!--row2--->
+								<div class="row ">
+									<div class="col-sm-6 ">
+										<div class="  mb-3 ">
+											<label for="Gender" class="form-label text-dark">Gender</label>
+											<select class="form-select shadow-none border-dark" aria-label="Default select example" name="Gender" id="Gender">
+												<option selected>--select--</option>
+												<option value="Male">Male</option>
+												<option value="Female">Female</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class=" mb-3">
+											<label for="email" class="form-label text-dark">Email<span class="ms-2">(Use your domain mail)</span></label>
+											<input type="email" class="form-control shadow-none border-dark" id="Email" name="Email" placeholder="youremail@domain.com"> </div>
+									</div>
+								</div>
+								<!--end row2-->
+								<!--row3-->
+								<div class="row mb-3">
+									<div class="mb-3">
+										<label for="yourgrievance" class="form-label text-dark">Your Grievance</label>
+										<textarea class="form-control shadow-none border-dark" id="grievance" name="grievance" rows="5" placeholder="Give a brief note of your grievance"></textarea>
+									</div>
+								</div>
+								<!--end row3-->
+								<div class="mb-3 text-center">
+									<button name="send" type="submit" class="btn  btn-dark shadow-none border-light"><i class="far fa-paper-plane"></i><span class="ms-2">Send</span></button>
+								</div>
+							
+				
+									
+							</div>
+						</form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-2"></div>
+            </div>
+        </div>
+        <!--grievance end request form-->
     </div>
+           
     <!-- table container -->
     
  
@@ -66,3 +139,13 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
