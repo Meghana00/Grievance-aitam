@@ -28,9 +28,11 @@ function ajaxAccountPageCall() {
       $('.ajax-main-content').html(response);
       // AvailableBloodDetails();
       setInterval(function () {
+        accountactivationresponse();
         // AvailableBloodDetails();
-      }, 10000);
+      }, 2000);
     },
+   
   });
 }
 
@@ -87,6 +89,45 @@ function ajaxChangePassPageCall(){
   });
 }
 /// ========== End Ajax Page Calls ==========
+// =========ADMIN=========
+
+//inactive accounts response
+function accountactivationresponse() {
+  var formData = {
+    From: $('#From').val(),
+    To: $('#To').val(),
+    accountactivationresponse: 'accountactivationresponse',
+  };
+  $.ajax({
+    type: 'POST',
+    url: './backScript.php',
+    data: formData,
+    success: function (response) {
+      $('.accountactivationresponse').html(response);
+    },
+  });
+}
+
+//Toactivate and send mail
+function ActivateUser(){
+  var formData = {
+    Email: $('#Email').val(),
+    Password: $('#Password').val(),
+    ActivateUser: 'ActivateUser',
+
+  };
+  $.ajax({
+    type: 'POST',
+    url: './backScript.php',
+    data: formData,
+    success: function (response) {
+      $('.activate-response').html(response);
+    },
+  
+  });
+}
+
+
 /******************************************************************************/
 /*******************************************************************************/
 // ========== Hospital ==========

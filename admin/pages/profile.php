@@ -1,4 +1,17 @@
-      <div class="row justify-content-center">
+<?PHP 
+session_start();
+include './../../include/config.php';
+if (!isset($_SESSION['sess_user'])) {
+	header("Location: ./../../index.php");
+}
+$active_user = $_SESSION['sess_user'];
+$msg = "";
+$error = '';
+$admin= mysqli_query($conn,"SELECT * FROM `admin` WHERE `UserName` = '$active_user'");
+$adminRow = mysqli_fetch_array($admin);
+?>     
+     
+     <div class="row justify-content-center">
         <div class="col-sm-8  overview text-dark">
           <div class="card bg-light text-success shadow">
             <div class="card-header bg-white border-0">
@@ -16,7 +29,7 @@
                     <div class="col-md-10">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-username">Full Name</label>
-                        <input type="text" name="FullName" id="input-username" class="form-control form-control-alternative" placeholder="Username" >
+                        <input type="text" name="FullName" id="input-username" class="form-control form-control-alternative" placeholder="Username" value="<?php echo htmlentities($adminRow['FullName'])?>" >
                       </div>
                     </div>
                   </div>
@@ -24,7 +37,7 @@
                     <div class="col-md-10">
                       <div class="form-group">
                         <label class="form-control-label" for="input-email">Email address</label>
-                        <input type="email" name="Email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com" >
+                        <input type="email" name="Email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com" value="<?php echo htmlentities($adminRow['Email'])?>" >
                       </div>
                     </div>
                   </div>
@@ -59,7 +72,7 @@
                     <div class="col-md-10">
                       <div class="form-group">
                         <label class="form-control-label" for="input-email">Mobile</label>
-                        <input type="email" name="Email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com" >
+                        <input type="email" name="Email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com" value="<?php echo htmlentities($adminRow['Mobile'])?>" >
                       </div>
                     </div>
                   </div>  

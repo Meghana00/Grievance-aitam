@@ -23,13 +23,13 @@ if(isset($_POST['Register']))
 	$Status=0;
     
 
-    	$sql = "INSERT INTO `users` (`FullName`,`RollNo`,`Email`,`Branch`,`Gender`,`Mobile`,`UserType`,`Status`) VALUES ('$FullName','$RollNo','$Email','$Branch','$Gender','$Mobile','$UserType','$Status')";
+    	$sql = "INSERT INTO `users` (`FullName`,`RollNo`,`Email`,`Branch`,`Gender`,`Mobile`,`UserType`,`Status`,`Dnt`) VALUES ('$FullName','$RollNo','$Email','$Branch','$Gender','$Mobile','$UserType','$Status','".date("d-m-Y H:i:s")."')";
     	$query = mysqli_query($conn,$sql);
 
 			if(isset($query))
 			{	
 				$subject="Mail Verification";
-				$mailHtml="Please confirm your account registration by clicking the button or link below:<html><br> <a href='http://localhost/grievance-aitam/mailer.php?Email=$Email'>http://localhost/grievance-cell/mailer.php?id=$Email</a></html>";
+				$mailHtml="Please confirm your account registration by clicking the button or link below:<html><br> <a href='http://localhost/grievance-aitam/mailer.php?Email=$Email'>http://localhost/grievance-aitam/mailer.php?Email=$Email'</a></html>";
 
 				$mail= new PHPMailer();
 				$mail->isSMTP();

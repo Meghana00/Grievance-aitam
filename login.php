@@ -25,7 +25,7 @@ if(isset($_POST['login']))
 		}   
 	}
 	elseif($Logintype=="STUDENT"){
-		$sql = "SELECT * FROM `userscred` WHERE `UserName` = '$UserName' ";
+		$sql = "SELECT * FROM `users` WHERE `UserName` = '$UserName' ";
     	$query = mysqli_query($conn,$sql);
    		$row = mysqli_fetch_array($query);
 		if($row['UserName']==$UserName){
