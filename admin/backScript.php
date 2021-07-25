@@ -22,7 +22,6 @@ if (isset($_POST['accountactivationresponse']))
     if(!empty($_POST['From']) && !empty($_POST['To'])){
         $From = $conn -> real_escape_string($_POST['From']);
         $To = $conn -> real_escape_string($_POST['To']);
-        
         $myRequestsQuery ="SELECT * FROM `users` WHERE `Status`= 1 AND `Dnt` BETWEEN '{$From}' AND '{$To}'";
     }else{
     $myRequestsQuery = "SELECT * FROM `users` WHERE `Status`= 1 ORDER BY `SlNo` DESC LIMIT $LIMIT";
@@ -55,6 +54,8 @@ if (isset($_POST['accountactivationresponse']))
                   </tr>';
         }
     
+    }else{
+        echo "$From  And $To ";
     }
    
 }
@@ -99,9 +100,25 @@ if(isset($_POST['ActivateUser'])){
     }
 
  }
- else{
-     echo "Failed";
- }
+
+
+//usercount ontheier status base
+if(isset($_POST['usercount'])){
+    $spam="SELECT `Status` From `User` Where Status=0";
+    $verified="SELECT `Status` From `User` Where Status=1";
+    $accepted="SELECT `Status` From `User` Where Status=2";
+    $rejected="SELECT `Status` From `User` Where Status=3";
+
+    $spamcount=mysqli_num_rows(mysqli_query($conn,$spam));
+    $verifiedcount=mysqli_num_rows(mysqli_query($conn,$verified));
+    $acceptedcount=mysqli_num_rows(mysqli_query($conn,$accepted));
+    $rejectedcount=mysqli_num_rows(mysqli_query($conn,$rejected));
+
+    $return[] = array($spamcount,$verifiedcount,$acceptedcount,$rejectedcount);
+
+    echo ($return);
+   
+}
 
 
 ?>

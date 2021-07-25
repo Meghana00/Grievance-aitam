@@ -29,8 +29,9 @@ function ajaxAccountPageCall() {
       // AvailableBloodDetails();
       setInterval(function () {
         accountactivationresponse();
+        usercount();
         // AvailableBloodDetails();
-      }, 2000);
+      }, 1000);
     },
    
   });
@@ -124,6 +125,26 @@ function ActivateUser(){
       $('.activate-response').html(response);
     },
   
+  });
+}
+
+//users count by there status
+function usercount() {
+  var formData = {
+
+    usercount : 'usercount',
+
+  };
+  $.ajax({
+    type: 'POST',
+    url: './backScript.php',
+    data: formData,
+    success: function (response) {
+      $('.spam').html(response[0]);
+      $('.verified').html(response[1]);
+      $('.accepted').html(response[2]);
+      $('.rejected').html(response[3]);
+    },
   });
 }
 

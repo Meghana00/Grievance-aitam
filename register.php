@@ -23,7 +23,7 @@ if(isset($_POST['Register']))
 	$Status=0;
     
 
-    	$sql = "INSERT INTO `users` (`FullName`,`RollNo`,`Email`,`Branch`,`Gender`,`Mobile`,`UserType`,`Status`,`Dnt`) VALUES ('$FullName','$RollNo','$Email','$Branch','$Gender','$Mobile','$UserType','$Status','".date("d-m-Y H:i:s")."')";
+    	$sql = "INSERT INTO `users` (`FullName`,`RollNo`,`Email`,`Branch`,`Gender`,`Mobile`,`UserType`,`Status`,`Dnt`) VALUES ('$FullName','$RollNo','$Email','$Branch','$Gender','$Mobile','$UserType','$Status','".date("Y-m-d H:i:s")."')";
     	$query = mysqli_query($conn,$sql);
 
 			if(isset($query))
@@ -130,7 +130,7 @@ if(isset($_POST['Register']))
 								</div>
 								<div class="mb-3">
 									<label for="mobile" class="form-label">Mobile no</label>
-									<input type="number" name="Mobile" class="form-control shadow-none" id="mobile"> 
+									<input type="text" name="Mobile" class="form-control shadow-none" id="mobile"> 
 								</div>
 								<!-- <div class="mb-3">
 									<label for="Designation" class="form-label">Designation</label>

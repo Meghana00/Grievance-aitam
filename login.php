@@ -24,14 +24,14 @@ if(isset($_POST['login']))
 			$error="UserName Incorrect";
 		}   
 	}
-	elseif($Logintype=="STUDENT"){
+	elseif($Logintype=="STUDENT"||$Logintype=="FACULTY"){
 		$sql = "SELECT * FROM `users` WHERE `UserName` = '$UserName' ";
     	$query = mysqli_query($conn,$sql);
    		$row = mysqli_fetch_array($query);
 		if($row['UserName']==$UserName){
 			if($row['Password']==$Password){
 				$_SESSION['sess_user'] = $row['UserName'];
-            	echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
+            	echo "<script type='text/javascript'> document.location = './student/dashboard.php'; </script>";
 			}
 			else{
 				$error="Password Incorrect";

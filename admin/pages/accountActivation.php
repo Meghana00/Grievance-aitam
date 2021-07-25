@@ -1,4 +1,51 @@
 <!-- <body onload="accountactivationresponse()"> -->
+<div class=" overview bg-light">
+        <h4 class="mt-5">Greivance Overview </h4> 
+   
+            <div class="container mt-3">
+                <div class="row">
+                    <div class="col-md-4 col-xl-3">
+                        <div class="card bg-c-blue order-card">
+                            <div class="card-block">
+                                <h6 class="m-b-20">Spam</h6>
+                                <h2 class="order-card "><i class="fa fa-th-list" aria-hidden="true"></i><span class="f-right spam" id="spam"></span></h2>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 col-xl-3">
+                        <div class="card bg-c-green order-card">
+                            <div class="card-block">
+                                <h6 class="m-b-20">Verified</h6>
+                                <h2 class=" order-card"><i class="fa fa-th-list" aria-hidden="true"></i><span class="f-right verified" id="verified" ></span></h2>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 col-xl-3">
+                        <div class="card bg-c-yellow order-card">
+                            <div class="card-block">
+                                <h6 class="m-b-20">Accepted</h6>
+                                <h2 class=" order-card"><i class="fa fa-th-list" aria-hidden="true"></i><span class="f-right accepted" id="accepted"></span></h2>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 col-xl-3">
+                        <div class="card bg-c-pink order-card">
+                            <div class="card-block">
+                                <h6 class="m-b-20">Rejected</h6>
+                                <h2 class=" order-card"><i class="fa fa-th-list" aria-hidden="true"></i><span class="f-right rejected" id="rejected"></span></h2>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
 <section class="ftco-section">
 		<div class="container ">
 			<div class="row justify-content-center">
