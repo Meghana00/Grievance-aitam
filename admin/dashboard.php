@@ -1,5 +1,5 @@
 <?php
-include('include/config.php');
+include('./../include/config.php');
 session_start();
 if(!isset($_SESSION["sess_user"])){
 	echo "<script type='text/javascript'> document.location = 'login.php'; </script>";
@@ -21,13 +21,13 @@ else
 	<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet'>
 	<link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
 	
-    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./../dashassets/css/style.css">
     <!-- table-->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="./../dashassets/assets/style.css">
 </head>
 <body>
     
@@ -68,10 +68,6 @@ else
     <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'> </script>
     <!-- Jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./assets/vendor/jquery/jquery.min.js"></script>
-	<script src="./assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="./assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="./assets/scripts/klorofil-common.js"></script>
 	<!-- Core theme JS-->
 	<!-- <script src="./../assets/js/DashboardScript.js"></script> -->
     <script src="./script.js"></script>
