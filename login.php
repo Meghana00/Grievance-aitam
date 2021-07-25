@@ -126,7 +126,7 @@ if(isset($_POST['login']))
 							</div>
 							<div class="row mt-">
 								<div class="col-sm-6"><a href="" class="text-right mb-3">Forgot Your Password ?</a></div>
-								<div class="col-sm-6 f-right"><a href="register.html" class="text-right mb-3 ">New User?</a></div>
+								<div class="col-sm-6 f-right"><a href="register.php?Logintype=<?php echo htmlentities($Logintype)?>" class="text-right mb-3 ">New User?</a></div>
 								
 							</div>
 							<div class="row">
