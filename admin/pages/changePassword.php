@@ -11,15 +11,15 @@
                          <form>
                            <div class="mb-3">
 					          <label for="oldpassword" class="text-dark">Your Old Password</label>
-					          <input type="password" class="form-control border-dark shadow-none" name="oldpassword">
+					          <input type="password" class="form-control  shadow-none" name="oldpassword">
 				           </div>
 				           <div class="mb-3">
 					          <label for="newpassword" class="text-dark">Your New Password</label>
-					          <input type="password" class="form-control border-dark shadow-none" name="newpassword">
+					          <input type="password" class="form-control  shadow-none" name="newpassword">
 				           </div>
 				           <div class="mb-3">
 					         <label for="confirmpassword" class="text-dark">Confirm password</label>
-					         <input type="password" class="form-control border-dark shadow-none" name="confirmpassword">
+					         <input type="password" class="form-control  shadow-none" name="confirmpassword">
 				           </div>
                            <div class="mb-3">
                              <button type="submit" class="btn btn-dark border-light shadow-none mt-2" name="update">Update</button>
