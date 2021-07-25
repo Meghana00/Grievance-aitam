@@ -78,7 +78,7 @@ if(isset($_POST['login']))
 </head>
    
 
-<body>
+<body style="background:url('./assets/images/indexbackground.jpg'); background-repeat:no-repeat;background-position:center ;background-size:cover;">
 	<!--header-->
 	<main>
 		<nav class="navbar navbar-light bg-transparent p-4">
@@ -104,34 +104,38 @@ if(isset($_POST['login']))
 		<div class="row mx-auto mt-5">
 			<div class="col-sm-3 col-md-3"></div>
 			<div class="col-sm-6 col-md-6">
-				<div class="card mb-5 p-2 shadow rounded">
-					<div class="card-body">
+				<div class="card mb-5 p-2  shadow rounded" style="background:#a0f9a0;">
+					<div class="card-body mt-2">
 						<div class="row mb-3">
 							
-							<h3 class="text-success"><?php echo htmlentities($Logintype) ?> LOGIN FORM</h3>
+							<h3 class="text-dark text-center border-bottom border-dark p-3"><?php echo htmlentities($Logintype) ?> LOGIN FORM</h3>
 						</div>
-						<form method="POST">
-							<div class="mb-3">
+						<form method="POST" >
+							<div class="mb-3 mt-2">
 							  <label for="Email" class="form-label">Email address</label>
-							  <input type="email" name="UserName" class="form-control border-success" id="Email" aria-describedby="emailHelp">
+							  <input type="email" name="UserName" class="form-control shadow-none " id="Email" aria-describedby="emailHelp">
 							  
 							</div>
-							<div class="mb-3">
+							<div class="mb-3 ">
 							  <label for="Password" class="form-label">Password</label>
-							  <input type="password" name="Password" class="form-control border-success" id="Password">
+							  <input type="password" name="Password" class="form-control shadow-none " id="Password">
 							</div>
 							<div class="row mt-3  text-danger" >
 								<div class="col-sm-6"><?php echo htmlentities($error)?></div>	
 									
 							</div>
-							<div class="row mt-">
-								<div class="col-sm-6"><a href="" class="text-right mb-3">Forgot Your Password ?</a></div>
-								<div class="col-sm-6 f-right"><a href="register.php?Logintype=<?php echo htmlentities($Logintype)?>" class="text-right mb-3 ">New User?</a></div>
+							<div class="row mt-2">
+								<div class="col-sm-6"><a href="" class="text-decoration-dark mb-3 text-dark">Forgot Your Password ?</a></div>
+                                 <div class="col-sm-3"></div>
+								<div class="col-sm-3"><a href="register.php?Logintype=<?php echo htmlentities($Logintype)?>" class="text-decoration-dark mb-3 text-dark ">New User?</a></div>
 								
 							</div>
 							<div class="row">
-								<div class="col-sm-9"></div>
-								<div class="col-sm-3"><input type="submit" name="login" value="Login" class="btn btn-primary border-success mb-3"style="background-color:#5cb85c"></div>
+								<div class="col-sm-4"></div>
+								<div class="col-sm-6 mx-auto mt-5">
+								<input type="submit" name="login" value="Login" class="btn btn-dark border-light shadow-none  mb-3">
+								</div>
+								
 							</div>
 						</form>
 					</div>
