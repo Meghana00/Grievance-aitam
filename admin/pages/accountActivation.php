@@ -2,7 +2,7 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">Grievence List</h2>
+					<h2 class="heading-section">New User Requests</h2>
 				</div>
 			</div>
 			<div class="row">
@@ -12,12 +12,12 @@
 						  <thead>
 						    <tr>
 						      <th>Slno</th>
-						      <th>Email</th>
-						      <th>Fullname</th>
-                              <th>Gender</th>
-                              <th>Grievance</th>
+						      <th>FullName</th>
+						      <th>RollNo</th>
+                              <th>Email</th>
+                              <th>Branch</th>
 						      <th>Status</th>
-                              <th>Solution</th>
+                              <th>UserType</th>
 						      <th>Action</th>
 						    </tr>
 						  </thead>
