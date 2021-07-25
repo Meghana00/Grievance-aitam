@@ -6,14 +6,12 @@ $sql1="UPDATE `users` set Status='1' where Email='$Email'";
 $query1=mysqli_query($conn,$sql1);
 if($query1){
 	echo '<script>alert("Request Sent To Management");</script>';
-	$msg="Your Account Verification is Under Process. Once It Activated You will recieve email with crediantials ";
+	$msg="Your Mail Verification is done and Account Activation is Under Process. Once It Activated You will recieve email with crediantials ";
 }
 else{
 	echo '<script>alert("Request Failed");</script>';
-	$msg="Your account deactivated";
+	$msg="Your Mail Verification Failed";
 }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +23,7 @@ else{
 	<!--Favicon-->
 	<!-- Page title -->
 	<link rel="icon" href="./assets/images/aitamlogo.png" type="image/gif" sizes="16x16">
-	<title>AITAM - Grievance Portal</title>
+	<title>Mail Verification - Grievance Portal</title>
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 	<!-- Bootstrap CSS -->

@@ -68,6 +68,10 @@ else
     <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'> </script>
     <!-- Jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./assets/vendor/jquery/jquery.min.js"></script>
+	<script src="./assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="./assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="./assets/scripts/klorofil-common.js"></script>
 	<!-- Core theme JS-->
 	<!-- <script src="./../assets/js/DashboardScript.js"></script> -->
     <script src="./script.js"></script>

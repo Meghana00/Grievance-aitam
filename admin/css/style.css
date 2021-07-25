@@ -4234,6 +4234,12 @@ input[type="button"].btn-block {
     right: 0;
     padding: 0.75rem 1.25rem;
     color: inherit; }
+    .alert-dismissible .open {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 0.75rem 1.25rem;
+      color: inherit; }
 
 .alert-primary {
   color: #004085;
@@ -4648,6 +4654,32 @@ button.close {
 
 a.close.disabled {
   pointer-events: none; }
+
+  .open {
+    float: right;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5; }
+    .open:hover {
+      color: #000;
+      text-decoration: none; }
+    .open:not(:disabled):not(.disabled):hover, .open:not(:disabled):not(.disabled):focus {
+      opacity: .75; }
+  
+  button.open {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; }
+  
+  a.open.disabled {
+    pointer-events: none; }
+  
 
 .toast {
   max-width: 350px;
@@ -8190,7 +8222,7 @@ h1, h2, h3, h4, h5,
   box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29); }
   .table thead th {
     border: none;
-    padding: 15px;
+    padding: 30px;
     font-size: 13px;
     font-weight: 500;
     color: gray; }
@@ -8242,6 +8274,10 @@ h1, h2, h3, h4, h5,
   .table tbody td .close span {
     font-size: 12px;
     color: #dc3545; }
+  .table tbody td .open span {
+    font-size: 12px;
+    color: #1ce626; }
+  
 
 .checkbox-wrap {
   display: block;
