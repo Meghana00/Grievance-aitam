@@ -26,9 +26,10 @@ else
     <link rel="stylesheet" href="./../dashassets/css/style.css">
     <!-- table-->
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
-
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	
+    
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js">
 	<link rel="stylesheet" href="./../dashassets/assets/style.css">
 </head>
 <body>
@@ -46,7 +47,7 @@ else
                 <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Grievance Cell</span> </a>
                 <div class="nav_list">
                     <a href="#" onclick="ajaxProfilePageCall()" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">My Profile</span> </a>
-                    <a href="#" onclick="ajaxGrievancePageCall()" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Greivance Members</span> </a>
+                    <a href="#" onclick="ajaxGrievancePageCall()" class="nav_link"> <i class='bx bx-box nav_icon'></i> <span class="nav_name">Greivances</span> </a>
                     <a href="#" onclick="ajaxAccountPageCall()" class="nav_link" > <i class='bx bx-user nav_icon'></i><span class="nav_name">Account Activation</span> </a>
                     <a href="#" onclick="ajaxGrievanceMemPageCall()" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">Greivance Members</span> </a>
                     <a href="#" onclick="ajaxGrievanceTypePageCall()" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Greivance Types</span> </a>

@@ -204,6 +204,38 @@ function  Grievancelist(){
     },
   });
 }
+///password genrator
+function generatePassword() {
+  var length = 8,
+      charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+      retVal = "";
+  for (var i = 0, n = charset.length; i < length; ++i) {
+      retVal += charset.charAt(Math.floor(Math.random() * n));
+  }
+  return retVal;
+}
+/////add grievance member
+function  Addmember(){
+  var formData = {
+    MemFullName: $('#MemFullName').val(),
+    MemEmpId: $('#MemEmpId').val(),
+    MemEmail: $('#MemEmail').val(),
+    MemBranch: $('#MemBranch').val(),
+    MemMobile: $('#MemMobile').val(),
+    MemDuty: $('#MemDuty').val(),
+    MemDesignation: $('#MemDesignation').val(),
+    MemPassword: generatePassword(),
+    Addmember : 'Addmember',
+  };
+  $.ajax({
+    type: 'POST',
+    url: './backScript.php',
+    data: formData,
+    success: function (response) {
+      $('.Addmember-response').html(response);
+    },
+  });
+}
 
 /******************************************************************************/
 /*******************************************************************************/

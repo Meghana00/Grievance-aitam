@@ -193,5 +193,53 @@ if (isset($_POST['Grievancelist']))
    
 }
 
+/////admember response
+if(isset($_POST['Addmember']))
+{
+    $FullName = $conn -> real_escape_string($_POST['MemFullName']);
+    $EmpId= $conn -> real_escape_string($_POST['MemEmpId']);
+    $Email= $conn -> real_escape_string($_POST['MemEmail']);
+    $Branch= $conn -> real_escape_string($_POST['MemBranch']);
+    $Duty= $conn -> real_escape_string($_POST['MemDuty']);
+    $Designation= $conn -> real_escape_string($_POST['MemDesignation']);
+    $Mobile= $conn -> real_escape_string($_POST['MemMobile']);
+    $Password= $conn -> real_escape_string($_POST['MemPassword']);
+    $UserName=$Email;
+
+    	$sql = "INSERT INTO `committee` (`FullName`,`EmpId`,`Email`,`Branch`,`Duty`,`Mobile`,`Designation`,`UserName`,`Password`) VALUES ('$FullName','$EmpId','$Email','$Branch','$Duty','$Mobile','$Designation','$UserName','$Password')";
+    	$query = mysqli_query($conn,$sql);
+        if($query){
+            $subject="YOU ARE ADDED AS THE GRIEVANCE COMMITTEE MEMEBER -AITAM";
+            $mailHtml="Your Account Has Been Activated Your User Name $Email and Password is $Password";
+
+            $mail= new PHPMailer();
+            $mail->isSMTP();
+            $mail->Host="smtp.gmail.com";
+            $mail->SMTPAuth="true";
+            $mail->SMTPSecure="tls";
+            $mail->Port="587";
+            $mail->Username="dtearthmovers1026@gmail.com";
+            $mail->Password="anand@123";
+            $mail->Subject=$subject;
+            $mail->setFrom("dtearthmovers1026@gmail.com");
+            $mail->Body=$mailHtml;
+            $mail->addAddress($Email);
+            if($mail->send()){
+                $msg="Credintials Has been sent $Email ";
+                echo $msg;	
+            
+            }
+            else{
+                $msg=" Account Activation Failed";
+                echo $msg;
+            }
+            $mail->smtpClose();
+    }
+    else{
+        $msg=" Registration Failed";
+        echo $msg;
+    }
+
+}
 
 ?>
