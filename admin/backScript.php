@@ -55,7 +55,7 @@ if (isset($_POST['accountactivationresponse']))
         }
     
     }else{
-        echo "$From  And $To ";
+        echo "No More Users";
     }
    
 }
@@ -133,6 +133,23 @@ if(isset($_POST['usercount'])){
    
 }
 
+if(isset($_POST['grievancecount'])){
+    $Rejected="SELECT `Status` From `grievances` Where Status='Rejected'";
+    $Open="SELECT `Status` From `grievances` Where Status='Open'";
+    $Closed="SELECT `Status` From `grievances` Where Status='Closed'";
+    $Reopened="SELECT `Status` From `grievances` Where Status='Reopened'";
+
+    $Rejectedcount=mysqli_num_rows(mysqli_query($conn,$Rejected));
+    $Opencount=mysqli_num_rows(mysqli_query($conn,$Open));
+    $Closedcount=mysqli_num_rows(mysqli_query($conn,$Closed));
+    $Reopenedcount=mysqli_num_rows(mysqli_query($conn,$Reopened));
+
+    $return[] = array($Rejectedcount,$Opencount,$Closedcount,$Reopenedcount);
+
+    echo ($return);
+   
+}
+
 
 // <!-- Grivences list Response -->
 
@@ -146,7 +163,7 @@ if (isset($_POST['Grievancelist']))
     }else{
     $myRequestsQuery = "SELECT * FROM `grievances` ORDER BY `SlNo` DESC LIMIT $LIMIT";
     }
-    $myRequests = mysqli_query($conn, $myRequestsQuery);
+    $myRequests = mysqli_query($conn,$myRequestsQuery);
     if ($myRequestsRow = mysqli_num_rows($myRequests) !='0')
     {      
         while($myRequestsRow = mysqli_fetch_array($myRequests))
@@ -174,8 +191,6 @@ if (isset($_POST['Grievancelist']))
         echo " No data Found";
     }
    
-}else{
-    echo"failed";
 }
 
 

@@ -19,6 +19,7 @@ function ajaxGrievancePageCall() {
       $('.ajax-main-content').html(response);
       setInterval(function () {
         Grievancelist();
+        grievancecount();
       }, 1000);
     },
   });
@@ -163,6 +164,26 @@ function usercount() {
       $('.verified').html(response[1]);
       $('.accepted').html(response[2]);
       $('.rejected').html(response[3]);
+    },
+  });
+}
+
+//users count by there status
+function grievancecount() {
+  var formData = {
+
+    grievancecount : 'grievancecount',
+
+  };
+  $.ajax({
+    type: 'POST',
+    url: './backScript.php',
+    data: formData,
+    success: function (response) {
+      $('.Rejected').html(response[0]);
+      $('.Open').html(response[1]);
+      $('.Closed').html(response[2]);
+      $('.Reopened').html(response[3]);
     },
   });
 }
