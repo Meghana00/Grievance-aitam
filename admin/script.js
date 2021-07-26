@@ -17,6 +17,9 @@ function ajaxGrievancePageCall() {
     url: './pages/grievances.php',
     success: function (response) {
       $('.ajax-main-content').html(response);
+      setInterval(function () {
+        Grievancelist();
+      }, 1000);
     },
   });
 }
@@ -30,10 +33,8 @@ function ajaxAccountPageCall() {
       setInterval(function () {
         accountactivationresponse();
         usercount();
-        // AvailableBloodDetails();
       }, 1000);
     },
-   
   });
 }
 
@@ -127,6 +128,24 @@ function ActivateUser(){
   
   });
 }
+///reject the user
+function RejectUser(){
+  var formData = {
+    Email1: $('#Email1').val(),
+    RejectUser : 'RejectUser',
+
+  };
+  $.ajax({
+    type: 'POST',
+    url: './backScript.php',
+    data: formData,
+    success: function (response) {
+      $('.reject-response').html(response);
+    },
+  
+  });
+}
+
 
 //users count by there status
 function usercount() {
@@ -148,6 +167,22 @@ function usercount() {
   });
 }
 
+// Grievances List function
+function  Grievancelist(){
+  var formData = {
+    From: $('#From').val(),
+    To: $('#To').val(),
+    Grievancelist : 'Grievancelist',
+  };
+  $.ajax({
+    type: 'POST',
+    url: './backScript.php',
+    data: formData,
+    success: function (response) {
+      $('.Grievance-response').html(response);
+    },
+  });
+}
 
 /******************************************************************************/
 /*******************************************************************************/

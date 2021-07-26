@@ -52,6 +52,12 @@
 				<div class="col-md-6 text-center mb-5">
 					<h2 class="heading-section">Grievence List</h2>
 				</div>
+				<div class="row  d-flex justify-content-end">
+				
+					<div class="col-md-3"><span>From</span><input id="From" type="date" class="form-control" ></div>
+					<div class="col-md-3"><span>To</span><input id="To" type="date" class="form-control" ></div>
+			
+				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-14">
@@ -63,74 +69,14 @@
 						      <th>Email</th>
 						      <th>Fullname</th>
                               <th>Gender</th>
-                              <th>Grievance</th>
+                              <!-- <th>Grievance</th> -->
 						      <th>Status</th>
                               <th>Solution</th>
+							  
 						      <th>Action</th>
 						    </tr>
 						  </thead>
-						  <tbody>
-							  <!-- row1 -->
-						    <tr class="alert" role="alert">
-						    	<td>1</td>
-						      	<td class="d-flex align-items-center">
-						      		<div class="pl-3 email">
-						      			<span>markotto@email.com</span>
-						      			<span>Added: 01/03/2020</span>
-						      		</div>
-						     	</td>
-						      	<td>Markotto89</td>
-                                <td>Male</td>
-                                <td>Please make changes</td>
-						      	<td class="status"><span class="active">Active</span></td>
-                                <td>We are working</td>
-						      	<td>
-						      		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				            		<span aria-hidden="true"><i class="fa fa-close"></i>Write</span>
-				          			</button>
-				        		</td>
-						    </tr>
-							<!-- end row1 -->
-                            <tr class="alert" role="alert">
-						    	<td>1</td>
-						      	<td class="d-flex align-items-center">
-						      		<div class="pl-3 email">
-						      			<span>markotto@email.com</span>
-						      			<span>Added: 01/03/2020</span>
-						      		</div>
-						     	</td>
-						      	<td>Markotto89</td>
-                                <td>Male</td>
-                                <td>Please make changes</td>
-						      	<td class="status"><span class="waiting">Pending</span></td>
-                                <td>We are working</td>
-						      	<td>
-						      		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				            		<span aria-hidden="true"><i class="fa fa-close"></i>Write</span>
-				          			</button>
-				        		</td>
-						    </tr>
-
-
-                            <tr class="alert" role="alert">
-						    	<td>1</td>
-						      	<td class="d-flex align-items-center">
-						      		<div class="pl-3 email">
-						      			<span>markotto@email.com</span>
-						      			<span>Added: 01/03/2020</span>
-						      		</div>
-						     	</td>
-						      	<td>Markotto89</td>
-                                <td>Male</td>
-                                <td>Please make changes</td>
-						      	<td class="status"><span class="waiting">Pending</span></td>
-                                <td>We are working</td>
-						      	<td>
-						      		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-				            		<span aria-hidden="true"><i class="fa fa-close"></i>Write</span>
-				          			</button>
-				        		</td>
-						    </tr>
+						  <tbody class="Grievance-response">
 							
 						  </tbody>
 						</table>

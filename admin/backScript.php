@@ -45,7 +45,7 @@ if (isset($_POST['accountactivationresponse']))
                     <td class="status"><span class="active">Mail Verified</span></td>
                     <td>'.$myRequestsRow['UserType'].'</td>
                     <td>
-                        <button type="button" class="close btn" data-dismiss="alert" aria-label="Close"><span aria-hidden="true"><i class="fa fa-close" ></i>Reject</span></button>
+                        <button type="button" class="close btn" data-dismiss="alert" data-bs-toggle="modal" data-bs-target="#example" aria-label="Close" data-bs-whatever="'.$myRequestsRow['Email'].'"><span aria-hidden="true"><i class="fa fa-close" ></i>Reject</span></button>
                     </td>
                     <td>
                         <button type="button" class="open btn" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-label="Close" data-dismiss="alert" data-bs-whatever="'.$myRequestsRow['Email'].'"><span aria-hidden="true"><i class="fa fa-check"></i>Activate</span></button>
@@ -59,6 +59,8 @@ if (isset($_POST['accountactivationresponse']))
     }
    
 }
+
+
 
 ////////sending creds to activated users
 if(isset($_POST['ActivateUser'])){
@@ -100,7 +102,18 @@ if(isset($_POST['ActivateUser'])){
     }
 
  }
-
+///rejecting user response
+if(isset($_POST['RejectUser'])){
+    $Email1 = $conn ->real_escape_string($_POST['Email1']);
+    $sql = "UPDATE `Users` SET `Status`='3' WHERE `Email`='$Email1'";
+    $query=mysqli_query($conn,$sql);
+    if(isset($query)){
+        echo"User Rejected";
+    }
+    else{
+        echo"Rejection Failed";
+    }
+}
 
 //usercount ontheier status base
 if(isset($_POST['usercount'])){
@@ -121,5 +134,49 @@ if(isset($_POST['usercount'])){
 }
 
 
-?>
+// <!-- Grivences list Response -->
 
+if (isset($_POST['Grievancelist']))
+{
+    $LIMIT = 10;
+    if(!empty($_POST['From']) && !empty($_POST['To'])){
+        $From = $conn -> real_escape_string($_POST['From']);
+        $To = $conn -> real_escape_string($_POST['To']);
+        $myRequestsQuery ="SELECT * FROM `grievances` AND `RegDate` BETWEEN '{$From}' AND '{$To}'";
+    }else{
+    $myRequestsQuery = "SELECT * FROM `grievances` ORDER BY `SlNo` DESC LIMIT $LIMIT";
+    }
+    $myRequests = mysqli_query($conn, $myRequestsQuery);
+    if ($myRequestsRow = mysqli_num_rows($myRequests) !='0')
+    {      
+        while($myRequestsRow = mysqli_fetch_array($myRequests))
+        {
+            echo '<tr class="alert" role="alert">
+                    <td>'.$myRequestsRow['SlNo'].'</td>
+                    <td class="d-flex align-items-center ">
+                        <div class="pl-3 email">
+                        <span>'.$myRequestsRow['Email'].'</span>
+                        <span>Requested on: '.$myRequestsRow['RegDate'].'</span>
+                        </div>
+                    </td>
+                    <td>'.$myRequestsRow['FullName'].'</td>
+                    <td>'.$myRequestsRow['Gender'].'</td>
+                    <td>'.$myRequestsRow['Status'].'</td>
+                    <td>'.$myRequestsRow['Solution'].'</td>
+                    <td>
+                        <button type="button" class="open btn" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-label="Close" data-dismiss="alert" data-bs-whatever="'.$myRequestsRow['Email'].'"><span aria-hidden="true"><i class="fa fa-check"></i>Details</span></button>
+                
+                    </td>
+                  </tr>';
+        }
+    
+    }else{
+        echo " No data Found";
+    }
+   
+}else{
+    echo"failed";
+}
+
+
+?>

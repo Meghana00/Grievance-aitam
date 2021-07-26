@@ -42,3 +42,28 @@ function ajaxChangePassPageCall(){
     });
   }
 
+
+  // ======================pagecall end===================
+
+///register Grievance
+function RegisterGrievance() {
+  var formData = {
+    FullName: $('#FullName').val(),
+    RollNo: $('#RollNo').val(),
+    Gender: $('#Gender').val(),
+    Email: $('#Email').val(),
+    Grievance: $('#Grievance').val(),
+    GrievanceType: $('#GrievanceType').val(),
+    
+    RegisterGrievance : 'RegisterGrievance',
+
+  };
+  $.ajax({
+    type: 'POST',
+    url: './backScript.php',
+    data: formData,
+    success: function (response) {
+      $('.Register_response').html(response);
+    },
+  });
+}

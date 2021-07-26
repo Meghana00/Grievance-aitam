@@ -118,6 +118,39 @@
 		</div>
 
 	</section>
+	<!-- Modal use -->
+				<div class="modal fade" id="example" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">New message</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+					<form method="POST">
+						<div class="row">
+							Are you Sure to reject
+							
+							<div class="mb-3">
+							<label for="recipient-name" class="col-form-label">Recipient:</label>
+							<input type="text" class="form-control" id="Email1" name="Email1">
+							</div>
+							
+							
+						</div>
+						<div class="mb3 reject-response">
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+							<button type="button" name="activate-btn" onclick="RejectUser()" class="btn btn-primary">Reject</button>
+						</div>
+					</form>
+					</div>
+					
+					</div>
+				</div>
+				</div>
+				<!-- modal use end -->
 
 <script>
 
@@ -147,5 +180,24 @@ exampleModal.addEventListener('show.bs.modal', function (event) {
 //   modalBodyInput.value = recipient
   document.getElementById('Email').value = recipient
   document.getElementById('Password').value= generatePassword()
+})
+
+var example = document.getElementById('example')
+example.addEventListener('show.bs.modal', function (event) {
+  // Button that triggered the modal
+  var button = event.relatedTarget
+  // Extract info from data-bs-* attributes
+  var recipient = button.getAttribute('data-bs-whatever')
+  // If necessary, you could initiate an AJAX request here
+  // and then do the updating in a callback.
+  //
+  // Update the modal's content.
+//   var modalTitle = example.querySelector('.modal-title')
+//   var modalBodyInput = example.querySelector('.modal-body input')
+
+  
+//   modalBodyInput.value = recipient
+  document.getElementById('Email1').value = recipient
+
 })
 </script>
