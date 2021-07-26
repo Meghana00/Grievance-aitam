@@ -6,8 +6,8 @@
                     <div class="col-md-4 col-xl-3">
                         <div class="card bg-c-blue order-card">
                             <div class="card-block">
-                                <h6 class="m-b-20">Greivances Recieved</h6>
-                                <h2 class="order-card "><i class="fa fa-th-list" aria-hidden="true"></i><span class="f-right">486</span></h2>
+                                <h6 class="m-b-20">Greivances Rejected</h6>
+                                <h2 class="order-card "><i class="fa fa-th-list" aria-hidden="true"></i><span class="f-right Rejected"></span></h2>
                                
                             </div>
                         </div>
@@ -16,8 +16,8 @@
                     <div class="col-md-4 col-xl-3">
                         <div class="card bg-c-green order-card">
                             <div class="card-block">
-                                <h6 class="m-b-20">Greivances Redressed</h6>
-                                <h2 class=" order-card"><i class="fa fa-th-list" aria-hidden="true"></i><span class="f-right" >486</span></h2>
+                                <h6 class="m-b-20">Greivances Open</h6>
+                                <h2 class=" order-card"><i class="fa fa-th-list" aria-hidden="true"></i><span class="f-right Open" ></span></h2>
                                
                             </div>
                         </div>
@@ -26,8 +26,8 @@
                     <div class="col-md-4 col-xl-3">
                         <div class="card bg-c-yellow order-card">
                             <div class="card-block">
-                                <h6 class="m-b-20">Greivances Pending</h6>
-                                <h2 class=" order-card"><i class="fa fa-th-list" aria-hidden="true"></i><span class="f-right">486</span></h2>
+                                <h6 class="m-b-20">Greivances Closed</h6>
+                                <h2 class=" order-card"><i class="fa fa-th-list" aria-hidden="true"></i><span class="f-right Closed"></span></h2>
                                
                             </div>
                         </div>
@@ -36,8 +36,8 @@
                     <div class="col-md-4 col-xl-3">
                         <div class="card bg-c-pink order-card">
                             <div class="card-block">
-                                <h6 class="m-b-20">Greivances In Progress</h6>
-                                <h2 class=" order-card"><i class="fa fa-th-list" aria-hidden="true"></i><span class="f-right">486</span></h2>
+                                <h6 class="m-b-20">Greivances Reopened</h6>
+                                <h2 class=" order-card"><i class="fa fa-th-list" aria-hidden="true"></i><span class="f-right Reopened">486</span></h2>
                                
                             </div>
                         </div>
