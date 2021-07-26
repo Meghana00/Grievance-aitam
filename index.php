@@ -16,7 +16,7 @@
 	<link href="./assets/css/main.css" rel="stylesheet" type="text/css" /> </head>
 
 </head>
-<body style="background:url('./assets/images/indexbackground.jpg'); background-repeat:no-repeat;background-position:center ;background-size:cover;">
+<body style="background:url('./assets/images/bg2.jpg'); background-repeat:no-repeat;background-position:center ;background-size:cover;">
 <main>
         <nav class="navbar navbar-light bg-transparent p-4">
     <div class="container-fluid">

@@ -78,7 +78,7 @@ if(isset($_POST['login']))
 </head>
    
 
-<body style="background:url('./assets/images/indexbackground.jpg'); background-repeat:no-repeat;background-position:center ;background-size:cover;">
+<body style="background:url('./assets/images/bg2.jpg'); background-repeat:no-repeat;background-position:center ;background-size:cover;">
 	<!--header-->
 	<main>
 		<nav class="navbar navbar-light bg-transparent p-4">
@@ -104,7 +104,7 @@ if(isset($_POST['login']))
 		<div class="row mx-auto mt-5">
 			<div class="col-sm-3 col-md-3"></div>
 			<div class="col-sm-6 col-md-6">
-				<div class="card mb-5 p-2  shadow rounded" style="background:#a0f9a0;">
+				<div class="card mb-5 p-2  shadow rounded">
 					<div class="card-body mt-2">
 						<div class="row mb-3">
 							

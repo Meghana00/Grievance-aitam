@@ -76,7 +76,7 @@ if(isset($_POST['Register']))
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<link href="./assets/css/main.css" rel="stylesheet"> </head>
 
-<body style="background:url('./assets/images/indexbackground.jpg'); background-repeat:no-repeat;background-position:center ;background-size:cover;">
+<body style="background:url('./assets/images/bg2.jpg'); background-repeat:no-repeat;background-position:center ;background-size:cover;">
 	<!--header-->
 	<main>
 		<nav class="navbar navbar-light bg-transparent p-4">
@@ -94,7 +94,7 @@ if(isset($_POST['Register']))
 			<div class="row mx-auto mt-5">
 				<div class="col-sm-3 col-md-3"></div>
 				<div class="col-sm-6 col-md-6">
-					<div class="card mb-5 p-2  shadow rounded" style="background:#a0f9a0;">
+					<div class="card mb-5 p-2  shadow rounded" >
 						<div class="card-body">
 							<div class="row mb-3">
 								<h3 class="text-dark border-bottom border-dark p-3 text-center"><?php echo htmlentities($Logintype) ?> Registration Form</h3> </div>
