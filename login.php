@@ -74,14 +74,14 @@ if(isset($_POST['login']))
 	
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> 
-    <link href="./assets/css/main.css" rel="stylesheet">
+    <link href="./assets/css/mainstyle.css" rel="stylesheet">
 </head>
    
 
 <body style="background:url('./assets/images/bg2.jpg'); background-repeat:no-repeat;background-position:center ;background-size:cover;">
 	<!--header-->
 	<main>
-		<nav class="navbar navbar-light bg-transparent p-4">
+		<nav class="navbar navbar-light bg-transparent ">
 			<div class="container-fluid">
 			   <a class="navbar-brand" href="#">
 			   </a>
@@ -108,34 +108,33 @@ if(isset($_POST['login']))
 					<div class="card-body mt-2">
 						<div class="row mb-3">
 							
-							<h3 class="text-dark text-center border-bottom border-dark p-3"><?php echo htmlentities($Logintype) ?> LOGIN FORM</h3>
+							<h3 class="text-success text-center border-bottom border-success p-3"><?php echo htmlentities($Logintype) ?> LOGIN FORM</h3>
 						</div>
 						<form method="POST" >
 							<div class="mb-3 mt-2">
 							  <label for="Email" class="form-label">Email address</label>
-							  <input type="email" name="UserName" class="form-control shadow-none " id="Email" aria-describedby="emailHelp">
+							  <input type="email" name="UserName" class="form-control border-success shadow-none " id="Email" aria-describedby="emailHelp">
 							  
 							</div>
 							<div class="mb-3 ">
 							  <label for="Password" class="form-label">Password</label>
-							  <input type="password" name="Password" class="form-control shadow-none " id="Password">
+							  <input type="password" name="Password" class="form-control border-success shadow-none " id="Password">
 							</div>
 							<div class="row mt-3  text-danger" >
 								<div class="col-sm-6"><?php echo htmlentities($error)?></div>	
 									
 							</div>
-							<div class="row mt-2">
-								<div class="col-sm-6"><a href="" class="text-decoration-dark mb-3 text-dark">Forgot Your Password ?</a></div>
+							<div class="row mt-3">
+								<div class="col-sm-6 mb-3"><a href="" class="text-decoration-dark mb-3 text-dark">Forgot Your Password ?</a></div>
                                  <div class="col-sm-3"></div>
 								<div class="col-sm-3"><a href="register.php?Logintype=<?php echo htmlentities($Logintype)?>" class="text-decoration-dark mb-3 text-dark ">New User?</a></div>
 								
 							</div>
+							
 							<div class="row">
-								<div class="col-sm-4"></div>
-								<div class="col-sm-6 mx-auto mt-5">
-								<input type="submit" name="login" value="Login" class="btn btn-dark border-light shadow-none  mb-3">
+							<div class="mt-3 text-center">
+								<input type="submit" name="login" value="Login" class="btn  btn-success border-light shadow-none w-25 mb-3">
 								</div>
-								
 							</div>
 						</form>
 					</div>
@@ -147,19 +146,15 @@ if(isset($_POST['login']))
 	</div>
 	<!--end login----------->
 	<!--footer-->
-	<footer class="mt-5">
+	<footer > 
 
-        <div  style="background-color:#5cb85c;" class="p-2">
-            <div class="container">
-              <div class="row">
-                  <div class="col-sm-4"></div>
-                  <div class="col-sm-6">
-                    <p class="justify-content-md-center text-white">@copyright | Aditya Institute of technology and Management</p> 
-                  </div>
-                  <div class="col-sm-2"></div>
-              </div>
-            </div>
+   
+        <div class="footer-copyright text-center text-light py-1" style="background-color:#5cb85c;">©
+				<script>
+				document.write(new Date().getFullYear())
+				</script> Copyright : <a href="https://aitamsac.in/" class="text-white">aitamsac</a> 
         </div>
+      
     </footer>
 	<!--end footer-->
     

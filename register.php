@@ -74,12 +74,12 @@ if(isset($_POST['Register']))
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 	<!-- Bootstrap CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	<link href="./assets/css/main.css" rel="stylesheet"> </head>
+	<link href="./assets/css/mainstyle.css" rel="stylesheet"> </head>
 
 <body style="background:url('./assets/images/bg2.jpg'); background-repeat:no-repeat;background-position:center ;background-size:cover;">
 	<!--header-->
 	<main>
-		<nav class="navbar navbar-light bg-transparent p-4">
+		<nav class="navbar navbar-light bg-transparent">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="#"> </a>
 				<div class="mx-auto"> <img src="./assets/images/aitam_logo.jpg" class="mb-3" alt="" width="50" height="42"><span class="ms-3 fw-bold display-6" style="color:#5cb85c;">AITAM</span> </div>
@@ -89,28 +89,40 @@ if(isset($_POST['Register']))
 		</nav>
 	</main>
 	<!--end header-->
+
+
 		<!-- login ---------------->
 		<div class="container mt-5">
-			<div class="row mx-auto mt-5">
-				<div class="col-sm-3 col-md-3"></div>
-				<div class="col-sm-6 col-md-6">
-					<div class="card mb-5 p-2  shadow rounded" >
-						<div class="card-body">
-							<div class="row mb-3">
-								<h3 class="text-dark border-bottom border-dark p-3 text-center"><?php echo htmlentities($Logintype) ?> Registration Form</h3> </div>
-							<form method="POST">
+	<div class="row mx-auto mt-5">
+		<div class="col-sm-2 col-md-2"></div>
+		<div class="col-sm-8 col-md-8">
+			<div class="card mb-5 p-2  shadow rounded">
+				<div class="card-body">
+					<div class="row mb-3">
+						<h3 class="text-success border-bottom border-success p-3 text-center"><?php echo htmlentities($Logintype) ?> Registration Form</h3> </div>
+					<form method="POST">
+						<div class="row">
+							<div class="col-sm-6">
 								<div class="mb-3">
 									<label for="fullname" class="form-label">Full Name</label>
-									<input type="text" name="FullName" class="form-control  shadow-none" id="Fullname"> </div>
+									<input type="text" name="FullName" class="form-control border-success  shadow-none" id="Fullname"> </div>
+							</div>
+							<div class="col-sm-6">
 								<div class="mb-3">
 									<label for="rollid" class="form-label">RollNo/Employee Id</label>
-									<input type="text" name="RollNo" class="form-control  shadow-none" id="rollid"> </div>
+									<input type="text" name="RollNo" class="form-control  border-success shadow-none" id="rollid"> </div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
 								<div class="mb-3">
 									<label for="Email" class="form-label">Email address</label>
-									<input type="email" name="Email" class="form-control shadow-none " shadow-none id="Email" aria-describedby="emailHelp"> </div>
+									<input type="email" name="Email" class="form-control  border-success shadow-none " shadow-none id="Email" aria-describedby="emailHelp"> </div>
+							</div>
+							<div class="col-sm-6">
 								<div class="mb-3">
 									<label for="department" class="form-label">Department</label>
-									<select id="department" class="form-select  shadow-none" name="Branch">
+									<select id="department" class="form-select  border-success  shadow-none" name="Branch">
 										<option value="" selected>---Select---</option>
 										<option value="CSE">CSE</option>
 										<option value="ECE">ECE</option>
@@ -120,57 +132,66 @@ if(isset($_POST['Register']))
 										<option value="IT">IT</option>
 									</select>
 								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
 								<div class="mb-3">
 									<label for="gender" class="form-label">Gender</label>
-									<select id="gender" class="form-select  shadow-none "name="Gender">
+									<select id="gender" class="form-select  border-success shadow-none " name="Gender">
 										<option value="" selected>---Select---</option>
 										<option value="Male">Male</option>
 										<option value="Female">Female</option>
 									</select>
 								</div>
+							</div>
+							<div class="col-sm-6">
 								<div class="mb-3">
 									<label for="mobile" class="form-label">Mobile no</label>
-									<input type="text" name="Mobile" class="form-control shadow-none" id="mobile"> 
-								</div>
-								<!-- <div class="mb-3">
-									<label for="Designation" class="form-label">Designation</label>
-									<input type="Text" name="Designation" class="form-control border-success" id="mobile"> 
-								</div> -->
-								<div class="row mt-4">
-									<div class="col-sm-6"><a href="index.php" class="text-decoration-dark text-dark mb-3">Already an account ?</a></div>
-									<div class="col-sm-3"></div>
-									<div class="col-sm-3">
-										<button type="submit" name="Register" class="btn btn-dark border-light mb-3" >Register</button>
-									</div>
-								</div>
-								<div class="row mt-4 text-danger fw-bold">
-									<?php echo htmlentities($msg) ?>
-								</div>
-							</form>
+									<input type="text" name="Mobile" class="form-control  border-success shadow-none" id="mobile"> </div>
+							</div>
 						</div>
-					</div>
+						<div class="row mt-4">
+							<div class="col-sm-6 mb-3"><a href="index.php" class="text-decoration-dark text-dark mb-3">Already an account ?</a></div>
+							<div class="col-sm-4"></div>
+							<div class="col-sm-2">
+								<button type="submit" name="Register" class="btn  btn-success border-light mb-3">Register</button>
+							</div>
+						</div>
+						<div class="row mt-4 text-danger fw-bold">
+							<?php echo htmlentities($msg) ?>
+						</div>
+					</form>
 				</div>
-				<div class="col-sm-3 col-md-3"></div>
 			</div>
 		</div>
+		<div class="col-sm-2 col-md-2"></div>
+	</div>
+</div>
 		<!--end login----------->
 		<!--footer-->
-		<footer class="mt-5">
-			<div style="background-color:#5cb85c;" class="p-2">
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-4"></div>
-						<div class="col-sm-6">
-							<p class="justify-content-md-center text-white">@copyright | WEB SAC-AITAM</p>
-						</div>
-						<div class="col-sm-2"></div>
-					</div>
-				</div>
-			</div>
-		</footer>
+		<footer >
+
+   
+        <div class="footer-copyright text-center text-light py-1" style="background-color:#5cb85c;">©
+				<script>
+				document.write(new Date().getFullYear())
+				</script> Copyright : <a href="https://aitamsac.in/" class="text-white">aitamsac</a> 
+        </div>
+      
+    </footer>
 		<!--end footer-->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 		<script src="./assets/js/script.js"></script>
 	</body>
 
 	
+
+	                           
+								
+								
+								
+								
+								
+								
+							

@@ -56,7 +56,7 @@
 			   <div class="card mt-5 shadow rounded" >
 				   <div class="card-body" >
 					   <div class="row">
-						   <h2 class="mt-3 mb-5 text-center text-success fw-bold">Grievance Details</h2>
+						   <h2 class="mt-3 mb-5 text-center text-success ">Grievance Details</h2>
 						</div>
 					    <div class="row mb-3">
 						   <div class="col-sm-3 col-md-3">
@@ -143,7 +143,7 @@
 						   </div>
 					 </div>
 					   <div class="mb-3 mt-5">
-					   <button class="btn btn-sm btn-success">Take Action</button>
+					   <button class="btn  btn-success">Take Action</button>
 					   </div>
 				  
 				   </div>
@@ -194,75 +194,5 @@
 
 
 
-<!--<table class="table">
-                    <tr>
-						<th scope="col">FullName:</th>
-						<td scope="col"><input type="text" class="form-control border-0 shadow-none " value="AshokVarma" style="background:#a0f9a0;"></td>
-						<th scope="col">RollNo:</th>
-						<td scope="col"><input type="text" class="form-control border-0 shadow-none" value="AshokVarma" style="background:#a0f9a0;"></td>
-                    </tr>
-					<tr>
-						<th>Gender:</th>
-						<td><input type="text" class="form-control border-0 shadow-none" value="AshokVarma" style="background:#a0f9a0;"></td>
-						<th>Email:</th>
-						<td><input type="text" class="form-control border-0 shadow-none" value="AshokVarma" style="background:#a0f9a0;"></td>
-                    </tr>
-					<tr>
-						<th>Grievance:</th>
-						<td><input type="text" class="form-control border-0 shadow-none" value="AshokVarma" style="background:#a0f9a0;"></td>
-						<th>RegDate:</th>
-						<td><input type="text" class="form-control border-0 shadow-none" value="AshokVarma" style="background:#a0f9a0;"></td>
-                    </tr>
-					<tr>
-						<th>SolDate:</th>
-						<td><input type="text" class="form-control border-0 shadow-none" value="AshokVarma" style="background:#a0f9a0;"></td>
-						<th>Status:</th>
-						<td><input type="text" class="form-control border-0 shadow-none" value="AshokVarma" style="background:#a0f9a0;"></td>
-                    </tr>
-					<tr>
-						<th>GrievanceId</th>
-						<td><input type="text" class="form-control border-0 shadow-none" value="AshokVarma" style="background:#a0f9a0;"></td>
-						<th>GrievanceType:</th>
-						<td><input type="text" class="form-control border-0 shadow-none" value="AshokVarma" style="background:#a0f9a0;"></td>
-                    </tr>
-					<tr>
-						<th>Solution:</th>
-						<td><input type="text" class="form-control border-0 shadow-none" value="AshokVarma" style="background:#a0f9a0;"></td>
-						<th></th>
-						<td><input type="text" class="form-control border-0 shadow-none"></td>
-						
-                    </tr>
-					<tr>
-					<td class="border-0">
-					<button class="btn btn-sm btn-dark">Take Action</button>
-                    </td>
-                   </tr>
-                   </table>
 
-
-
-
-
-
-
-
-
-
-
-
-
-				    <div class="row">
-						   <div class="col-sm-1 col-md-3">
-							   <h5>Fullname <span>:<span></h5>
-						   </div>
-						   <div class="col-sm-5 col-md-3">
-						   <input type="text" class="form-control border-0 shadow-none " value="AshokVarma" style="background:#a0f9a0;">
-						   </div>
-						   <div class="col-sm-1 col-md-3">
-							   <h5>Rollno <span>:<span></h5>
-						   </div>
-						   <div class="col-sm-5 col-md-3">
-						   <input type="text" class="form-control border-0 shadow-none " value="AshokVarma" style="background:#a0f9a0;">
-						   </div>
-
-					   </div>
+                   

@@ -13,11 +13,11 @@ $adminRow = mysqli_fetch_array($admin);
      
      <div class="row justify-content-center">
         <div class="col-sm-8  overview text-dark">
-          <div class="card bg-light text-success shadow">
+          <div class="card bg-white text-success shadow">
             <div class="card-header bg-white border-0">
               <div class="row align-items-center">
                 <div class="col-8">
-                  <h3 class="mb-0">My Profile</h3>
+                  <h3 class="mb-0 text-success">My Profile</h3>
                 </div>
               </div>
             </div>
@@ -29,7 +29,7 @@ $adminRow = mysqli_fetch_array($admin);
                     <div class="col-md-10">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-username">Full Name</label>
-                        <input type="text" name="FullName" id="input-username" class="form-control form-control-alternative" placeholder="Username" value="<?php echo htmlentities($adminRow['FullName'])?>" >
+                        <input type="text" name="FullName" id="input-username" class="form-control form-control-alternative border-success shadow-none" placeholder="Username" value="<?php echo htmlentities($adminRow['FullName'])?>" >
                       </div>
                     </div>
                   </div>
@@ -37,7 +37,7 @@ $adminRow = mysqli_fetch_array($admin);
                     <div class="col-md-10">
                       <div class="form-group">
                         <label class="form-control-label" for="input-email">Email address</label>
-                        <input type="email" name="Email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com" value="<?php echo htmlentities($adminRow['Email'])?>" >
+                        <input type="email" name="Email" id="input-email" class="form-control form-control-alternative  border-success  shadow-none" placeholder="jesse@example.com" value="<?php echo htmlentities($adminRow['Email'])?>" >
                       </div>
                     </div>
                   </div>
@@ -45,7 +45,7 @@ $adminRow = mysqli_fetch_array($admin);
                     <div class="col-md-10">
                       <div class="form-group">
                         <label class="form-control-label" for="input-email">Branch</label>
-                        <input type="email" name="Email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com" value="CSE">
+                        <input type="email" name="Email" id="input-email" class="form-control form-control-alternative  border-success  shadow-none" placeholder="jesse@example.com" value="CSE">
                       </div>
                     </div>
                   </div>
@@ -72,22 +72,22 @@ $adminRow = mysqli_fetch_array($admin);
                     <div class="col-md-10">
                       <div class="form-group">
                         <label class="form-control-label" for="input-email">Mobile</label>
-                        <input type="email" name="Email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com" value="<?php echo htmlentities($adminRow['Mobile'])?>" >
+                        <input type="email" name="Email" id="input-email" class="form-control form-control-alternative  border-success  shadow-none" placeholder="jesse@example.com" value="<?php echo htmlentities($adminRow['Mobile'])?>" >
                       </div>
                     </div>
                   </div>  
               </form>
             </div>
-            <div class="card-header bg-white border-0">
-              <div class="row align-items-center">
-                <div class="col-8">
+            <div class="row">
+              <div class="row align-items-center mt-4">
+                <div class="col-5">
                   
                 </div>
-                <div class="col-4 text-right">
-                  <a href="#!" class="btn btn-sm btn-primary">Update</a>
+                <div class="col-7 ">
+                  <a href="#!" class="btn  btn-success shadow-none">Update</a>
                 </div>
               </div>
-          </div>
+           </div>
           
         </div>
     </div> 
