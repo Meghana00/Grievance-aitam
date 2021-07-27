@@ -45,7 +45,7 @@
 						</table>
 						
 					</div>
-					<div class="row justify-content-end"><button type="button" class="open btn" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-label="Close" data-dismiss="alert" ><span aria-hidden="true"><i class="fa fa-check"></i>Activate</span></button></div>
+					<div class="container mt-5 justify-content-end"><button type="button" class="open btn" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-label="Close" data-dismiss="alert" ><span aria-hidden="true"><i class="fa fa-plus"></i>Add Member</span></button></div>
 				</div>
 			</div>
 		</div>
@@ -84,48 +84,66 @@
 				</div>
 				<!-- modal use end -->
 				<!-- Modal use -->
-				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal fade container" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				<div class="modal-dialog">
 					<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">New message</h5>
+						<h5 class="modal-title" id="exampleModalLabel">Add Grievance Commitee Form:</h5>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
 						<form method="POST">
-						<div class="mb-3">
-							<label for="recipient-name" class="col-form-label">Recipient:</label>
-							<input type="text" class="form-control" id="Email" name="Email">
+					<div class="row">	
+						<div class="col-sm-6 mb-3">
+							<label for="recipient-name" class="col-form-label">MemFullName:</label>
+							<input type="text" class="form-control" id="MemFullName" name="MemFullName" required>
 						</div>
-						<div class="mb-3">
-							<label for="recipient-name" class="col-form-label">Recipient:</label>
-							<input type="text" class="form-control" id="Email" name="Email">
+						<div class="col-sm-6 mb-3">
+							<label for="recipient-name" class="col-form-label">MemEmpId:</label>
+							<input type="text" class="form-control" id="MemEmpId" name="MemEmpId" required>
 						</div>
-						<div class="mb-3">
-							<label for="recipient-name" class="col-form-label">Recipient:</label>
-							<input type="text" class="form-control" id="Email" name="Email">
+					</div>	
+					<div class="row">
+						<div class="col-sm-6 mb-3">
+							<label for="recipient-name" class="col-form-label">MemEmail:</label>
+							<input type="text" class="form-control" id="MemEmail" name="MemEmail" required>
 						</div>
-						<div class="mb-3">
-							<label for="recipient-name" class="col-form-label">Recipient:</label>
-							<input type="text" class="form-control" id="Email" name="Email">
+						<div class="col-sm-6 mb-3">
+							<label for="recipient-name" class="col-form-label">MemBranch:</label>
+							<input type="text" class="form-control" id="MemBranch" name="MemBranch" required>
 						</div>
-						<div class="mb-3">
-							<label for="recipient-name" class="col-form-label">Recipient:</label>
-							<input type="text" class="form-control" id="Email" name="Email">
+					</div>
+					<div class="row">	
+						<div class=" col-sm-6mb-3">
+							<label for="message-text" class="col-form-label">MemDuty:</label>
+							<select id="MemDuty" class="form-select"name="MemDuty">
+										<option value="" selected>---Select---</option>
+										<option value="Ragging">Ragging</option>
+										<option value="Infrastructure">Infrastructure</option>
+							</select>
 						</div>
-						<div class="mb-3">
-							<label for="message-text" class="col-form-label">Password:</label>
-							<input type="password" class="form-control" id="Password" name="Password">
+					</div>
+					<div class="row">
+						<div class=" mb-3 col-sm-6">
+							<label for="recipient-name" class="col-form-label">MemMobile:</label>
+							<input type="text" class="form-control" id="MemMobile" name="MemMobile" required>
 						</div>
-						<div class="mb3 activate-response">Data
+						
+					
+						<div class="mb-3 col-sm-6 ">
+							<label for="recipient-name" class="col-form-label">MemDesignation:</label>
+							<input type="text" class="form-control" id="MemDesignation" name="MemDesignation" required>
 						</div>
+                    </div>
+						<div class="mb3 Addmember-response">
+						</div>
+
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-							<button type="button" name="activate-btn" onclick="ActivateUser()" class="btn btn-primary">Active Account</button>
+							<button type="button" name="activate-btn" onclick="Addmember()" class="btn btn-primary">Add Member</button>
 						</div>
 						</form>
 					</div>
-					
 					</div>
 				</div>
 				</div>
@@ -142,7 +160,7 @@
         retVal += charset.charAt(Math.floor(Math.random() * n));
     }
     return retVal;
-}
+	}
 	var exampleModal = document.getElementById('exampleModal')
 exampleModal.addEventListener('show.bs.modal', function (event) {
   // Button that triggered the modal
@@ -153,13 +171,13 @@ exampleModal.addEventListener('show.bs.modal', function (event) {
   // and then do the updating in a callback.
   //
   // Update the modal's content.
-  var modalTitle = exampleModal.querySelector('.modal-title')
+//   var modalTitle = exampleModal.querySelector('.modal-title')
   var modalBodyInput = exampleModal.querySelector('.modal-body input')
 
   modalTitle.textContent = 'New message to ' + recipient
 //   modalBodyInput.value = recipient
-  document.getElementById('Email').value = recipient
-  document.getElementById('Password').value= generatePassword()
+//   document.getElementById('Email').value = recipient
+  document.getElementById('MemPassword').value= generatePassword()
 })
 
 var example = document.getElementById('example')
