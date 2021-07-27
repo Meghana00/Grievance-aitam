@@ -31,7 +31,7 @@ if (isset($_POST['accountactivationresponse']))
     {      
         while($myRequestsRow = mysqli_fetch_array($myRequests))
         {
-            echo '<tr class="alert" role="alert">
+            echo '<tr>
                     <td>'.$myRequestsRow['SlNo'].'</td>
                     <td class="d-flex align-items-center ">
                         <div class="pl-3 email">

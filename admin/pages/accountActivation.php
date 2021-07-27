@@ -1,4 +1,6 @@
 <!-- <body onload="accountactivationresponse()"> -->
+<!---Grievance OverView Part--->
+<section>
 <div class=" overview bg-light">
         <h4 class="mt-5">Greivance Overview </h4> 
    
@@ -46,11 +48,15 @@
                 </div>
             </div>
     </div>
+</section>
+
+<!--end Grievance overview part--->
+
 <section class="ftco-section">
 		<div class="container ">
 			<div class="row justify-content-center">
 			
-			<!-- Modal use -->
+			<===========================Modal use ============================================>
 				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				<div class="modal-dialog">
 					<div class="modal-content">
@@ -80,7 +86,7 @@
 					</div>
 				</div>
 				</div>
-				<!-- modal use end -->
+				<======================== modal use end ==================================>
 				<div class="col-md-6 text-center mb-5">
 					<h2 class="heading-section">New User Requests</h2>
 				</div>
@@ -118,7 +124,7 @@
 		</div>
 
 	</section>
-	<!-- Modal use -->
+	 <===================================Modal use =====================================>
 				<div class="modal fade" id="example" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 				<div class="modal-dialog">
 					<div class="modal-content">
@@ -150,7 +156,7 @@
 					</div>
 				</div>
 				</div>
-				<!-- modal use end -->
+				 <======================================modal use end ==============================>
 
 <script>
 
@@ -201,3 +207,4 @@ example.addEventListener('show.bs.modal', function (event) {
 
 })
 </script>
+

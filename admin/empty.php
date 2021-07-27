@@ -18,6 +18,8 @@
 	
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 	<link rel="stylesheet" href="./../dashassets/assets/style.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+	
 </head>
 <body>
     
@@ -50,112 +52,498 @@
     <!-- table container -->
     
     <div class="ajax-main-content" >
-       <!--Grievance details--->
-       <div class="container mt-5">
-		   <div class="row">
-			   <div class="card mt-5 shadow rounded" >
-				   <div class="card-body" >
-					   <div class="row">
-						   <h2 class="mt-3 mb-5 text-center text-success ">Grievance Details</h2>
-						</div>
-					    <div class="row mb-3">
-						   <div class="col-sm-3 col-md-3">
-							   <h5 class="text-success fw-bold">Fullname <span>:<span></h5>
-						   </div>
-						   <div class="col-sm-3 col-md-3">
-						   <input type="text" class="form-control border-0 shadow-none " value="AshokVarma" >
-						   </div>
-						   <div class="col-sm-3 col-md-3">
-							   <h5 class="text-success fw-bold">Rollno <span>:<span></h5>
-						   </div>
-						   <div class="col-sm-3 col-md-3">
-						   <input type="text" class="form-control border-0 shadow-none " value="19A51A0510">
-						   </div>
-
-					   </div>
-					   <div class="row mb-3">
-						   <div class="col-sm-3 col-md-3">
-							   <h5 class="text-success fw-bold">Gender <span>:<span></h5>
-						   </div>
-						   <div class="col-sm-3 col-md-3">
-						   <input type="text" class="form-control border-0 shadow-none " value="Male" >
-						   </div>
-						   <div class="col-sm-3 col-md-3">
-							   <h5 class="text-success fw-bold">Email <span>:<span></h5>
-						   </div>
-						   <div class="col-sm-3 col-md-3">
-						   <input type="text" class="form-control border-0 shadow-none " value="Ashok@gmail.com" >
-						   </div>
-
-					   </div>
-					   <div class="row mb-3">
-						   <div class="col-sm-3 col-md-3">
-							   <h5 class="text-success fw-bold">Grievance <span>:<span></h5>
-						   </div>
-						   <div class="col-sm-3 col-md-3">
-						   <input type="text" class="form-control border-0 shadow-none " value="Supply e-book facility">
-						   </div>
-						   <div class="col-sm-3 col-md-3">
-							   <h5 class="text-success fw-bold">RegDate <span>:<span></h5>
-						   </div>
-						   <div class="col-sm-3 col-md-3">
-						   <input type="text" class="form-control border-0 shadow-none " value="20-09-2021" >
-						   </div>
-
-					   </div>
-					   <div class="row mb-3">
-						   <div class="col-sm-3 col-md-3">
-							   <h5 class="text-success fw-bold">SolDate <span>:<span></h5>
-						   </div>
-						   <div class="col-sm-3 col-md-3">
-						   <input type="text" class="form-control border-0 shadow-none " value="30-12-2021" >
-						   </div>
-						   <div class="col-sm-3 col-md-3">
-							   <h5 class="text-success fw-bold">Status <span>:<span></h5>
-						   </div>
-						   <div class="col-sm-3 col-md-3">
-						   <input type="text" class="form-control border-0 shadow-none " value="0" >
-						   </div>
-
-					   </div>
-					   <div class="row mb-3">
-						   <div class="col-sm-3 col-md-3">
-							   <h5 class="text-success fw-bold">GrievanceId <span>:<span></h5>
-						   </div>
-						   <div class="col-sm-3 col-md-3">
-						   <input type="text" class="form-control border-0 shadow-none " value="29087654" >
-						   </div>
-						   <div class="col-sm-3 col-md-3">
-							   <h5 class="text-success fw-bold">GrievanceType <span>:<span></h5>
-						   </div>
-						   <div class="col-sm-3 col-md-3">
-						   <input type="text" class="form-control border-0 shadow-none " value="Education" >
-						   </div>
-
-					   </div>
-					   <div class="row mb-3">
-						   <div class="col-sm-3 col-md-3">
-							   <h5 class="text-success fw-bold">Solution <span>:<span></h5>
-							  
-						   </div>
-						   <div class="col-sm-9 col-md-9">
-							   <input type="textarea" class="form-control border-0 shadow-none" rows="4" cols="100" value="we will upload in the portal in pdf format">
-						   </div>
-					 </div>
-					   <div class="mb-3 mt-5">
-					   <button class="btn  btn-success">Take Action</button>
-					   </div>
-				  
-				   </div>
-			   </div>
-		   </div>
-	   </div>
-
-
-
-
-
-	   <!--end Grievance details page-->
+    <div class="container">
+    <table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+                <th>Salary</th>
+                <th>Salary</th>
+                <th>Salary</th>
+                <th>Salary</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Tiger Nixon</td>
+                <td>System Architect</td>
+                <td>Edinburgh</td>
+                <td>61</td>
+                <td>2011/04/25</td>
+                <td>$320,800</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Garrett Winters</td>
+                <td>Accountant</td>
+                <td>Tokyo</td>
+                <td>63</td>
+                <td>2011/07/25</td>
+                <td>$170,750</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Ashton Cox</td>
+                <td>Junior Technical Author</td>
+                <td>San Francisco</td>
+                <td>66</td>
+                <td>2009/01/12</td>
+                <td>$86,000</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Cedric Kelly</td>
+                <td>Senior Javascript Developer</td>
+                <td>Edinburgh</td>
+                <td>22</td>
+                <td>2012/03/29</td>
+                <td>$433,060</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Airi Satou</td>
+                <td>Accountant</td>
+                <td>Tokyo</td>
+                <td>33</td>
+                <td>2008/11/28</td>
+                <td>$162,700</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Brielle Williamson</td>
+                <td>Integration Specialist</td>
+                <td>New York</td>
+                <td>61</td>
+                <td>2012/12/02</td>
+                <td>$372,000</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Herrod Chandler</td>
+                <td>Sales Assistant</td>
+                <td>San Francisco</td>
+                <td>59</td>
+                <td>2012/08/06</td>
+                <td>$137,500</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Rhona Davidson</td>
+                <td>Integration Specialist</td>
+                <td>Tokyo</td>
+                <td>55</td>
+                <td>2010/10/14</td>
+                <td>$327,900</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Colleen Hurst</td>
+                <td>Javascript Developer</td>
+                <td>San Francisco</td>
+                <td>39</td>
+                <td>2009/09/15</td>
+                <td>$205,500</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Sonya Frost</td>
+                <td>Software Engineer</td>
+                <td>Edinburgh</td>
+                <td>23</td>
+                <td>2008/12/13</td>
+                <td>$103,600</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Jena Gaines</td>
+                <td>Office Manager</td>
+                <td>London</td>
+                <td>30</td>
+                <td>2008/12/19</td>
+                <td>$90,560</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Quinn Flynn</td>
+                <td>Support Lead</td>
+                <td>Edinburgh</td>
+                <td>22</td>
+                <td>2013/03/03</td>
+                <td>$342,000</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Charde Marshall</td>
+                <td>Regional Director</td>
+                <td>San Francisco</td>
+                <td>36</td>
+                <td>2008/10/16</td>
+                <td>$470,600</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Haley Kennedy</td>
+                <td>Senior Marketing Designer</td>
+                <td>London</td>
+                <td>43</td>
+                <td>2012/12/18</td>
+                <td>$313,500</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Tatyana Fitzpatrick</td>
+                <td>Regional Director</td>
+                <td>London</td>
+                <td>19</td>
+                <td>2010/03/17</td>
+                <td>$385,750</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Michael Silva</td>
+                <td>Marketing Designer</td>
+                <td>London</td>
+                <td>66</td>
+                <td>2012/11/27</td>
+                <td>$198,500</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Paul Byrd</td>
+                <td>Chief Financial Officer (CFO)</td>
+                <td>New York</td>
+                <td>64</td>
+                <td>2010/06/09</td>
+                <td>$725,000</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Gloria Little</td>
+                <td>Systems Administrator</td>
+                <td>New York</td>
+                <td>59</td>
+                <td>2009/04/10</td>
+                <td>$237,500</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Bradley Greer</td>
+                <td>Software Engineer</td>
+                <td>London</td>
+                <td>41</td>
+                <td>2012/10/13</td>
+                <td>$132,000</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Dai Rios</td>
+                <td>Personnel Lead</td>
+                <td>Edinburgh</td>
+                <td>35</td>
+                <td>2012/09/26</td>
+                <td>$217,500</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Jenette Caldwell</td>
+                <td>Development Lead</td>
+                <td>New York</td>
+                <td>30</td>
+                <td>2011/09/03</td>
+                <td>$345,000</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Yuri Berry</td>
+                <td>Chief Marketing Officer (CMO)</td>
+                <td>New York</td>
+                <td>40</td>
+                <td>2009/06/25</td>
+                <td>$675,000</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Caesar Vance</td>
+                <td>Pre-Sales Support</td>
+                <td>New York</td>
+                <td>21</td>
+                <td>2011/12/12</td>
+                <td>$106,450</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Doris Wilder</td>
+                <td>Sales Assistant</td>
+                <td>Sydney</td>
+                <td>23</td>
+                <td>2010/09/20</td>
+                <td>$85,600</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Angelica Ramos</td>
+                <td>Chief Executive Officer (CEO)</td>
+                <td>London</td>
+                <td>47</td>
+                <td>2009/10/09</td>
+                <td>$1,200,000</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Gavin Joyce</td>
+                <td>Developer</td>
+                <td>Edinburgh</td>
+                <td>42</td>
+                <td>2010/12/22</td>
+                <td>$92,575</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Jennifer Chang</td>
+                <td>Regional Director</td>
+                <td>Singapore</td>
+                <td>28</td>
+                <td>2010/11/14</td>
+                <td>$357,650</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Brenden Wagner</td>
+                <td>Software Engineer</td>
+                <td>San Francisco</td>
+                <td>28</td>
+                <td>2011/06/07</td>
+                <td>$206,850</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Fiona Green</td>
+                <td>Chief Operating Officer (COO)</td>
+                <td>San Francisco</td>
+                <td>48</td>
+                <td>2010/03/11</td>
+                <td>$850,000</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Shou Itou</td>
+                <td>Regional Marketing</td>
+                <td>Tokyo</td>
+                <td>20</td>
+                <td>2011/08/14</td>
+                <td>$163,000</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Michelle House</td>
+                <td>Integration Specialist</td>
+                <td>Sydney</td>
+                <td>37</td>
+                <td>2011/06/02</td>
+                <td>$95,400</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Suki Burks</td>
+                <td>Developer</td>
+                <td>London</td>
+                <td>53</td>
+                <td>2009/10/22</td>
+                <td>$114,500</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Prescott Bartlett</td>
+                <td>Technical Author</td>
+                <td>London</td>
+                <td>27</td>
+                <td>2011/05/07</td>
+                <td>$145,000</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Gavin Cortez</td>
+                <td>Team Leader</td>
+                <td>San Francisco</td>
+                <td>22</td>
+                <td>2008/10/26</td>
+                <td>$235,500</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+            <tr>
+                <td>Martena Mccray</td>
+                <td>Post-Sales support</td>
+                <td>Edinburgh</td>
+                <td>46</td>
+                <td>2011/03/09</td>
+                <td>$324,050</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+                <td>Salary</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+                <th>Salary</th>
+                <th>Salary</th>
+                <th>Salary</th>
+                <th>Salary</th>
+                <th>Salary</th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+       
     </div>
            
     <!-- table container -->
@@ -172,6 +560,14 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+    $('#example').DataTable();
+} );
+    </script>
+	
 </body>
 </html>
 
