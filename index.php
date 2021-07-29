@@ -29,7 +29,7 @@
         
     </div>
        <div class="mx-auto ">
-        <h2 class=" header  fw-normal">Grievance Redressal Portal</h2>
+        <h2 class=" header fw-normal">Grievance Redressal Portal</h2>
        </div>
    
        </nav>
@@ -136,13 +136,11 @@
     </section>
     <!--end hex grid layout------------>
 
-    <footer >
+    <footer>
 
    
-        <div class="footer-copyright text-center text-light py-1" style="background-color:#5cb85c;">©
-				<script>
-				document.write(new Date().getFullYear())
-				</script> Copyright : <a href="https://aitamsac.in/" class="text-white">aitamsac</a> 
+        <div class="footer-copyright text-center text-light py-1" style="background-color:transparent;">
+				<p class="text-success fw-bold">© 2021 Copyright : <a href="https://aitamsac.in/" class="text-danger">aitamsac</a></p>
         </div>
       
     </footer>

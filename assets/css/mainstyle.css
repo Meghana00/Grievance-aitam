@@ -7,7 +7,6 @@
 #lab {
 	width: 1000px;
 	overflow: hidden;
-	padding-bottom: 70px;
 	position: relative;
 	margin: 0 auto;
 	margin-bottom: 2.5em;
@@ -32,7 +31,7 @@
 	background-color: #5cb85c;
 	border-radius: 33px;
 	font-size:35px;
-	padding: 14px;
+	padding: 10px;
 	color:white;
 }
 @media (max-width: 820px){
