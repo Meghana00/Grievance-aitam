@@ -62,6 +62,7 @@ function ajaxGrievanceTypePageCall() {
     url: './pages/GrievanceType.php',
     success: function (response) {
       $('.ajax-main-content').html(response);
+      GrievanceTypelist();
     },
   });
 }
@@ -117,6 +118,7 @@ function ActivateUser(){
     data: formData,
     success: function (response) {
       $('.activate-response').html(response);
+      $('.active-btn').hide();
     },
   
   });
@@ -267,7 +269,6 @@ function  addmember(){
     MemPassword: generatePassword(),
     Addmember : 'Addmember',
   };
-  alert(formData);
   $.ajax({
     type: 'POST',
     url: './backScript.php',
@@ -279,152 +280,68 @@ function  addmember(){
   });
 }
 
-// data table try for grievance mem
-// ===========================================================================
-// ==============================================================/
-
-
-
-
-$(document).on('submit','#addUser',function(e){
-  e.preventDefault();
-  var Empid= $('#addEmpId').val();
-  var Email= $('#addEmail').val();
-  var Mobile= $('#addMobile').val();
-  var FullName= $('#addFullName').val();
-  var Designation= $('#addDesignation').val();
-  var Branch= $('#addBranch').val();
-  var Duty= $('#addDuty').val();
-  var Password=generatePassword();
-  var Addmember=Addmember;
-  if(Empid != '' && Email != '' && Mobile != '' && FullName != '' && Designation != ''&& Branch != ''&& Duty != ''&&  UserName != '' &&  Password != '' )
-  {
-   $.ajax({
-     url:"BackScript.php",
-     type:"post",
-     data:{Empid:Empid,Email:Email,Mobile:Mobile,FullName:FullName,Designation:Designation,Branch:Branch,Duty:Duty,Password:Password,Addmember:Addmember},
-     success:function(data)
-     {
-       var json = JSON.parse(data);
-       var status = json.status;
-       if(status=='true')
-       {
-        mytable =$('#example').DataTable();
-        mytable.draw();
-        $('#addUserModal').modal('hide');
-      }
-      else
-      {
-        alert('failed');
-      }
-    }
-  });
- }
- else {
-  alert('Fill all the required fields');
-}
-});
-$(document).on('submit','#updateUser',function(e){
-  e.preventDefault();
-   //var tr = $(this).closest('tr');
-   var city= $('#cityField').val();
-   var username= $('#nameField').val();
-   var mobile= $('#mobileField').val();
-   var email= $('#emailField').val();
-   var trid= $('#trid').val();
-   var id= $('#id').val();
-   if(city != '' && username != '' && mobile != '' && email != '' )
-   {
-     $.ajax({
-       url:"update_user.php",
-       type:"post",
-       data:{city:city,username:username,mobile:mobile,email:email,id:id},
-       success:function(data)
-       {
-         var json = JSON.parse(data);
-         var status = json.status;
-         if(status=='true')
-         {
-          table =$('#example').DataTable();
-          // table.cell(parseInt(trid) - 1,0).data(id);
-          // table.cell(parseInt(trid) - 1,1).data(username);
-          // table.cell(parseInt(trid) - 1,2).data(email);
-          // table.cell(parseInt(trid) - 1,3).data(mobile);
-          // table.cell(parseInt(trid) - 1,4).data(city);
-          var button =   '<td><a href="javascript:void();" data-id="' +id + '" class="btn btn-info btn-sm editbtn">Edit</a>  <a href="#!" data-bs-toggle="modal" data-id="' +id + '" data-bs-target="#exampleModal" class="btn btn-danger btn-sm">Delete</a></td>';
-          var row = table.row("[id='"+trid+"']");
-          row.row("[id='" + trid + "']").data([id,username,email,mobile,city,button]);
-          $('#exampleModal').modal('hide');
-        }
-        else
-        {
-          alert('failed');
-        }
-      }
-    });
-   }
-   else {
-    alert('Fill all the required fields');
-  }
-});
-$('#example').on('click','.editbtn ',function(event){
-  var table = $('#example').DataTable();
-  var trid = $(this).closest('tr').attr('SlNo');
- // console.log(selectedRow);
- var SlNo = $(this).data('SlNo');
- $('#exampleModal').modal('show');
-
- $.ajax({
-  url:"get_single_data.php",
-  data:{SlNo:SlNo},
-  type:'post',
-  success:function(data)
-  {
-   var json = JSON.parse(data);
-   $('#nameField').val(json.username);
-   $('#emailField').val(json.email);
-   $('#mobileField').val(json.mobile);
-   $('#cityField').val(json.city);
-   $('#SlNo').val(SlNo);
-   $('#trid').val(trid);
- }
-})
-});
-
-$(document).on('click','.deleteBtn',function(event){
-   var table = $('#example').DataTable();
-  event.preventDefault();
-  var id = $(this).data('id');
-  if(confirm("Are you sure want to delete this User ? "))
-  {
+/////rejecting The Member
+function Rejectmem(){
+  var formData = {
+    MemEmail :  $('#mememail').val(),
+    Rejectmem:'Rejectmem',
+  };
   $.ajax({
-    url:"delete_user.php",
-    data:{id:id},
-    type:"post",
-    success:function(data)
-    {
-      var json = JSON.parse(data);
-      status = json.status;
-      if(status=='success')
-      {
-        //table.fnDeleteRow( table.$('#' + id)[0] );
-         //$("#example tbody").find(id).remove();
-         //table.row($(this).closest("tr")) .remove();
-         $("#"+id).closest('tr').remove();
-      }
-      else
-      {
-        alert('Failed');
-        return;
-      }
-    }
+    type: 'POST',
+    url: './backScript.php',
+    data: formData,
+    success: function (response) {
+      $('.remove-response').html(response);
+      $('.reject-btn').hide();
+    },
   });
-  }
-  else
-  {
-    return null;
-  }
-})
+}
+/////Add grievance type
+function  addGrievanceType(){
+  var formData = {
+    GrievanceType: $('#GrievanceType').val(),
+    Description: $('#Description').val(),
+    AddType : 'Addtype',
+  };
+  $.ajax({
+    type: 'POST',
+    url: './backScript.php',
+    data: formData,
+    success: function (response) {
+      $('.Addmember-response').html(response);
+      $('.addmem-btn').hide();
 
+    },
+  });
+}
+////Grievnaces List
 
-  
+function  GrievanceTypelist(){
+  var formData = {
+    GrievanceTypeList : 'GrievanceTypeList',
+  };
+  $.ajax({
+    type: 'POST',
+    url: './backScript.php',
+    data: formData,
+    success: function (response) {  
+      $('.GrievanceType-response').html(response);
+    },
+  });
+}
+////remove the Type of grievance
+function RemoveType(){
+  var formData = {
+    GType :  $('#GType').val(),
+    RemoveType:'RemoveType',
+  };
+  $.ajax({
+    type: 'POST',
+    url: './backScript.php',
+    data: formData,
+    success: function (response) {
+      $('.remove-response').html(response);
+      $('.reject-btn').hide();
+    },
+  });
+}

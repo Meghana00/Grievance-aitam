@@ -24,7 +24,6 @@
                   <th>Branch</th>
                   <th>Mobile</th>
                   <th>Duty</th>
-                  <th>Update</th>
                   <th>Remove</th>
 						    </tr>
 						  </thead>
@@ -37,76 +36,6 @@
 		</div>
 </section>
 
-
-
-
-
-
-<!-- Modal -->
-<div class="modal fade modal-lg" id="UpdateMem" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Update User</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form id="updateUser" >
-          <input type="hidden" name="id" id="id" value="">
-          <input type="hidden" name="trid" id="trid" value="">
-          <div class="mb-3 row">
-            <label for="nameField" class="col-md-3 form-label">FullName</label>
-            <div class="col-md-9">
-              <input type="text" class="form-control" id="FullName" name="name" >
-            </div>
-          </div>
-          <div class="mb-3 row">
-            <label for="emailField" class="col-md-3 form-label">Email</label>
-            <div class="col-md-9">
-              <input type="email" class="form-control" id="Email" name="email">
-            </div>
-          </div>
-          <div class="mb-3 row">
-            <label for="mobileField" class="col-md-3 form-label">Mobile</label>
-            <div class="col-md-9">
-              <input type="text" class="form-control" id="Mobile" name="mobile">
-            </div>
-          </div>
-          <div class="mb-3 row">
-            <label for="cityField" class="col-md-3 form-label">EmpId</label>
-            <div class="col-md-9">
-              <input type="text" class="form-control" id="Empid" name="City">
-            </div>
-          </div>
-		  <div class="mb-3 row">
-            <label for="cityField" class="col-md-3 form-label">Designation</label>
-            <div class="col-md-9">
-              <input type="text" class="form-control" id="Designation" name="City">
-            </div>
-          </div>
-		  <div class="mb-3 row">
-            <label for="cityField" class="col-md-3 form-label">Branch</label>
-            <div class="col-md-9">
-              <input type="text" class="form-control" id="Branch" name="City">
-            </div>
-          </div>
-		  <div class="mb-3 row">
-            <label for="cityField" class="col-md-3 form-label">Duty</label>
-            <div class="col-md-9">
-              <input type="text" class="form-control" id="Duty" name="City">
-            </div>
-          </div>
-          <div class="text-center">
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </div>
-        </form> 
-      </div>
-      <div class="modal-footer">
-        <button type="button"  class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
 <!-- Add user Modal -->
 <div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -173,3 +102,44 @@
     </div>
   </div>
 </div>
+
+<!-- rejectmodal -->
+<div class="modal fade" id="removemember" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title text-danger" id="exampleModalLabel">!Alert  </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <h1 for="recipient-name" class="col-form-label text-danger reject-response ">Are Sure to Reject</h1>
+            <input type="hidden" class="form-control" id="mememail" value="">
+          </div>
+        </form>
+		<div class="row text-danger remove-response" ></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger reject-btn" onclick="Rejectmem()">Reject</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- rejected modal -->
+
+<script>
+ var removemember = document.getElementById('removemember')
+removemember.addEventListener('show.bs.modal', function (event) {
+  // Button that triggered the modal
+  var button = event.relatedTarget
+  // Extract info from data-bs-* attributes
+  var recipient = button.getAttribute('data-bs-whatever')
+  
+  var modalBodyInput = removemember.querySelector('.modal-body input')
+
+  
+  modalBodyInput.value = recipient
+})
+</script>

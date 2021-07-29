@@ -189,7 +189,7 @@ if (isset($_POST['Grievancelist']))
 if (isset($_POST['memberslist']))
 {
     $LIMIT = 10;
-    $myRequestsQuery = "SELECT * FROM `committee` ";
+    $myRequestsQuery = "SELECT * FROM `committee` where Status = 'Active' ";
     
     $myRequests = mysqli_query($conn,$myRequestsQuery);
     if ($myRequestsRow = mysqli_num_rows($myRequests) !='0')
@@ -205,8 +205,7 @@ if (isset($_POST['memberslist']))
                 <td><?php echo htmlentities($myRequestsRow['Branch'])?></td>
                 <td><?php echo htmlentities($myRequestsRow['Mobile'])?></td>
                 <td><?php echo htmlentities($myRequestsRow['Duty'])?></td>
-                <td><button class="btn btn-sucess" data-bs-toggle="modal" data-bs-target="#UpdateMem" >Update</button></td>
-                <td> <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#remove" >Remove</button></td>
+                <td> <button class="btn btn-danger" data-bs-toggle="modal" data-bs-whatever="<?php echo htmlentities($myRequestsRow['Email']) ?>" data-bs-target="#removemember">Remove</button></td>
             </tr>
     <?php }?>
 <?php
@@ -229,7 +228,7 @@ if (isset($_POST['Redress']))
         echo "Failed";
     }
 }
-// Redressing the Complaint
+// Rejecting the Complaint
 if (isset($_POST['RejectGrievance']))
 {
     $GrievanceId=$_POST['GrievanceId'];
@@ -292,3 +291,74 @@ if(isset($_POST['Addmember']))
          } 
 }
 
+////removing the member
+if (isset($_POST['Rejectmem']))
+{
+    $Email=$_POST['MemEmail'];
+    $sql = "UPDATE  `committee` SET  `Status` = 'Inactive' WHERE Email='$Email'";
+    $query=mysqli_query($conn,$sql);
+    if($query){
+        echo "Removed SuccessFully";
+    }else{
+        echo "Failed Action";
+    }
+}
+
+////add grievance Type 
+////admember respons
+if(isset($_POST['AddType']))
+{
+    $GrievanceType = $conn -> real_escape_string($_POST['GrievanceType']);
+    $Description= $conn -> real_escape_string($_POST['Description']);
+
+    $sql=" SELECT `GrievanceType` FROM `grievancetype` WHERE `GrievanceType`='$GrievanceType' ";
+    $query=mysqli_query($conn,$sql);
+
+    if(mysqli_num_rows($query) > 0){
+        
+        echo "Type All ready exits";
+    }else{
+        $sql = "INSERT INTO `grievancetype` (`GrievanceType`,`Description`) VALUES ('$GrievanceType','$Description')";
+        $query = mysqli_query($conn,$sql);
+        if($query){
+            echo "Added Sucessfully";
+        }else{
+            echo "Failed Action";
+        }
+    }
+}
+
+// <!-- Grivences Type list Response -->
+
+if (isset($_POST['GrievanceTypeList']))
+{
+    $myRequestsQuery = "SELECT * FROM `grievancetype` where Status = 'Active' ";
+    
+    $myRequests = mysqli_query($conn,$myRequestsQuery);
+    if ($myRequestsRow = mysqli_num_rows($myRequests) !='0')
+    {      
+         while($myRequestsRow = mysqli_fetch_array($myRequests))
+        {?>
+           <tr>
+                <td><?php echo htmlentities($myRequestsRow['SlNo'])?></td>
+                <td><?php echo htmlentities($myRequestsRow['GrievanceType'])?></td>
+                <td><?php echo htmlentities($myRequestsRow['Description'])?></td>
+                <td><button class="btn btn-danger" data-bs-toggle="modal" data-bs-whatever="<?php echo htmlentities($myRequestsRow['GrievanceType']) ?>" data-bs-target="#removetype">Remove</button></td>
+            </tr>  
+    <?php } ?>
+<?php  }
+}
+
+
+////removing the type
+if (isset($_POST['RemoveType']))
+{
+    $GType=$_POST['GType'];
+    $sql = "UPDATE  `grievancetype` SET  `Status` = 'Inactive' WHERE GrievanceType ='$GType'";
+    $query=mysqli_query($conn,$sql);
+    if($query){
+        echo "Removed SuccessFully";
+    }else{
+        echo "Failed Action";
+    }
+}

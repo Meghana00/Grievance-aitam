@@ -76,7 +76,7 @@
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-							<button type="button" name="activate-btn" onclick="ActivateUser()" class="btn btn-primary">Active Account</button>
+							<button type="button" name="activate-btn active-btn" onclick="ActivateUser()" class="btn btn-success active-btn">Active Account</button>
 						</div>
 						</form>
 					</div>
