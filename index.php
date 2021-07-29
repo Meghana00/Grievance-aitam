@@ -107,7 +107,7 @@
               <div class="hexagon hexagon2">
                 <div class="hexagon-in1">
                     <div class="hexagon-in2" >
-                        <a class="hexLink" href="#">
+                        <a class="hexLink" href="contact.html">
                             <img src="./assets/images/help-desk.png" class="img-fluid" alt="admin" width="110" height="100" >
                             <p class="text-center mt-1">Help </p>
                         </a>
@@ -119,7 +119,7 @@
               <div class="hexagon hexagon2">
                 <div class="hexagon-in1">
                     <div class="hexagon-in2" >
-                        <a class="hexLink" href="#">
+                        <a class="hexLink" href="contact.html">
                             <img src="./assets/images/agenda.png" class="img-fluid" alt="admin" width="110" height="100" >
                             <p class="text-center mt-1">Contact Us </p>
                         </a>

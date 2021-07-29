@@ -91,7 +91,7 @@ if(isset($_POST['Register']))
 	<!--end header-->
 
 
-		<!-- login ---------------->
+		<!-- Register ---------------->
 		<div class="container mt-5">
 	<div class="row mx-auto mt-5">
 		<div class="col-sm-2 col-md-2"></div>
@@ -168,7 +168,7 @@ if(isset($_POST['Register']))
 		<div class="col-sm-2 col-md-2"></div>
 	</div>
 </div>
-		<!--end login----------->
+		<!--end Register----------->
 		<!--footer-->
 		<footer >
 
