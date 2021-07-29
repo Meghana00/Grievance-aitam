@@ -1,3 +1,5 @@
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
 <div class=" overview bg-light">
         <h4 class="mt-5">Greivance Overview </h4> 
    
@@ -37,7 +39,7 @@
                         <div class="card bg-c-pink order-card">
                             <div class="card-block">
                                 <h6 class="m-b-20">Greivances Reopened</h6>
-                                <h2 class=" order-card"><i class="fa fa-th-list" aria-hidden="true"></i><span class="f-right Reopened">486</span></h2>
+                                <h2 class=" order-card"><i class="fa fa-th-list" aria-hidden="true"></i><span class="f-right Reopened"></span></h2>
                                
                             </div>
                         </div>
@@ -46,39 +48,32 @@
             </div>
     </div>
 	<!-- table start -->
-<section class="ftco-section">
+<section class="">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-6 text-center mb-5">
 					<h2 class="heading-section">Grievence List</h2>
 				</div>
-				<div class="row  d-flex justify-content-end">
-				
-					<div class="col-md-3"><span>From</span><input id="From" type="date" class="form-control" ></div>
-					<div class="col-md-3"><span>To</span><input id="To" type="date" class="form-control" ></div>
-			
-				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-14">
 					<div class="table-wrap">
-						<table class="table table-responsive-xl">
+                        <table class="table display" id="Grievances"  style="width: 100%;">
 						  <thead>
 						    <tr>
 						      <th>Slno</th>
+                              <th>GrievanceId</th>
 						      <th>Email</th>
 						      <th>Fullname</th>
-                              <th>Gender</th>
-                              <!-- <th>Grievance</th> -->
+                              <th>Grievance</th>
 						      <th>Status</th>
-                              <th>Solution</th>
-							  
+                              <th>Solution</th>  
 						      <th>Action</th>
 						    </tr>
 						  </thead>
 						  <tbody class="Grievance-response">
-							
 						  </tbody>
+                          
 						</table>
 					</div>
 				</div>
@@ -86,3 +81,13 @@
 		</div>
 	</section>
 	<!-- table end-->
+    
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script> 
+<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+<script>
+   $(document).ready(function() {
+    $('#Grievances').DataTable( {
+    } );
+} );
+</script>

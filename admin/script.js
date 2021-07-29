@@ -17,10 +17,19 @@ function ajaxGrievancePageCall() {
     url: './pages/grievances.php',
     success: function (response) {
       $('.ajax-main-content').html(response);
-      setInterval(function () {
         Grievancelist();
         grievancecount();
-      }, 1000);
+    },
+  });
+}
+/////GreievanceDetailPage call///////
+function GrievanceDetails(GrievanceId) {
+  $.ajax({
+    type: 'POST',
+    url: './pages/GrievanceDetails.php',
+    data: {id:GrievanceId},
+    success: function (response) {
+      $('.ajax-main-content').html(response);
     },
   });
 }
@@ -31,10 +40,8 @@ function ajaxAccountPageCall() {
     success: function (response) {
       $('.ajax-main-content').html(response);
       // AvailableBloodDetails();
-      setInterval(function () {
-        accountactivationresponse();
-        usercount();
-      }, 1000);
+      usercount();
+      accountactivationresponse();
     },
   });
 }
@@ -45,10 +52,7 @@ function ajaxGrievanceMemPageCall() {
     url: './pages/GrievanceMem.php',
     success: function (response) {
       $('.ajax-main-content').html(response);
-      // BloodRequestsDetails();
-      setInterval(function () {
-        // BloodRequestsDetails();
-      }, 10000);
+      memberslist();
     },
   });
 }
@@ -58,10 +62,6 @@ function ajaxGrievanceTypePageCall() {
     url: './pages/GrievanceType.php',
     success: function (response) {
       $('.ajax-main-content').html(response);
-      // BloodRequestsDetails();
-      setInterval(function () {
-        // BloodRequestsDetails();
-      }, 10000);
     },
   });
 }
@@ -71,10 +71,6 @@ function ajaxReportsPageCall() {
     url: './pages/Reports.php',
     success: function (response) {
       $('.ajax-main-content').html(response);
-      // BloodRequestsDetails();
-      setInterval(function () {
-        // BloodRequestsDetails();
-      }, 10000);
     },
   });
 }
@@ -84,10 +80,6 @@ function ajaxChangePassPageCall(){
     url: './pages/changePassword.php',
     success: function (response) {
       $('.ajax-main-content').html(response);
-      // BloodRequestsDetails();
-      setInterval(function () {
-        // BloodRequestsDetails();
-      }, 10000);
     },
   });
 }
@@ -151,19 +143,18 @@ function RejectUser(){
 //users count by there status
 function usercount() {
   var formData = {
-
     usercount : 'usercount',
-
   };
   $.ajax({
     type: 'POST',
     url: './backScript.php',
     data: formData,
     success: function (response) {
-      $('.spam').html(response[0]);
-      $('.verified').html(response[1]);
-      $('.accepted').html(response[2]);
-      $('.rejected').html(response[3]);
+      let arr = response.split(','); 
+      $('.spam').html(arr[0]);
+      $('.verified').html(arr[1]);
+      $('.accepted').html(arr[2]);
+      $('.rejected').html(arr[3]);
     },
   });
 }
@@ -180,10 +171,12 @@ function grievancecount() {
     url: './backScript.php',
     data: formData,
     success: function (response) {
-      $('.Rejected').html(response[0]);
-      $('.Open').html(response[1]);
-      $('.Closed').html(response[2]);
-      $('.Reopened').html(response[3]);
+      let arrr = response.split(',');
+      // alert(arrr);
+      $('.Rejected').html(arrr[1]);
+      $('.Open').html(arrr[2]);
+      $('.Closed').html(arrr[3]);
+      $('.Reopened').html(arrr[4]);
     },
   });
 }
@@ -191,8 +184,6 @@ function grievancecount() {
 // Grievances List function
 function  Grievancelist(){
   var formData = {
-    From: $('#From').val(),
-    To: $('#To').val(),
     Grievancelist : 'Grievancelist',
   };
   $.ajax({
@@ -200,7 +191,23 @@ function  Grievancelist(){
     url: './backScript.php',
     data: formData,
     success: function (response) {
+      
       $('.Grievance-response').html(response);
+    },
+  });
+}
+// Grievances members List function
+function  memberslist(){
+  var formData = {
+    memberslist : 'memberslist',
+  };
+  $.ajax({
+    type: 'POST',
+    url: './backScript.php',
+    data: formData,
+    success: function (response) {
+      
+      $('.memberlist-response').html(response);
     },
   });
 }
@@ -214,180 +221,210 @@ function generatePassword() {
   }
   return retVal;
 }
-/////add grievance member
-function  Addmember(){
+/////redressing 
+function  Redress(){
   var formData = {
-    MemFullName: $('#MemFullName').val(),
-    MemEmpId: $('#MemEmpId').val(),
-    MemEmail: $('#MemEmail').val(),
-    MemBranch: $('#MemBranch').val(),
-    MemMobile: $('#MemMobile').val(),
-    MemDuty: $('#MemDuty').val(),
-    MemDesignation: $('#MemDesignation').val(),
-    MemPassword: generatePassword(),
-    Addmember : 'Addmember',
+    Solution : $('#Solution').val(),
+    GrievanceId :  $('#Gid').val(),
+    Redress:'Redress',
   };
   $.ajax({
     type: 'POST',
     url: './backScript.php',
     data: formData,
     success: function (response) {
+      $('.redress-response').html(response);
+      $('.redress-btn').hide();
+    },
+  });
+}
+/////rejecting The Grievance
+function RejectGrievance(){
+  var formData = {
+    GrievanceId :  $('#Gid1').val(),
+    RejectGrievance:'RejectGrievance',
+  };
+  $.ajax({
+    type: 'POST',
+    url: './backScript.php',
+    data: formData,
+    success: function (response) {
+      $('.rejectgrievance-response').html(response);
+      $('.reject-btn').hide();
+    },
+  });
+}
+/////add grievance member
+function  addmember(){
+  var formData = {
+    MemFullName: $('#addFullName').val(),
+    MemEmpId: $('#addEmpId').val(),
+    MemEmail: $('#addEmail').val(),
+    MemBranch: $('#addBranch').val(),
+    MemMobile: $('#addMobile').val(),
+    MemDuty: $('#addDuty').val(),
+    MemDesignation: $('#addDesignation').val(),
+    MemPassword: generatePassword(),
+    Addmember : 'Addmember',
+  };
+  alert(formData);
+  $.ajax({
+    type: 'POST',
+    url: './backScript.php',
+    data: formData,
+    success: function (response) {
       $('.Addmember-response').html(response);
+      $('.addmem-btn').hide();
     },
   });
 }
 
-/******************************************************************************/
-/*******************************************************************************/
-// ========== Hospital ==========
-// Available Blood Details
-// function AvailableBloodDetails() {
-//   var formData = {
-//     bloodGroup: $('#bloodGroup').val(),
-//     AvailableBloodDetails: 'AvailableBloodDetails',
-//   };
-//   $.ajax({
-//     type: 'POST',
-//     url: './backScript.php',
-//     data: formData,
-//     success: function (response) {
-//       $('.AvailableBloodResponse').html(response);
-//     },
-//   });
-// }
-// // Update Quantity
-// function UpdateQuantity(UpdateQuantitySno) {
-//   $('.alert-bell').removeClass('d-none');
-//   $('.Available-Blood-Detail-Alerts').html('Loading...');
-//   var formData = {
-//     UpdateQuantity: 'UpdateQuantity',
-//     Quantity: $('#updateQuantity').val(),
-//     UpdateQuantitySno: UpdateQuantitySno,
-//   };
-//   if (formData.Quantity == '' || formData.UpdateQuantitySno == '') {
-//     $('.alert-bell').removeClass('d-none');
-//     $('.Available-Blood-Detail-Alerts').html('Enter Quantity');
-//   } else {
-//     $.ajax({
-//       type: 'POST',
-//       url: './backScript.php',
-//       data: formData,
-//       success: function (response) {
-//         $('.alert-bell').removeClass('d-none');
-//         $('.Available-Blood-Detail-Alerts').html(response);
-//       },
-//     });
-//   }
-// }
-// // Delete Quantity
-// function DeleteQuantity(DeleteQuantitySno) {
-//   $('.alert-bell').removeClass('d-none');
-//   $('.Available-Blood-Detail-Alerts').html('Loading...');
-//   var formData = {
-//     DeleteQuantity: 'DeleteQuantity',
-//     DeleteQuantitySno: DeleteQuantitySno,
-//   };
-//   $.ajax({
-//     type: 'POST',
-//     url: './backScript.php',
-//     data: formData,
-//     success: function (response) {
-//       $('.alert-bell').removeClass('d-none');
-//       $('.Available-Blood-Detail-Alerts').html(response);
-//     },
-//   });
-// }
+// data table try for grievance mem
+// ===========================================================================
+// ==============================================================/
 
-// // Blood Requests Details
-// function BloodRequestsDetails() {
-//   var formData = {
-//     bloodGroup: $('#bloodGroup').val(),
-//     ShowRows: $('#ShowRows').val(),
-//     BloodRequestsResponse: 'BloodRequestsResponse',
-//   };
-//   $.ajax({
-//     type: 'POST',
-//     url: './backScript.php',
-//     data: formData,
-//     success: function (response) {
-//       $('.BloodRequestsResponse').html(response);
-//     },
-//   });
-// }
-// // Allot Blood
-// function AllotBlood(RequestID) {
-//   $('.alert-bell').removeClass('d-none');
-//   $('.Available-Blood-Detail-Alerts').html('Loading...');
-//   var formData = {
-//     AllotBlood: 'AllotBlood',
-//     RequestID: RequestID,
-//   };
-//   $.ajax({
-//     type: 'POST',
-//     url: './backScript.php',
-//     data: formData,
-//     success: function (response) {
-//       $('.alert-bell').removeClass('d-none');
-//       $('.Available-Blood-Detail-Alerts').html(response);
-//     },
-//   });
-// }
-// // Add Blood Group
-// function AddBloodGroup() {
-//   $('.alert-bell').removeClass('d-none');
-//   $('.Add-Blood-Detail-Alerts').html('Loading...');
-//   var formData = {
-//     bloodGroup: $('#bloodGroup').val(),
-//     Quantity: $('#Quantity').val(),
-//     AddBloodGroup: 'AddBloodGroup',
-//   };
-//   if (
-//     formData.bloodGroup == '' ||
-//     formData.Quantity == '' ||
-//     formData.AddBloodGroup == ''
-//   ) {
-//     $('.alert-bell').removeClass('d-none');
-//     $('.Add-Blood-Detail-Alerts').html('All fields must be filled!');
-//   } else {
-//     $.ajax({
-//       type: 'POST',
-//       url: './backScript.php',
-//       data: formData,
-//       success: function (response) {
-//         $('.alert-bell').removeClass('d-none');
-//         $('.Add-Blood-Detail-Alerts').html(response);
-//       },
-//     });
-//   }
-// }
 
-// // Change Password
-// function ChangePassword() {
-//   $('.alert-bell').removeClass('d-none');
-//   $('.Change-Password-Alerts').html('Loading...');
-//   var formData = {
-//     oldPassword: $('#oldPassword').val(),
-//     newPassword: $('#newPassword').val(),
-//     confirmPassword: $('#confirmPassword').val(),
-//     ChangePassword: 'ChangePassword',
-//   };
-//   if (
-//     formData.oldPassword == '' ||
-//     formData.newPassword == '' ||
-//     formData.confirmPassword == '' ||
-//     formData.ChangePassword == ''
-//   ) {
-//     $('.alert-bell').removeClass('d-none');
-//     $('.Change-Password-Alerts').html('All fields must be filled!');
-//   } else {
-//     $.ajax({
-//       type: 'POST',
-//       url: './backScript.php',
-//       data: formData,
-//       success: function (response) {
-//         $('.alert-bell').removeClass('d-none');
-//         $('.Change-Password-Alerts').html(response);
-//       },
-//     });
-//   }
-// }
+
+
+$(document).on('submit','#addUser',function(e){
+  e.preventDefault();
+  var Empid= $('#addEmpId').val();
+  var Email= $('#addEmail').val();
+  var Mobile= $('#addMobile').val();
+  var FullName= $('#addFullName').val();
+  var Designation= $('#addDesignation').val();
+  var Branch= $('#addBranch').val();
+  var Duty= $('#addDuty').val();
+  var Password=generatePassword();
+  var Addmember=Addmember;
+  if(Empid != '' && Email != '' && Mobile != '' && FullName != '' && Designation != ''&& Branch != ''&& Duty != ''&&  UserName != '' &&  Password != '' )
+  {
+   $.ajax({
+     url:"BackScript.php",
+     type:"post",
+     data:{Empid:Empid,Email:Email,Mobile:Mobile,FullName:FullName,Designation:Designation,Branch:Branch,Duty:Duty,Password:Password,Addmember:Addmember},
+     success:function(data)
+     {
+       var json = JSON.parse(data);
+       var status = json.status;
+       if(status=='true')
+       {
+        mytable =$('#example').DataTable();
+        mytable.draw();
+        $('#addUserModal').modal('hide');
+      }
+      else
+      {
+        alert('failed');
+      }
+    }
+  });
+ }
+ else {
+  alert('Fill all the required fields');
+}
+});
+$(document).on('submit','#updateUser',function(e){
+  e.preventDefault();
+   //var tr = $(this).closest('tr');
+   var city= $('#cityField').val();
+   var username= $('#nameField').val();
+   var mobile= $('#mobileField').val();
+   var email= $('#emailField').val();
+   var trid= $('#trid').val();
+   var id= $('#id').val();
+   if(city != '' && username != '' && mobile != '' && email != '' )
+   {
+     $.ajax({
+       url:"update_user.php",
+       type:"post",
+       data:{city:city,username:username,mobile:mobile,email:email,id:id},
+       success:function(data)
+       {
+         var json = JSON.parse(data);
+         var status = json.status;
+         if(status=='true')
+         {
+          table =$('#example').DataTable();
+          // table.cell(parseInt(trid) - 1,0).data(id);
+          // table.cell(parseInt(trid) - 1,1).data(username);
+          // table.cell(parseInt(trid) - 1,2).data(email);
+          // table.cell(parseInt(trid) - 1,3).data(mobile);
+          // table.cell(parseInt(trid) - 1,4).data(city);
+          var button =   '<td><a href="javascript:void();" data-id="' +id + '" class="btn btn-info btn-sm editbtn">Edit</a>  <a href="#!" data-bs-toggle="modal" data-id="' +id + '" data-bs-target="#exampleModal" class="btn btn-danger btn-sm">Delete</a></td>';
+          var row = table.row("[id='"+trid+"']");
+          row.row("[id='" + trid + "']").data([id,username,email,mobile,city,button]);
+          $('#exampleModal').modal('hide');
+        }
+        else
+        {
+          alert('failed');
+        }
+      }
+    });
+   }
+   else {
+    alert('Fill all the required fields');
+  }
+});
+$('#example').on('click','.editbtn ',function(event){
+  var table = $('#example').DataTable();
+  var trid = $(this).closest('tr').attr('SlNo');
+ // console.log(selectedRow);
+ var SlNo = $(this).data('SlNo');
+ $('#exampleModal').modal('show');
+
+ $.ajax({
+  url:"get_single_data.php",
+  data:{SlNo:SlNo},
+  type:'post',
+  success:function(data)
+  {
+   var json = JSON.parse(data);
+   $('#nameField').val(json.username);
+   $('#emailField').val(json.email);
+   $('#mobileField').val(json.mobile);
+   $('#cityField').val(json.city);
+   $('#SlNo').val(SlNo);
+   $('#trid').val(trid);
+ }
+})
+});
+
+$(document).on('click','.deleteBtn',function(event){
+   var table = $('#example').DataTable();
+  event.preventDefault();
+  var id = $(this).data('id');
+  if(confirm("Are you sure want to delete this User ? "))
+  {
+  $.ajax({
+    url:"delete_user.php",
+    data:{id:id},
+    type:"post",
+    success:function(data)
+    {
+      var json = JSON.parse(data);
+      status = json.status;
+      if(status=='success')
+      {
+        //table.fnDeleteRow( table.$('#' + id)[0] );
+         //$("#example tbody").find(id).remove();
+         //table.row($(this).closest("tr")) .remove();
+         $("#"+id).closest('tr').remove();
+      }
+      else
+      {
+        alert('Failed');
+        return;
+      }
+    }
+  });
+  }
+  else
+  {
+    return null;
+  }
+})
+
+
+  

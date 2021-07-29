@@ -1,10 +1,18 @@
+
 <?PHP
 include './../include/config.php';
 session_start();
 require './../include/PHPMailer.php';
 require './../include/SMTP.php';
 require './../include/Exception.php';
-
+ function getUserCount($UserSatus){
+    include './../include/config.php';
+    $user = "SELECT * FROM `users` WHERE `Status` = '$UserSatus'";
+    $query = mysqli_query($conn,$user);
+    $num=mysqli_num_rows($query);
+    return $num.",";
+ }
+ 
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -18,42 +26,37 @@ if (isset($_SESSION['sess_user']))
 
 if (isset($_POST['accountactivationresponse']))
 {
-    $LIMIT = 10;
-    if(!empty($_POST['From']) && !empty($_POST['To'])){
-        $From = $conn -> real_escape_string($_POST['From']);
-        $To = $conn -> real_escape_string($_POST['To']);
-        $myRequestsQuery ="SELECT * FROM `users` WHERE `Status`= 1 AND `Dnt` BETWEEN '{$From}' AND '{$To}'";
-    }else{
-    $myRequestsQuery = "SELECT * FROM `users` WHERE `Status`= 1 ORDER BY `SlNo` DESC LIMIT $LIMIT";
-    }
+    $myRequestsQuery = "SELECT * FROM `users` WHERE `Status`= 1 ";
+    
     $myRequests = mysqli_query($conn, $myRequestsQuery);
     if ($myRequestsRow = mysqli_num_rows($myRequests) !='0')
-    {      
+    { ?> 
+    <?php    
         while($myRequestsRow = mysqli_fetch_array($myRequests))
         {
-            echo '<tr>
-                    <td>'.$myRequestsRow['SlNo'].'</td>
-                    <td class="d-flex align-items-center ">
-                        <div class="pl-3 email">
-                        <span>'.$myRequestsRow['FullName'].'</span>
-                        <span>Requested on: '.$myRequestsRow['Dnt'].'</span>
-                        </div>
-                    </td>
-                    <td>'.$myRequestsRow['RollNo'].'</td>
-                    <td>'.$myRequestsRow['Email'].'</td>
-                    <td>'.$myRequestsRow['Branch'].'</td>
-                    <td class="status"><span class="active">Mail Verified</span></td>
-                    <td>'.$myRequestsRow['UserType'].'</td>
-                    <td>
-                        <button type="button" class="close btn" data-dismiss="alert" data-bs-toggle="modal" data-bs-target="#example" aria-label="Close" data-bs-whatever="'.$myRequestsRow['Email'].'"><span aria-hidden="true"><i class="fa fa-close" ></i>Reject</span></button>
-                    </td>
-                    <td>
-                        <button type="button" class="open btn" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-label="Close" data-dismiss="alert" data-bs-whatever="'.$myRequestsRow['Email'].'"><span aria-hidden="true"><i class="fa fa-check"></i>Activate</span></button>
-                
-                    </td>
-                  </tr>';
-        }
-    
+        ?><tr>
+                <td><?php echo htmlentities($myRequestsRow['SlNo']) ?></td>
+                <td class="d-flex align-items-center ">
+                    <div class="pl-3 email">
+                    <span><?php echo htmlentities($myRequestsRow['FullName']) ?></span>
+                    <span>Requested on: <?php echo htmlentities($myRequestsRow['Dnt']) ?></span>
+                    </div>
+                </td>
+                <td><?php echo htmlentities($myRequestsRow['RollNo']) ?></td>
+                <td><?php echo htmlentities($myRequestsRow['Email']) ?></td>
+                <td><?php echo htmlentities($myRequestsRow['Branch']) ?></td>
+                <td class="status"><span class="active">Mail Verified</span></td>
+                <td><?php echo htmlentities($myRequestsRow['UserType']) ?></td>
+                <td>
+                <button type="button" class="btn close" data-bs-toggle="modal" data-bs-target="#example" data-bs-whatever="<?php echo htmlentities($myRequestsRow['Email']) ?>"><span aria-hidden="true"><i class="fa fa-check"></i>Reject</span></button>
+                </td>
+                <td>
+                    <button type="button" class="open btn" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-label="Close" data-dismiss="alert" data-bs-whatever="<?php echo htmlentities($myRequestsRow['Email']) ?>"><span aria-hidden="true"><i class="fa fa-check"></i>Activate</span></button>
+            
+                </td>
+            </tr>';
+       <?php }?>
+<?php
     }else{
         echo "No More Users";
     }
@@ -117,37 +120,38 @@ if(isset($_POST['RejectUser'])){
 
 //usercount ontheier status base
 if(isset($_POST['usercount'])){
-    $spam="SELECT `Status` From `User` Where Status=0";
-    $verified="SELECT `Status` From `User` Where Status=1";
-    $accepted="SELECT `Status` From `User` Where Status=2";
-    $rejected="SELECT `Status` From `User` Where Status=3";
-
-    $spamcount=mysqli_num_rows(mysqli_query($conn,$spam));
-    $verifiedcount=mysqli_num_rows(mysqli_query($conn,$verified));
-    $acceptedcount=mysqli_num_rows(mysqli_query($conn,$accepted));
-    $rejectedcount=mysqli_num_rows(mysqli_query($conn,$rejected));
-
-    $return[] = array($spamcount,$verifiedcount,$acceptedcount,$rejectedcount);
-
-    echo ($return);
-   
+    $userCount = [1,2,3,4];
+    for($i = 0; $i<=3;$i++){
+        echo $userCount["$i"] = getUserCount($i);
+    }
+    
 }
 
 if(isset($_POST['grievancecount'])){
-    $Rejected="SELECT `Status` From `grievances` Where Status='Rejected'";
-    $Open="SELECT `Status` From `grievances` Where Status='Open'";
-    $Closed="SELECT `Status` From `grievances` Where Status='Closed'";
-    $Reopened="SELECT `Status` From `grievances` Where Status='Reopened'";
+    
+    $GrievanceCount[]=1111;
+    $Rejected="SELECT * FROM `grievances` WHERE `Status` = 'Rejected' ";
+    $quer1=mysqli_query($conn,$Rejected);
+    $Rejectedcount=mysqli_num_rows($quer1);
+    $GrievanceCount[]=$Rejectedcount;
 
-    $Rejectedcount=mysqli_num_rows(mysqli_query($conn,$Rejected));
-    $Opencount=mysqli_num_rows(mysqli_query($conn,$Open));
-    $Closedcount=mysqli_num_rows(mysqli_query($conn,$Closed));
-    $Reopenedcount=mysqli_num_rows(mysqli_query($conn,$Reopened));
+    $Open=" SELECT * FROM `grievances` WHERE `Status` = 'Open' ";
+    $quer2=mysqli_query($conn,$Open);
+    $Opencount=mysqli_num_rows($quer2);
+    $GrievanceCount[]=$Opencount;
 
-    $return[] = array($Rejectedcount,$Opencount,$Closedcount,$Reopenedcount);
+    $Closed=" SELECT * FROM `grievances` WHERE `Status` = 'Closed' ";
+    $quer3=mysqli_query($conn,$Closed);
+    $Closedcount=mysqli_num_rows($quer3);
+    $GrievanceCount[]=$Closedcount;
 
-    echo ($return);
-   
+    $Reopened=" SELECT * FROM `grievances` WHERE `Status` = 'Reopened' ";
+    $quer4=mysqli_query($conn,$Reopened);
+    $Reopenedcount=mysqli_num_rows($quer4);
+    $GrievanceCount[]=$Reopenedcount;
+    $GrievanceCount[]=1111;
+    
+    echo  json_encode($GrievanceCount) ;
 }
 
 
@@ -156,44 +160,91 @@ if(isset($_POST['grievancecount'])){
 if (isset($_POST['Grievancelist']))
 {
     $LIMIT = 10;
-    if(!empty($_POST['From']) && !empty($_POST['To'])){
-        $From = $conn -> real_escape_string($_POST['From']);
-        $To = $conn -> real_escape_string($_POST['To']);
-        $myRequestsQuery ="SELECT * FROM `grievances` AND `RegDate` BETWEEN '{$From}' AND '{$To}'";
-    }else{
-    $myRequestsQuery = "SELECT * FROM `grievances` ORDER BY `SlNo` DESC LIMIT $LIMIT";
-    }
+    $myRequestsQuery = "SELECT * FROM `grievances` ";
+    
     $myRequests = mysqli_query($conn,$myRequestsQuery);
     if ($myRequestsRow = mysqli_num_rows($myRequests) !='0')
     {      
-        while($myRequestsRow = mysqli_fetch_array($myRequests))
-        {
-            echo '<tr class="alert" role="alert">
-                    <td>'.$myRequestsRow['SlNo'].'</td>
-                    <td class="d-flex align-items-center ">
-                        <div class="pl-3 email">
-                        <span>'.$myRequestsRow['Email'].'</span>
-                        <span>Requested on: '.$myRequestsRow['RegDate'].'</span>
-                        </div>
-                    </td>
-                    <td>'.$myRequestsRow['FullName'].'</td>
-                    <td>'.$myRequestsRow['Gender'].'</td>
-                    <td>'.$myRequestsRow['Status'].'</td>
-                    <td>'.$myRequestsRow['Solution'].'</td>
-                    <td>
-                        <button type="button" class="open btn" data-bs-toggle="modal" data-bs-target="#exampleModal" aria-label="Close" data-dismiss="alert" data-bs-whatever="'.$myRequestsRow['Email'].'"><span aria-hidden="true"><i class="fa fa-check"></i>Details</span></button>
-                
-                    </td>
-                  </tr>';
-        }
-    
+         while($myRequestsRow = mysqli_fetch_array($myRequests))
+        {?>
+           <tr>
+                    <td><?php echo htmlentities($myRequestsRow['SlNo'])?></td>
+                    <td><?php echo htmlentities($myRequestsRow['GrievanceId'])?></td>
+                    <td><?php echo htmlentities($myRequestsRow['Email'])?></td>
+                    <td><?php echo htmlentities($myRequestsRow['FullName'])?></td>
+                    <td><?php echo htmlentities($myRequestsRow['Grievance'])?></td>
+                    <td><?php echo htmlentities($myRequestsRow['Status'])?></td>
+                    <td><?php echo htmlentities($myRequestsRow['Solution'])?></td>
+                    <td><a  onclick="GrievanceDetails(<?php echo htmlentities($myRequestsRow['GrievanceId'])?>)"   class="btn btn-success btn-sm editbtn" >Details</a></td>
+                </tr>
+    <?php }?>
+<?php
     }else{
         echo " No data Found";
     }
    
 }
+// <!-- Grivences committee members list Response -->
 
-/////admember response
+if (isset($_POST['memberslist']))
+{
+    $LIMIT = 10;
+    $myRequestsQuery = "SELECT * FROM `committee` ";
+    
+    $myRequests = mysqli_query($conn,$myRequestsQuery);
+    if ($myRequestsRow = mysqli_num_rows($myRequests) !='0')
+    {      
+         while($myRequestsRow = mysqli_fetch_array($myRequests))
+        {?>
+           <tr>
+                <td><?php echo htmlentities($myRequestsRow['SlNo'])?></td>
+                <td><?php echo htmlentities($myRequestsRow['EmpId'])?></td>
+                <td><?php echo htmlentities($myRequestsRow['Email'])?></td>
+                <td><?php echo htmlentities($myRequestsRow['FullName'])?></td>
+                <td><?php echo htmlentities($myRequestsRow['Designation'])?></td>
+                <td><?php echo htmlentities($myRequestsRow['Branch'])?></td>
+                <td><?php echo htmlentities($myRequestsRow['Mobile'])?></td>
+                <td><?php echo htmlentities($myRequestsRow['Duty'])?></td>
+                <td><button class="btn btn-sucess" data-bs-toggle="modal" data-bs-target="#UpdateMem" >Update</button></td>
+                <td> <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#remove" >Remove</button></td>
+            </tr>
+    <?php }?>
+<?php
+    }else{
+        echo " No data Found";
+    }
+   
+}
+// Redressing the Complaint
+if (isset($_POST['Redress']))
+{
+    $GrievanceId=$_POST['GrievanceId'];
+    $Solution=$_POST['Solution'];
+    date_default_timezone_set("Asia/Calcutta");
+    $sql = "UPDATE  `grievances` SET `Solution` = '$Solution', `Status` = 'Closed', `SolDate` = '".date("d-m-Y H:i:s")."' WHERE GrievanceId='$GrievanceId'";
+    $query=mysqli_query($conn,$sql);
+    if($query==true){
+        echo "Action Taken";
+    }else{
+        echo "Failed";
+    }
+}
+// Redressing the Complaint
+if (isset($_POST['RejectGrievance']))
+{
+    $GrievanceId=$_POST['GrievanceId'];
+    $Solution='Rejected';
+    date_default_timezone_set("Asia/Calcutta");
+    $sql = "UPDATE  `grievances` SET `Solution` = '$Solution', `Status` = 'Rejected', `SolDate` = '".date("d-m-Y H:i:s")."' WHERE GrievanceId='$GrievanceId'";
+    $query=mysqli_query($conn,$sql);
+    if($query){
+        echo "Rejected SuccessFully";
+    }else{
+        echo "Failed Action";
+    }
+}
+
+/////admember respons
 if(isset($_POST['Addmember']))
 {
     $FullName = $conn -> real_escape_string($_POST['MemFullName']);
@@ -208,7 +259,7 @@ if(isset($_POST['Addmember']))
 
     	$sql = "INSERT INTO `committee` (`FullName`,`EmpId`,`Email`,`Branch`,`Duty`,`Mobile`,`Designation`,`UserName`,`Password`) VALUES ('$FullName','$EmpId','$Email','$Branch','$Duty','$Mobile','$Designation','$UserName','$Password')";
     	$query = mysqli_query($conn,$sql);
-        if($query){
+        if($query==true){
             $subject="YOU ARE ADDED AS THE GRIEVANCE COMMITTEE MEMEBER -AITAM";
             $mailHtml="Your Account Has Been Activated Your User Name $Email and Password is $Password";
 
@@ -225,7 +276,7 @@ if(isset($_POST['Addmember']))
             $mail->Body=$mailHtml;
             $mail->addAddress($Email);
             if($mail->send()){
-                $msg="Credintials Has been sent $Email ";
+                $msg="Credintials Has been sent to $Email ";
                 echo $msg;	
             
             }
@@ -234,12 +285,10 @@ if(isset($_POST['Addmember']))
                 echo $msg;
             }
             $mail->smtpClose();
-    }
-    else{
-        $msg=" Registration Failed";
-        echo $msg;
-    }
-
+        }
+        else
+        {
+        echo "Failed Add Member";
+         } 
 }
 
-?>

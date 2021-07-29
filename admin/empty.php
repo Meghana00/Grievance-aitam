@@ -51,7 +51,7 @@
     <!--Container Main end-->
     <!-- table container -->
     
-    <div class="ajax-main-content" >
+    <div class="ajax-main-content overview" >
     <div class="container">
     <table id="example" class="display" style="width:100%">
         <thead>
