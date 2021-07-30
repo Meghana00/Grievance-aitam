@@ -39,7 +39,23 @@ if(isset($_POST['login']))
 		}else{
 			$error="UserName Incorrect";
 		}
-	}    
+	}   
+	elseif($Logintype=="COMMITEE"){
+		$sql = "SELECT * FROM `committee` WHERE `UserName` = '$UserName' ";
+    	$query = mysqli_query($conn,$sql);
+   		$row = mysqli_fetch_array($query);
+		if($row['UserName']==$UserName){
+			if($row['Password']==$Password){
+				$_SESSION['sess_user'] = $row['UserName'];
+            	echo "<script type='text/javascript'> document.location = './committee/dashboard.php'; </script>";
+			}
+			else{
+				$error="Password Incorrect";
+			}
+		}else{
+			$error="UserName Incorrect";
+		}
+	}
 
     // $sql = "SELECT * FROM `admin` WHERE `username` = '$username' ";
     // $query = mysqli_query($conn,$sql);
