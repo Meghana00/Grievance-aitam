@@ -51,12 +51,12 @@ else{
 					<div class="container  ">
 						<!--header row-->
 						<div class="row ">
-							<div class="col d-flex justify-content-center">
+							
 								
-								<div class="col-sm-11 ">
+								<div class=" ">
 									<p class="ms-1 fw-bold text-success text-success text-center" style="font-size:32px;">Grievance Response</p>
 								</div>
-							</div>
+							
 						</div>
 						<!--end header row-->
 						<div class="row d-flex justify-content-center">
