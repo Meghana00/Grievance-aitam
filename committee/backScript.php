@@ -159,6 +159,7 @@ if(isset($_POST['grievancecount'])){
 
 if (isset($_POST['Grievancelist']))
 {
+    
     $LIMIT = 10;
     $myRequestsQuery = "SELECT * FROM `grievances` ";
     
@@ -369,11 +370,11 @@ if (isset($_POST['ChangePassword'])){
     // $newPassword = $conn -> real_escape_string($_POST['newPassword']);
     $confirmPassword = $conn -> real_escape_string($_POST['confirmPassword']);
     $active_user = $_SESSION['sess_user'];
-    $sql="SELECT * FROM `admin` where `UserName`= '$active_user' ";
+    $sql="SELECT * FROM `committee` where `UserName`= '$active_user' ";
     $query=mysqli_query($conn,$sql);
     $row=mysqli_fetch_array($query);
     if($row['Password']==$oldPassword){
-        $sql = " UPDATE  `admin` SET  `Password` = '$confirmPassword' WHERE `UserName`= '$active_user' ";
+        $sql = " UPDATE  `committee` SET  `Password` = '$confirmPassword' WHERE `UserName`= '$active_user' ";
         $query=mysqli_query($conn,$sql);
         echo 'Updated Successfully';
     }else{

@@ -34,14 +34,14 @@ else
 <body>
     
 
-<body oncontextmenu='return false' class='snippet-body'>
+<body oncontextmenu='return false' class='snippet-body body-pd'>
 <body id="body-pd" onload="ajaxProfilePageCall()">
-    <header class="header" id="header">
-        <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
-        <div class="header_img"> <img src="https://i.imgur.com/hczKIze.jpg" alt=""> </div>
-    </header>
+    <header class="header body-pd" id="header">
+        <!-- <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div> -->
+        <div class="header_img"> <img src="../assets//images/aitamlogo.png" alt=""></div>
+   </header>
   </style>
-    <div class="l-navbar" id="nav-bar">
+    <div class="l-navbar show1 show" id="nav-bar">
         <nav class="nav">
             <div>
                 <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Grievance Cell</span> </a>

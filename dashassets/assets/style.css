@@ -172,9 +172,9 @@
 			padding-left: calc(var(--nav-width) + 188px)
 		}
 
-		/* .show {
-			width: calc(var(--nav-width) + 156px);
-		} */
+		.show {
+			width:100%;
+		}
 		.show1 {
 			width: calc(var(--nav-width) + 156px);
 		}

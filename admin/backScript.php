@@ -295,7 +295,7 @@ if(isset($_POST['Addmember']))
 if (isset($_POST['Rejectmem']))
 {
     $Email=$_POST['MemEmail'];
-    $sql = "UPDATE  `committee` SET  `Status` = 'Inactive' WHERE Email='$Email'";
+    $sql = "UPDATE  `committee` SET  `Status` = 'Inactive' , `UserName` = 'Null' , `Password`= 'Null' WHERE `Email` = '$Email'";
     $query=mysqli_query($conn,$sql);
     if($query){
         echo "Removed SuccessFully";

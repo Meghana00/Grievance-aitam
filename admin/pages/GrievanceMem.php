@@ -136,7 +136,7 @@ $query=mysqli_query($conn,$sql);
       <div class="modal-body">
         <form>
           <div class="mb-3">
-            <h1 for="recipient-name" class="col-form-label text-danger reject-response ">Are Sure to Reject</h1>
+            <h1 for="recipient-name" class="col-form-label text-danger reject-response ">Are Sure to Remove</h1>
             <input type="hidden" class="form-control" id="mememail" value="">
           </div>
         </form>
@@ -144,7 +144,7 @@ $query=mysqli_query($conn,$sql);
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-danger reject-btn" onclick="Rejectmem()">Reject</button>
+        <button type="button" class="btn btn-danger reject-btn" onclick="Rejectmem()">Remove</button>
       </div>
     </div>
   </div>
