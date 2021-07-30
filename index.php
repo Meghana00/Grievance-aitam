@@ -136,14 +136,17 @@
     </section>
     <!--end hex grid layout------------>
 
-    <footer>
+    <!-- Footer -->
+<footer class="text-center text-lg-start bg-light text-white">
 
-   
-        <div class="footer-copyright text-center text-light py-1" style="background-color:transparent;">
-				<p class="text-success fw-bold">© 2021 Copyright : <a href="https://aitamsac.in/" class="text-danger">aitamsac</a></p>
-        </div>
-      
-    </footer>
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: #5cb85c;">
+    © 2021 Copyright: designed and developed by
+    <a class=" fw-bold text-danger" href="http://aitamsac.in/">DEVELOPER's CLUB</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+<!-- Footer -->
     
 
     

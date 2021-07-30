@@ -162,16 +162,15 @@ if(isset($_POST['login']))
 	</div>
 	<!--end login----------->
 	<!--footer-->
-	<footer > 
+	<footer class="text-center text-lg-start bg-light text-white">
 
-   
-        <div class="footer-copyright text-center text-light py-1" style="background-color:#5cb85c;">©
-				<script>
-				document.write(new Date().getFullYear())
-				</script> Copyright : <a href="https://aitamsac.in/" class="text-white">aitamsac</a> 
-        </div>
-      
-    </footer>
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: #5cb85c;">
+    © 2021 Copyright: designed and developed by
+    <a class=" fw-bold text-danger" href="http://aitamsac.in/">DEVELOPER's CLUB</a>
+  </div>
+  <!-- Copyright -->
+</footer>
 	<!--end footer-->
     
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
