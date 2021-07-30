@@ -45,7 +45,7 @@ $usersrow = mysqli_fetch_array($users);
                     <div class="col-md-10">
                       <div class="form-group">
                         <label class="form-control-label" for="input-email">Branch</label>
-                        <input type="email" name="Email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com" value="value="<?php echo htmlentities($usersrow['Email'])?>"" >
+                        <input type="email" name="Email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com" value="<?php echo htmlentities($usersrow['Branch'])?>" >
                       </div>
                     </div>
                   </div>

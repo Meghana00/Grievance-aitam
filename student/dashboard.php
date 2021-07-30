@@ -14,9 +14,9 @@ else
 <head>
 <meta charset='utf-8'>
     <!--Favicon-->
-    <link rel="icon" href="./assets/images/aitamlogo.png" type="image/gif" sizes="16x16">
+    <link rel="icon" href="./../assets//images/aitamlogo.png" type="image/gif" sizes="16x16">
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
-	<title>DashBoard-Aitam</title>
+	<title>StudentDashBoard-Aitam</title>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet'>
 	<link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
@@ -44,7 +44,7 @@ else
                 <a href="#" class="nav_logo"> <i class='bx bx-layer nav_logo-icon'></i> <span class="nav_logo-name">Grievance Cell</span> </a>
                 <div class="nav_list">
                     <a href="#" onclick="ajaxProfilePageCall()" class="nav_link active"> <i class='bx bx-grid-alt nav_icon'></i> <span class="nav_name">My Profile</span> </a>
-                    <a href="#" onclick="ajaxRegisterGrievancePageCall()" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name"> Register Greivance</span> </a>
+                    <a href="#" onclick="ajaxRegisterGrievancePageCall()" class="nav_link"> <i class='bx bx-pen nav_icon'></i> <span class="nav_name"> Register Greivance</span> </a>
                     <!-- <a href="#" onclick="ajaxAccountPageCall()" class="nav_link" > <i class='bx bx-user nav_icon'></i><span class="nav_name">Account Activation</span> </a> -->
                     <a href="#" onclick="ajaxMyGrievancesPageCall()" class="nav_link"> <i class='bx bx-bookmark nav_icon'></i> <span class="nav_name">My Greivances</span> </a>
                     <!-- <a href="#" onclick="ajaxGrievanceTypePageCall()" class="nav_link"> <i class='bx bx-folder nav_icon'></i> <span class="nav_name">Greivance Types</span> </a> -->

@@ -16,7 +16,7 @@ else
     <!--Favicon-->
     <link rel="icon" href="./assets/images/aitamlogo.png" type="image/gif" sizes="16x16">
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
-	<title>DashBoard-Aitam</title>
+	<title>AdminDashBoard-Aitam</title>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 	<link href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css' rel='stylesheet'>
 	<link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
