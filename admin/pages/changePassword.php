@@ -11,18 +11,19 @@
                          <form>
                            <div class="mb-3">
 					          <label for="oldpassword" class="text-dark">Your Old Password</label>
-					          <input type="password" class="form-control border-success shadow-none" name="oldpassword">
+					          <input type="password"  class="form-control border-success shadow-none" id="oldpassword">
 				           </div>
 				           <div class="mb-3">
 					          <label for="newpassword" class="text-dark">Your New Password</label>
-					          <input type="password" class="form-control border-success shadow-none" name="newpassword">
+					          <input type="password" class="form-control border-success shadow-none" id="newpassword">
 				           </div>
 				           <div class="mb-3">
 					         <label for="confirmpassword" class="text-dark">Confirm password</label>
-					         <input type="password" class="form-control  border-success shadow-none" name="confirmpassword">
+					         <input type="password" class="form-control  border-success shadow-none" id="confirmpassword">
 				           </div>
+                           <div class="row Change-Password-Alerts text-danger"></div>
                            <div class="mb-3">
-                             <button type="submit" class="btn btn-success border-light shadow-none mt-2" name="update">Update</button>
+                             <button type="button" onclick="ChangePassword()" class="btn btn-success border-light shadow-none mt-2" name="update">Update</button>
                            </div>
 				          
 			            </form>

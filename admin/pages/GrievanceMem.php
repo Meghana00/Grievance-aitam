@@ -1,3 +1,12 @@
+<?php 
+include './../../include/config.php';
+$sql="SELECT `GrievanceType` FROM `grievancetype` WHERE `Status` = 'Active' ";
+$query=mysqli_query($conn,$sql);
+
+
+?>
+
+
 <section>
 <div class="container">
 			<div class="row justify-content-center">
@@ -7,7 +16,7 @@
 			</div>
       <div class="row mb-2">
         <div class="btnAdd">
-          <a href="#!" data-id="" data-bs-toggle="modal" data-bs-target="#addUserModal"   class="btn btn-success btn-md" >Add User</a>
+          <a href="#!" data-id="" data-bs-toggle="modal" data-bs-target="#addUserModal"   class="btn btn-success btn-md" >Add Member</a>
         </div>
       </div>
 			<div class="row">
@@ -85,9 +94,22 @@
             </div>
           </div>
 		  <div class="mb-3 row">
+          <div class="dropdown">
+            <a class="btn btn-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">Duties list</a>
+              <ul class="dropdown-menu " aria-labelledby="dropdownMenuLink">
+                <?php 
+                while($row=mysqli_fetch_array($query)){
+                    echo '<li><input type="checkbox" name="duties[]" value="'.$row['GrievanceType'].'">'.$row['GrievanceType'].'</li>';
+                }
+                ?>
+              </ul>
+              <button type="button" onclick="duties()" class="btn btn-success">Save</button>
+          </div>
+      </div>
+      <div class="mb-3 row">
             <label for="cityField" class="col-md-3 form-label">Duty</label>
             <div class="col-md-9">
-              <input type="text" class="form-control" id="addDuty" name="City">
+              <input type="text" class="form-control" id="addDuty" name="City" >
             </div>
           </div>
           <div class="row Addmember-response text-danger"></div>
@@ -128,6 +150,23 @@
   </div>
 </div>
 <!-- rejected modal -->
+<script>
+function duties(){ 
+var checkboxes = document.getElementsByName('duties[]');
+var vals = "";
+for (var i=0, n=checkboxes.length;i<n;i++) 
+{
+    if (checkboxes[i].checked) 
+    {
+        vals += ","+checkboxes[i].value;
+    }
+}
+if (vals) vals = vals.substring(1);
+var modalBodyInput = addUserModal.querySelector('#addDuty')
+modalBodyInput.value = vals;
+ }
+ 
+</script>
 
 <script>
  var removemember = document.getElementById('removemember')

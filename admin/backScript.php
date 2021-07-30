@@ -362,3 +362,22 @@ if (isset($_POST['RemoveType']))
         echo "Failed Action";
     }
 }
+
+//////// admin password change
+if (isset($_POST['ChangePassword'])){
+    $oldPassword= $conn -> real_escape_string($_POST['oldPassword']);
+    // $newPassword = $conn -> real_escape_string($_POST['newPassword']);
+    $confirmPassword = $conn -> real_escape_string($_POST['confirmPassword']);
+    $active_user = $_SESSION['sess_user'];
+    $sql="SELECT * FROM `admin` where `UserName`= '$active_user' ";
+    $query=mysqli_query($conn,$sql);
+    $row=mysqli_fetch_array($query);
+    if($row['Password']==$oldPassword){
+        $sql = " UPDATE  `admin` SET  `Password` = '$confirmPassword' WHERE `UserName`= '$active_user' ";
+        $query=mysqli_query($conn,$sql);
+        echo 'Updated Successfully';
+    }else{
+      echo "Old Password Incorrect";
+    }
+    
+}

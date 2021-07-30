@@ -10,6 +10,9 @@ $error = '';
 $users= mysqli_query($conn,"SELECT * FROM `users` WHERE `UserName` = '$active_user'");
 $usersrow = mysqli_fetch_array($users);
 
+$sql="SELECT `GrievanceType` FROM `grievancetype` WHERE `Status` = 'Active' ";
+$query=mysqli_query($conn,$sql);
+
 ?>  
 <div class="container mt-5">
     <div class="row mt-5">
@@ -62,8 +65,10 @@ $usersrow = mysqli_fetch_array($users);
 											<label for="Gender" class="form-label">GrievanceType</label>
 											<select class="form-select shadow-none border-success" aria-label="Default select example" name="GrievanceType" id="GrievanceType">
 												<option selected>--select--</option>
-												<option value="Infrastucture">Infrastucture</option>
-												<option value="Ragging">Ragging</option>
+                                                <?php while($row=mysqli_fetch_array($query)){
+                                                   echo  '<option value="'.$row['GrievanceType'].'">'.$row['GrievanceType'].'</option>';
+                                                }
+												?>
 											</select>
 										</div>
 									</div>

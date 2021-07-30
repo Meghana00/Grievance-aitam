@@ -72,6 +72,8 @@ function ajaxReportsPageCall() {
     url: './pages/Reports.php',
     success: function (response) {
       $('.ajax-main-content').html(response);
+      Grievancelist();
+      grievancecount();
     },
   });
 }
@@ -264,7 +266,7 @@ function  addmember(){
     MemEmail: $('#addEmail').val(),
     MemBranch: $('#addBranch').val(),
     MemMobile: $('#addMobile').val(),
-    MemDuty: $('#addDuty').val(),
+    MemDuty : $('#addDuty').val(),
     MemDesignation: $('#addDesignation').val(),
     MemPassword: generatePassword(),
     Addmember : 'Addmember',
@@ -314,7 +316,7 @@ function  addGrievanceType(){
     },
   });
 }
-////Grievnaces List
+////Grievnacestype List
 
 function  GrievanceTypelist(){
   var formData = {
@@ -344,4 +346,37 @@ function RemoveType(){
       $('.reject-btn').hide();
     },
   });
+}
+
+///update password
+function ChangePassword() {
+  // $('.alert-bell').removeClass('d-none');
+  $('.Change-Password-Alerts').html('Loading...');
+  var formData = {
+    oldPassword: $('#oldpassword').val(),
+    newPassword: $('#newpassword').val(),
+    confirmPassword: $('#confirmpassword').val(),
+    ChangePassword: 'ChangePassword',
+  };
+  if (formData.oldPassword == '' || formData.newPassword == '' || formData.confirmPassword == '' || formData.ChangePassword == '') {
+    // $('.alert-bell').removeClass('d-none');
+    $('.Change-Password-Alerts').html('All fields must be filled!');
+  } 
+  else{
+
+      if(formData.newPassword == formData.confirmPassword) {
+        $.ajax({
+          type: 'POST',
+          url: './backScript.php',
+          data: formData,
+          success: function (response) {
+            // $('.alert-bell').removeClass('d-none');
+            $('.Change-Password-Alerts').html(response);
+          },
+        });
+      }
+    else {
+        $('.Change-Password-Alerts').html('Password and confirm password should be same!!');
+    }
+  }
 }

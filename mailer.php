@@ -54,7 +54,7 @@ else{
 							<div class="col d-flex justify-content-center">
 								<div class="col-sm-1 "> <i class="far fa-user-circle ms-3" style="font-size: 3rem;"></i> </div>
 								<div class="col-sm-11 ">
-									<p class="ms-1 fw-lighter text-success" style="font-size:32px;">Grievance Response</p>
+									<p class="ms-1 fw-lighter text-success" style="font-size:32px;">Mail Response</p>
 								</div>
 							</div>
 						</div>
