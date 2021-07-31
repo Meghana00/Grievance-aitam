@@ -152,7 +152,7 @@ if(isset($_POST['Register']))
 							</div>
 						</div>
 						<div class="row mt-4">
-							<div class="col-sm-6 mb-3"><a href="index.php" class="text-decoration-dark text-dark mb-3">Already an account ?</a></div>
+							<div class="col-sm-6 mb-3"><a href="index.php" class="text-decoration-none text-success fw-bold mb-3">Already an account ?</a></div>
 							<div class="col-sm-4"></div>
 							<div class="col-sm-2">
 								<button type="submit" name="Register" class="btn  btn-success border-light mb-3">Register</button>

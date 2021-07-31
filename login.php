@@ -141,9 +141,9 @@ if(isset($_POST['login']))
 									
 							</div>
 							<div class="row mt-3">
-								<div class="col-sm-6 mb-3"><a href="" class="text-decoration-dark mb-3 text-dark">Forgot Your Password ?</a></div>
+								<div class="col-sm-6 mb-3"><a href="mail.html" class="text-decoration-none mb-3 text-success fw-bold">Forgot Your Password ?</a></div>
                                  <div class="col-sm-3"></div>
-								<div class="col-sm-3"><a href="register.php?Logintype=<?php echo htmlentities($Logintype)?>" class="text-decoration-dark mb-3 text-dark ">New User?</a></div>
+								<div class="col-sm-3"><a href="register.php?Logintype=<?php echo htmlentities($Logintype)?>" class="text-decoration-none mb-3 text-success fw-bold ">New User?</a></div>
 								
 							</div>
 							
