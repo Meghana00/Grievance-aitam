@@ -382,3 +382,24 @@ if (isset($_POST['ChangePassword'])){
     }
     
 }
+
+//admin update profile
+if(isset($_POST['Update'])){
+    $FullName=$_POST['FullName'];
+    $Email=$_POST['Email'];
+    $Branch=$_POST['Branch'];
+    $Mobile=$_POST['Mobile'];
+    $Designation=$_POST['Designation'];
+    $EmpId=$_POST['EmpId'];
+   
+    $admin= mysqli_query($conn,"UPDATE  `committee` SET `FullName` ='$FullName', `Email` = '$Email', `Branch` = '$Branch', `Mobile`='$Mobile',`Designation`='$Designation',`EmpId`='$EmpId'  WHERE `Email` ='$Email'");
+    if($admin){
+
+      echo "Updated SuccessFully";
+
+    }else{
+      echo "Failed To Update Retry!!!";
+    }
+  }else{
+      echo "failed";
+  }

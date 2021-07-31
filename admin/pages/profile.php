@@ -7,8 +7,12 @@ if (!isset($_SESSION['sess_user'])) {
 $active_user = $_SESSION['sess_user'];
 $msg = "";
 $error = '';
+
+
 $admin= mysqli_query($conn,"SELECT * FROM `admin` WHERE `UserName` = '$active_user'");
 $adminRow = mysqli_fetch_array($admin);
+
+
 ?>     
      
      <div class="row justify-content-center">
@@ -29,7 +33,7 @@ $adminRow = mysqli_fetch_array($admin);
                     <div class="col-md-10">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-username">Full Name</label>
-                        <input type="text" name="FullName" id="input-username" class="form-control form-control-alternative border-success shadow-none" placeholder="Username" value="<?php echo htmlentities($adminRow['FullName'])?>" >
+                        <input type="text" id="adminFullName" name="FullName" class="form-control form-control-alternative border-success shadow-none" placeholder="Username" value="<?php echo htmlentities($adminRow['FullName'])?>" >
                       </div>
                     </div>
                   </div>
@@ -37,7 +41,7 @@ $adminRow = mysqli_fetch_array($admin);
                     <div class="col-md-10">
                       <div class="form-group">
                         <label class="form-control-label" for="input-email">Email address</label>
-                        <input type="email" name="Email" id="input-email" class="form-control form-control-alternative  border-success  shadow-none" placeholder="jesse@example.com" value="<?php echo htmlentities($adminRow['Email'])?>" >
+                        <input type="email" id="adminEmail" name="Email" class="form-control form-control-alternative  border-success  shadow-none" placeholder="jesse@example.com" value="<?php echo htmlentities($adminRow['Email'])?>" >
                       </div>
                     </div>
                   </div>
@@ -45,7 +49,7 @@ $adminRow = mysqli_fetch_array($admin);
                     <div class="col-md-10">
                       <div class="form-group">
                         <label class="form-control-label" for="input-email">Branch</label>
-                        <input type="email" name="Email" id="input-email" class="form-control form-control-alternative  border-success  shadow-none" placeholder="jesse@example.com" value="CSE">
+                        <input type="email" id="adminBranch" name="Branch" class="form-control form-control-alternative  border-success  shadow-none" placeholder="jesse@example.com" value="<?php echo htmlentities($adminRow['Branch'])?>">
                       </div>
                     </div>
                   </div>
@@ -72,19 +76,22 @@ $adminRow = mysqli_fetch_array($admin);
                     <div class="col-md-10">
                       <div class="form-group">
                         <label class="form-control-label" for="input-email">Mobile</label>
-                        <input type="email" name="Email" id="input-email" class="form-control form-control-alternative  border-success  shadow-none" placeholder="jesse@example.com" value="<?php echo htmlentities($adminRow['Mobile'])?>" >
+                        <input name="Mobile" id="adminMobile" class="form-control form-control-alternative  border-success  shadow-none" placeholder="jesse@example.com" value="<?php echo htmlentities($adminRow['Mobile'])?>" >
                       </div>
                     </div>
                   </div>  
               </form>
             </div>
             <div class="row">
-              <div class="row align-items-center mt-4">
-                <div class="col-5">
-                  
-                </div>
+            <div class=" text-success update-response"></div>
+            
+            </div>
+            <div class="row">
+              <div class="row mt-4">
+                
                 <div class="col-7 ">
-                  <a href="#!" class="btn  btn-success shadow-none">Update</a>
+                  <button type="submit" name="Update" onclick="updateprofile()" class="btn btn-success update-btn shadow-none">Update</button>
+                  <!-- <a href="#!" class="btn  btn-success shadow-none">Update</a> -->
                 </div>
               </div>
            </div>

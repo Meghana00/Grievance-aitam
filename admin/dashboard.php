@@ -2,7 +2,7 @@
 include('./../include/config.php');
 session_start();
 if(!isset($_SESSION["sess_user"])){
-	echo "<script type='text/javascript'> document.location = 'login.php'; </script>";
+	echo "<script type='text/javascript'> document.location = './../index.php'; </script>";
 	echo session_status();
 }
 else

@@ -18,11 +18,11 @@ if(isset($_POST['RegisterGrievance'])){
     $sql="INSERT INTO `grievances` (`FullName`,`RollNo`,`Gender`,`Email`,`Grievance`,`GrievanceType`,`GrievanceId`,`RegDate`) VALUES ('$FullName','$RollNo','$Gender','$Email','$Grievance','$GrievanceType','$GrievanceId','".date("Y-m-d H:i:s")."')";
     $register= mysqli_query($conn,$sql);  
     if($register){
-        echo " Registed Successfully";
+        echo " Your Grievance has been Registered Successfully !";
+    }else{
+        echo "Failed to Register Try Again Later!!";
     }
-    else{
-        echo "Failed";
-    }      
+       
 }
 ?>
 <?php
@@ -43,7 +43,7 @@ if (isset($_POST['Grievancelist']))
                     <td><?php echo htmlentities($myRequestsRow['FullName'])?></td>
                     <td><?php echo htmlentities($myRequestsRow['Grievance'])?></td>
                     <td><?php echo htmlentities($myRequestsRow['Status'])?></td>
-                    <td><?php echo htmlentities($myRequestsRow['Solution'])?></td>
+                    <td><?php echo htmlentities($myRequestsRow['GrievanceType'])?></td>
                     <td><a  onclick="GrievanceDetails(<?php echo htmlentities($myRequestsRow['GrievanceId'])?>)"   class="btn btn-success btn-sm editbtn" >Details</a></td>
                 </tr>
     <?php }?>
@@ -116,3 +116,22 @@ if (isset($_POST['ChangePassword'])){
     }
     
 }
+
+//update profile
+if(isset($_POST['Update'])){
+    $FullName=$_POST['FullName'];
+    $Email=$_POST['Email'];
+    $Branch=$_POST['Branch'];
+    $Mobile=$_POST['Mobile'];
+    $Gender=$_POST['Gender'];
+    
+   
+    $admin= mysqli_query($conn,"UPDATE  `users` SET `FullName` ='$FullName', `Email` = '$Email', `Branch` = '$Branch', `Mobile`='$Mobile',`Gender`='$Gender'  WHERE `Email` ='$Email'");
+    if($admin){
+
+      echo "Updated SuccessFully";
+
+    }else{
+      echo "Failed To Update Retry!!!";
+    }
+  }

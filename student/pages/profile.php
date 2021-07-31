@@ -29,7 +29,15 @@ $usersrow = mysqli_fetch_array($users);
                     <div class="col-md-10">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-username">Full Name</label>
-                        <input type="text" name="FullName" id="input-username" class="form-control form-control-alternative" placeholder="Username" value="<?php echo htmlentities($usersrow['FullName'])?>" >
+                        <input type="text" name="FullName" id="FullName" class="form-control form-control-alternative" placeholder="Username" value="<?php echo htmlentities($usersrow['FullName'])?>" >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-10">
+                      <div class="form-group focused">
+                        <label class="form-control-label" for="input-username"><?php if($usersrow['UserType']=='STUDENT'){ echo htmlentities("Roll Number");} ?> <?php if($usersrow['UserType']=='FACULTY'){ echo htmlentities("Employee Id");} ?></label>
+                        <input type="text"  class="form-control form-control-alternative" readonly placeholder="Username" value="<?php echo htmlentities($usersrow['RollNo'])?>" >
                       </div>
                     </div>
                   </div>
@@ -37,7 +45,7 @@ $usersrow = mysqli_fetch_array($users);
                     <div class="col-md-10">
                       <div class="form-group">
                         <label class="form-control-label" for="input-email">Email address</label>
-                        <input type="email" name="Email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com" value="<?php echo htmlentities($usersrow['Email'])?>" >
+                        <input type="email" name="Email" id="Email" class="form-control form-control-alternative" placeholder="jesse@example.com" value="<?php echo htmlentities($usersrow['Email'])?>" >
                       </div>
                     </div>
                   </div>
@@ -45,7 +53,7 @@ $usersrow = mysqli_fetch_array($users);
                     <div class="col-md-10">
                       <div class="form-group">
                         <label class="form-control-label" for="input-email">Branch</label>
-                        <input type="email" name="Email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com" value="<?php echo htmlentities($usersrow['Branch'])?>" >
+                        <input type="text" name="Email" id="Branch" class="form-control form-control-alternative" placeholder="jesse@example.com" value="<?php echo htmlentities($usersrow['Branch'])?>" >
                       </div>
                     </div>
                   </div>
@@ -53,13 +61,13 @@ $usersrow = mysqli_fetch_array($users);
                     <div class="col-lg-6">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-first-name">Gender</label>
-                        <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" value="<?php echo htmlentities($usersrow['Gender'])?>">
+                        <input type="text" id="Gender" class="form-control form-control-alternative" placeholder="First name" value="<?php echo htmlentities($usersrow['Gender'])?>">
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-last-name">UserType</label>
-                        <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value="<?php echo htmlentities($usersrow['UserType'])?>">
+                        <input type="text" id="input-last-name" class="form-control form-control-alternative" readonly placeholder="Last name" value="<?php echo htmlentities($usersrow['UserType'])?>">
                       </div>
                     </div>
                   </div>
@@ -72,19 +80,19 @@ $usersrow = mysqli_fetch_array($users);
                     <div class="col-md-10">
                       <div class="form-group">
                         <label class="form-control-label" for="input-email">Mobile</label>
-                        <input type="email" name="Email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com" value="<?php echo htmlentities($usersrow['Mobile'])?>" >
+                        <input type="text" name="Email" id="Mobile" class="form-control form-control-alternative" placeholder="jesse@example.com" value="<?php echo htmlentities($usersrow['Mobile'])?>" >
                       </div>
                     </div>
+                    <div class="row update-response"></div>
                   </div>  
               </form>
             </div>
+            <!-- <div class="row update-response"></div> -->
             <div class="card-header bg-white border-0">
-              <div class="row align-items-center">
-                <div class="col-8">
-                  
-                </div>
-                <div class="col-4 text-right">
-                  <a href="#!" class="btn btn-sm btn-primary">Update</a>
+              <div class="row ">
+                <div class="col-4 ">
+                  <button class="btn btn-success btn-md update-btn " type="button" onclick="UpdateProfile()">Update</button>
+                  <!-- <a href="#!" class="btn btn-sm btn-primary">Update</a> -->
                 </div>
               </div>
           </div>

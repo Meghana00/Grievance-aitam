@@ -77,6 +77,7 @@ function RegisterGrievance() {
     data: formData,
     success: function (response) {
       $('.Register_response').html(response);
+      $('.send-btn').hide();
     },
   });
 }
@@ -167,4 +168,24 @@ function ChangePassword() {
         $('.Change-Password-Alerts').html('Password and confirm password should be same!!');
     }
   }
+}
+///UPDATE PROFILE
+function UpdateProfile(){
+  var formData = {
+    FullName :  $('#FullName').val(),
+    Email :  $('#Email').val(),
+    Branch :  $('#Branch').val(),
+    Mobile :  $('#Mobile').val(),
+    Gender :  $('#Gender').val(),
+    Update : 'Update' ,
+  };
+  $.ajax({
+    type: 'POST',
+    url: './backScript.php',
+    data: formData,
+    success: function (response) {
+      $('.update-response').html(response);
+      $('.update-btn').hide();
+    },
+  });
 }

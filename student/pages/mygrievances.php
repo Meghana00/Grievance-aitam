@@ -67,7 +67,7 @@
 						      <th>Fullname</th>
                               <th>Grievance</th>
 						      <th>Status</th>
-                              <th>Solution</th>  
+                              <th>GrievanceType</th>  
 						      <th>Action</th>
 						    </tr>
 						  </thead>

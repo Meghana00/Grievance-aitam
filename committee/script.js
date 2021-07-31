@@ -380,3 +380,26 @@ function ChangePassword() {
     }
   }
 }
+
+////Admin Update 
+function updateprofile(){
+  var formData = {
+    FullName :  $('#FullName').val(),
+    Email :  $('#Email').val(),
+    Branch :  $('#Branch').val(),
+    Mobile :  $('#Mobile').val(),
+    EmpId :  $('#EmpId').val(),
+    Designation :  $('#Designation').val(),
+
+    Update :'Update',
+  };
+  $.ajax({
+    type: 'POST',
+    url: './backScript.php',
+    data: formData,
+    success: function (response) {
+      $('.update-response').html(response);
+      $('.update-btn').hide();
+    },
+  });
+}

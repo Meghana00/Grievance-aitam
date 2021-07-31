@@ -1,4 +1,3 @@
-
 <?PHP
 include './../include/config.php';
 session_start();
@@ -381,3 +380,20 @@ if (isset($_POST['ChangePassword'])){
     }
     
 }
+
+//admin update profile
+if(isset($_POST['Updateadmin'])){
+    $FullName=$_POST['adminFullName'];
+    $Email=$_POST['adminEmail'];
+    $Branch=$_POST['adminBranch'];
+    $Mobile=$_POST['adminMobile'];
+   
+    $admin= mysqli_query($conn,"UPDATE  `admin` SET `FullName` ='$FullName', `Email` = '$Email', `Branch` = '$Branch', `Mobile`='$Mobile' WHERE Email='$Email'");
+    if($admin){
+
+      echo "Updated SuccessFully";
+
+    }else{
+      echo "Failed To Update Retry!!!";
+    }
+  }

@@ -55,7 +55,7 @@ $row = mysqli_fetch_array($query);
 							   <h5 class="text-success fw-bold">Grievance <span>:<span></h5>
 						   </div>
 						   <div class="col-sm-3 col-md-3">
-						   <input type="text" class="form-control border-0  " value="<?php echo htmlentities($row['Grievance']) ?>">
+						   <?php echo htmlentities($row['Grievance']) ?>
 						   </div>
 						   <div class="col-sm-3 col-md-3">
 							   <h5 class="text-success fw-bold">RegDate <span>:<span></h5>
