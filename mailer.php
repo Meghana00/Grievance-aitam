@@ -61,7 +61,7 @@ else{
 						<!--end header row-->
 						<div class="row d-flex justify-content-center">
 						    <div class="col-sm-2"></div>
-							<div class="col-sm-8 text-center border mt-5 shadow shadow-regular">
+							<div class="col-sm-8 mb-5 text-center border mt-2 shadow shadow-regular">
 								<p class="ms-1 fw-lighter text-success p-5" style="font-size:32px;"><?php echo htmlentities($msg) ?></p>
 							</div>
 							<div class="col-sm-2"></div>
@@ -73,14 +73,17 @@ else{
 		</div>
 		<!-- response msg mailer end -->
 
-	<footer>
+	<!--footer-->
+	<footer class="text-center text-lg-start bg-light text-white mt-3">
 
-   
-<div class="footer-copyright text-center text-light py-1 mt-5" style="background-color:transparent;">
-		<p class="text-success fw-bold">© 2021 Copyright : <a href="https://aitamsac.in/" class="text-danger">aitamsac</a></p>
-</div>
-
+  <!-- Copyright -->
+  <div class="text-center p-2" style="background-color: #5cb85c;">
+    © 2021 Copyright: designed and developed by
+    <a class=" fw-bold text-danger" href="http://aitamsac.in/">DEVELOPER's CLUB</a>
+  </div>
+  <!-- Copyright -->
 </footer>
+	<!--end footer-->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 
