@@ -6,7 +6,7 @@ $sql1="UPDATE `users` set Status='1' where Email='$Email'";
 $query1=mysqli_query($conn,$sql1);
 if($query1){
 	echo '<script>alert("Request Sent To Management");</script>';
-	$msg="Your Mail Verification is done and Account Activation is Under Process. Once It Activated You will recieve email with crediantials ";
+	$msg="Your Mail Verification is done and Account Activation is Under Process. Once It Activated You will receive email with credentials ";
 }
 else{
 	echo '<script>alert("Request Failed");</script>';
