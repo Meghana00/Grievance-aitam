@@ -76,7 +76,7 @@ if(isset($_POST['Register']))
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<link href="./assets/css/mainstyle.css" rel="stylesheet"> </head>
 
-<body style="background:url('./assets/images/bg2.jpg'); background-repeat:no-repeat;background-position:center ;background-size:cover;">
+<body style="background:url('./assets/images/aitam_ablock.jpg'); background-repeat:no-repeat;background-position:center ;background-size:cover;">
 	<!--header-->
 	<main>
 		<nav class="navbar navbar-light bg-transparent">
@@ -170,10 +170,10 @@ if(isset($_POST['Register']))
 </div>
 		<!--end Register----------->
 		<!--footer-->
-		<footer class="text-center text-lg-start bg-light text-white">
+		<footer class="text-center text-lg-start bg-light text-white fixed-bottom">
 
   <!-- Copyright -->
-  <div class="text-center p-4" style="background-color: #5cb85c;">
+  <div class="text-center p-1" style="background-color: #5cb85c;">
     © 2021 Copyright: designed and developed by
     <a class=" fw-bold text-danger" href="http://aitamsac.in/">DEVELOPER's CLUB</a>
   </div>

@@ -32,7 +32,7 @@ else{
 	<link href="./assets/css/mainstyle.css" rel="stylesheet" /> </head>
 </head>
 
-<body>
+<body >
 	<main>
 		<nav class="navbar navbar-light bg-transparent p-4">
 			<div class="container-fluid">
@@ -74,10 +74,10 @@ else{
 		<!-- response msg mailer end -->
 
 	<!--footer-->
-	<footer class="text-center text-lg-start bg-light text-white mt-3">
+	<footer class="text-center text-lg-start bg-light text-white fixed-bottom">
 
   <!-- Copyright -->
-  <div class="text-center p-2" style="background-color: #5cb85c;">
+  <div class="text-center p-1" style="background-color: #5cb85c;">
     © 2021 Copyright: designed and developed by
     <a class=" fw-bold text-danger" href="http://aitamsac.in/">DEVELOPER's CLUB</a>
   </div>

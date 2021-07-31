@@ -94,7 +94,7 @@ if(isset($_POST['login']))
 </head>
    
 
-<body style="background:url('./assets/images/bg2.jpg'); background-repeat:no-repeat;background-position:center ;background-size:cover;">
+<body style="background:url('./assets/images/aitam_ablock.jpg'); background-repeat:no-repeat;background-position:center ;background-size:cover;">
 	<!--header-->
 	<main>
 		<nav class="navbar navbar-light bg-transparent ">
@@ -161,17 +161,15 @@ if(isset($_POST['login']))
 		</div>
 	</div>
 	<!--end login----------->
-	<!--footer-->
-	<footer class="text-center text-lg-start bg-light text-white">
+	<footer class="text-center text-lg-start bg-light text-white fixed-bottom">
 
   <!-- Copyright -->
-  <div class="text-center p-4" style="background-color: #5cb85c;">
+  <div class="text-center p-1" style="background-color: #5cb85c;">
     © 2021 Copyright: designed and developed by
     <a class=" fw-bold text-danger" href="http://aitamsac.in/">DEVELOPER's CLUB</a>
   </div>
   <!-- Copyright -->
 </footer>
-	<!--end footer-->
     
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 	<script src="./assets/js/script.js"></script>
