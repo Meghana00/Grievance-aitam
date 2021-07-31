@@ -34,7 +34,7 @@ $query=mysqli_query($conn,$sql);
                             </div>
                             <div class="col-sm-6">
                                 <div class=" mb-3 ">
-                                    <label for="Rollno" class="form-label text-dark">RollNumber</label>
+                                    <label for="Rollno" class="form-label text-dark"><?php if($usersrow['UserType']=='STUDENT'){ echo htmlentities("Roll Number");} ?> <?php if($usersrow['UserType']=='FACULTY'){ echo htmlentities("Employee Id");} ?></label>
                                     <input type="text" class="form-control  border-success shadow-none " id="RollNo" name="RollNo" placeholder="Enter Rollno"value="<?php echo htmlentities($usersrow['RollNo'])?>" readonly> </div>
                             </div>
                       </div>
@@ -72,8 +72,8 @@ $query=mysqli_query($conn,$sql);
                             </div>
                         </div>
                         <div class="row Register_response"></div>
-                        <div class="mb-3 text-center">
-                            <button name="send" type="button" onclick="RegisterGrievance()"  class="btn  btn-success shadow-none border-light ">Send</button>
+                        <div class="mb-3 text-center send-btn">
+                            <button name="send" type="button" onclick="RegisterGrievance()"  class="btn  btn-success shadow-none border-light">Send</button>
                         </div>
                       </form>
                   </div>

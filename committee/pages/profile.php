@@ -29,7 +29,7 @@ $usersrow = mysqli_fetch_array($users);
                     <div class="col-md-10">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-username">Full Name</label>
-                        <input type="text" name="FullName" id="input-username" class="form-control form-control-alternative" placeholder="Username" value="<?php echo htmlentities($usersrow['FullName'])?>" >
+                        <input type="text" name="FullName" id="FullName" class="form-control form-control-alternative" placeholder="Username" value="<?php echo htmlentities($usersrow['FullName'])?>" >
                       </div>
                     </div>
                   </div>
@@ -37,7 +37,7 @@ $usersrow = mysqli_fetch_array($users);
                     <div class="col-md-10">
                       <div class="form-group">
                         <label class="form-control-label" for="input-email">Email address</label>
-                        <input type="email" name="Email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com" value="<?php echo htmlentities($usersrow['Email'])?>" >
+                        <input type="email" name="Email" id="Email" class="form-control form-control-alternative" placeholder="jesse@example.com" value="<?php echo htmlentities($usersrow['Email'])?>" >
                       </div>
                     </div>
                   </div>
@@ -45,7 +45,7 @@ $usersrow = mysqli_fetch_array($users);
                     <div class="col-md-10">
                       <div class="form-group">
                         <label class="form-control-label" for="input-email">Branch</label>
-                        <input type="email" name="Email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com" value="<?php echo htmlentities($usersrow['Branch'])?>" >
+                        <input type="email" name="Email" id="Branch" class="form-control form-control-alternative" placeholder="jesse@example.com" value="<?php echo htmlentities($usersrow['Branch'])?>" >
                       </div>
                     </div>
                   </div>
@@ -53,13 +53,13 @@ $usersrow = mysqli_fetch_array($users);
                     <div class="col-lg-6">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-first-name">Employee Id</label>
-                        <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" value="<?php echo htmlentities($usersrow['EmpId'])?>">
+                        <input type="text" id="EmpId" class="form-control form-control-alternative" placeholder="First name" value="<?php echo htmlentities($usersrow['EmpId'])?>">
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-last-name">UserType</label>
-                        <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value="<?php echo htmlentities($usersrow['UserType'])?>">
+                        <input type="text" id="UserType" class="form-control form-control-alternative" readonly placeholder="Last name" value="<?php echo htmlentities($usersrow['UserType'])?>">
                       </div>
                     </div>
                   </div>
@@ -67,13 +67,13 @@ $usersrow = mysqli_fetch_array($users);
                     <div class="col-lg-6">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-first-name">Designation</label>
-                        <input type="text" id="input-first-name" class="form-control form-control-alternative" placeholder="First name" value="<?php echo htmlentities($usersrow['Designation'])?>">
+                        <input type="text" id="Designation" class="form-control form-control-alternative" placeholder="First name" value="<?php echo htmlentities($usersrow['Designation'])?>">
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-group focused">
                         <label class="form-control-label" for="input-last-name">Duty</label>
-                        <input type="text" id="input-last-name" class="form-control form-control-alternative" placeholder="Last name" value="<?php echo htmlentities($usersrow['Duty'])?>">
+                        <input type="text" id="Duty" class="form-control form-control-alternative" readonly placeholder="Last name" value="<?php echo htmlentities($usersrow['Duty'])?>">
                       </div>
                     </div>
                   </div>
@@ -87,20 +87,17 @@ $usersrow = mysqli_fetch_array($users);
                     <div class="col-md-10">
                       <div class="form-group">
                         <label class="form-control-label" for="input-email">Mobile</label>
-                        <input type="email" name="Email" id="input-email" class="form-control form-control-alternative" placeholder="jesse@example.com" value="<?php echo htmlentities($usersrow['Mobile'])?>" >
+                        <input type="email" name="Email" id="Mobile" class="form-control form-control-alternative" placeholder="jesse@example.com" value="<?php echo htmlentities($usersrow['Mobile'])?>" >
                       </div>
                     </div>
                   </div>  
               </form>
             </div>
-            <div class="card-header bg-white border-0">
-              <div class="row align-items-center">
-                <div class="col-8">
-                  
-                </div>
-                <div class="col-4 text-right">
-                  <a href="#!" class="btn btn-sm btn-primary">Update</a>
-                </div>
+            <duv class="row update-response"></duv>
+            <div class="card-header bg-white border-0 align-items-end">
+              <div>
+                  <button class="btn btn-md btn-success update-btn" onclick="updateprofile()" type="button">Update</button>
+                  <!-- <a href="#!" class="btn btn-sm btn-primary" >Update</a> -->
               </div>
           </div>
           

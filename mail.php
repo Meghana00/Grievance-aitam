@@ -1,3 +1,59 @@
+<?php
+session_start();
+include('include/config.php');
+$msg='';
+require './include/PHPMailer.php';
+require './include/SMTP.php';
+require './include/Exception.php';
+
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+if(isset($_POST['Verify']))
+{
+    $UserName = $_POST['UserName'];
+    $UserType= $_POST['UserType'];
+	
+    
+
+    	// $sql = "INSERT INTO `users` (`FullName`,`RollNo`,`Email`,`Branch`,`Gender`,`Mobile`,`UserType`,`Status`,`Dnt`) VALUES ('$FullName','$RollNo','$Email','$Branch','$Gender','$Mobile','$UserType','$Status','".date("Y-m-d H:i:s")."')";
+    	// $query = mysqli_query($conn,$sql);
+
+			if(isset($query))
+			{	
+				$subject="Mail Verification";
+				$mailHtml="Please confirm your account registration by clicking the button or link below:<html><br> <a href='http://localhost/grievance-aitam/mailer.php?Email=$Email'>http://localhost/grievance-aitam/mailer.php?Email=$Email'</a></html>";
+
+				$mail= new PHPMailer();
+				$mail->isSMTP();
+				$mail->Host="smtp.gmail.com";
+				$mail->SMTPAuth="true";
+				$mail->SMTPSecure="tls";
+				$mail->Port="587";
+				$mail->Username="dtearthmovers1026@gmail.com";
+				$mail->Password="anand@123";
+				$mail->Subject=$subject;
+				$mail->setFrom("dtearthmovers1026@gmail.com");
+				$mail->Body=$mailHtml;
+				$mail->addAddress($Email);
+				if($mail->send()){
+				$msg="We've just sent a verification link to $Email. Please check your inbox and click on the link to get started. If you can't find this email (which could be due to spam filters), just request a new one here.";
+				}
+				else{
+				$msg=" Mail failed";
+				}
+				$mail->smtpClose();
+
+			}
+			else
+			{
+					echo '<script>alert("Fail");</script>';
+					echo "<script type='text/javascript'> document.location = 'index.php'; </script>";
+			}
+}
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -50,7 +106,7 @@
                                 </div>
                                 <div class="mb-3 ">
                                   <label for="Password" class="form-label">UserType</label>
-                                  <select id="usertype" class="form-select  border-success shadow-none " name="UserType">
+                                  <select id="UserType" class="form-select  border-success shadow-none " name="UserType">
                                     <option value="" selected>---Select---</option>
                                     <option value="STUDENT">STUDENT</option>
                                     <option value="FACULTY">FACULTY</option>
@@ -64,8 +120,8 @@
                                 
                                 <div class="row">
                                 <div class="mt-3 text-center">
-                                    <input type="submit" name="login" value="Confirm" class="btn  btn-success border-light shadow-none w-25 mb-3">
-                                    </div>
+                                    <input type="submit" name="Verify" value="Verify" class="btn  btn-success border-light shadow-none w-25 mb-3">
+                                </div>
                                 </div>
                             </form>
                         </div>

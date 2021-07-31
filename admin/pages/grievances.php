@@ -1,5 +1,6 @@
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
+
 <div class=" overview bg-light">
         <h4 class="mt-5">Greivance Overview </h4> 
    
@@ -85,6 +86,7 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script> 
 <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+
 <script>
    $(document).ready(function() {
     $('#Grievances').DataTable( {

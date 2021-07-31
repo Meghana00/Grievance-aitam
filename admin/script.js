@@ -195,7 +195,11 @@ function  Grievancelist(){
     url: './backScript.php',
     data: formData,
     success: function (response) {
-      
+      // data = JSON.parse(response);
+ 
+      // $('#Grievances').DataTable( {
+      //         data: data,
+      // } );
       $('.Grievance-response').html(response);
     },
   });
@@ -379,4 +383,24 @@ function ChangePassword() {
         $('.Change-Password-Alerts').html('Password and confirm password should be same!!');
     }
   }
+}
+////Admin Update 
+function updateprofile(){
+  var formData = {
+    adminFullName :  $('#adminFullName').val(),
+    adminEmail :  $('#adminEmail').val(),
+    adminBranch :  $('#adminBranch').val(),
+    adminMobile :  $('#adminMobile').val(),
+
+    Updateadmin :'Updateadmin',
+  };
+  $.ajax({
+    type: 'POST',
+    url: './backScript.php',
+    data: formData,
+    success: function (response) {
+      $('.update-response').html(response);
+      $('.update-btn').hide();
+    },
+  });
 }
