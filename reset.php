@@ -1,4 +1,37 @@
+<?php 
+session_start();
+include('include/config.php');
+$msg='';
+$msg1='';
+if(isset($_POST['Reset']))
+{
+    $UserName = $_GET['UserName'];
+    $UserType= $_GET['UserType'];
+    // echo $UserType;
+	$Password=$_POST['Password'];
+    $ConfirmPassword=$_POST['ConfirmPassword'];
+    if($Password==$ConfirmPassword){
 
+        if($UserType=='ADMIN'){
+            $sql="UPDATE `admin` SET `Password`='$ConfirmPassword' WHERE `UserName`= '$UserName' ";   
+        }elseif($UserType=="COMMITTEE"){
+            $sql="UPDATE `committee` SET `Password`='$ConfirmPassword' WHERE `UserName`= '$UserName' ";
+        }elseif($UserType=='STUDENT'||'FACULTY'||'PARENT'){
+            $sql="UPDATE `users` SET `Password`='$ConfirmPassword' WHERE `UserName`= '$UserName' ";
+        }
+
+        $query = mysqli_query($conn,$sql);
+        if ($query) {
+            $msg="Password Reset Successful";
+        }else{
+            $msg="Password Reset Failed Try Again!!";
+        }
+
+    }else{
+        $msg1="Password And ConfirmPassword Must Match";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,18 +78,33 @@
                             <form method="POST" >
                                 <div class="mb-3 mt-2">
                                   <label for="Email" class="form-label">New Password</label>
-                                  <input type="password" name="resetnewpassword" class="form-control border-success shadow-none " id="Email" aria-describedby="emailHelp">
+                                  <input type="password" name="Password" class="form-control border-success shadow-none " id="Email" aria-describedby="emailHelp">
                                   
                                 </div>
                                 <div class="mb-3 ">
                                   <label for="Password" class="form-label">Confirm Password</label>
-                                  <input type="password" name="confirmnewpassword" class="form-control border-success shadow-none " id="Email" aria-describedby="emailHelp">
+                                  <input type="password" name="ConfirmPassword" class="form-control border-success shadow-none " id="Email" aria-describedby="emailHelp">
                                
                                 </div>
+                                <div class="row mt-3 text-danger fw-bold">
+                                    <?php if ($msg1) {
+                                        echo htmlentities($msg1);
+                                    } ?>
+                                </div>
+                                <div class="row mt-3 text-danger fw-bold"><?php if ($msg) {
+									echo htmlentities($msg);
+								} ?></div>
+                                
                                 <div class="row">
+								<?php if($msg) {?>	
+								<div class="mt-3 text-center">
+									<a href="index.php" class="btn  btn-success border-light shadow-none w-25 mb-3 "> Home </a>
+								</div>
+								<?php }else {?>
                                 <div class="mt-3 text-center">
-                                    <input type="submit" name="login" value="Reset" class="btn  btn-success border-light shadow-none w-25 mb-3">
-                                    </div>
+                                    <input type="submit" name="Reset" value="Reset" class="btn  btn-success border-light shadow-none w-25 mb-3">
+                                </div>
+								<?php }?>
                                 </div>
                             </form>
                         </div>

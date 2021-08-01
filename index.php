@@ -43,10 +43,10 @@
     <div class="">
         <article>
     
-            <div class="lab_item">		
-            <div class="hexagon hexagon2">
+            <div class="lab_item" >		
+            <div class="hexagon hexagon2 ">
                 <div class="hexagon-in1">
-                    <div class="hexagon-in2" >
+                    <div class="hexagon-in2" style="opacity: 0.85;" >
                         <a class="hexLink" href="login.php?Logintype=ADMIN">
                             <img src="./assets/images/admin.png" class="img-fluid" alt="admin" width="110" height="100" >
                             <p class="text-center mt-1">Admin </p>
@@ -58,7 +58,7 @@
               <div class="lab_item">
               <div class="hexagon hexagon2">
                 <div class="hexagon-in1">
-                    <div class="hexagon-in2" >
+                    <div class="hexagon-in2" style="opacity: 0.85;">
                         <a class="hexLink" href="login.php?Logintype=STUDENT">
                             <img src="./assets/images/graduate.png" class="img-fluid" alt="admin" width="110" height="100" >
                             <p class="text-center mt-1">students </p>
@@ -70,7 +70,7 @@
      <div class="lab_item">
               <div class="hexagon hexagon2">
                 <div class="hexagon-in1">
-                    <div class="hexagon-in2" >
+                    <div class="hexagon-in2" style="opacity: 0.85;">
                         <a class="hexLink" href="login.php?Logintype=PARENT">
                             <img src="./assets/images/family.png" class="img-fluid" alt="admin" width="110" height="100" >
                             <p class="text-center mt-1">Parents</p>
@@ -82,7 +82,7 @@
      <div class="lab_item">
               <div class="hexagon hexagon2">
                 <div class="hexagon-in1">
-                    <div class="hexagon-in2" >
+                    <div class="hexagon-in2" style="opacity: 0.85;" >
                         <a class="hexLink" href="login.php?Logintype=FACULTY">
                             <img src="./assets/images/classroom.png" class="img-fluid" alt="admin" width="110" height="100" >
                             <p class="text-center mt-1">Faculty </p>
@@ -94,7 +94,7 @@
                   <div class="lab_item">        
             <div class="hexagon hexagon2">
                 <div class="hexagon-in1">
-                    <div class="hexagon-in2" >
+                    <div class="hexagon-in2" style="opacity: 0.85;">
                         <a class="hexLink" href="login.php?Logintype=COMMITEE">
                             <img src="./assets/images/group.png" class="img-fluid" alt="admin" width="110" height="100" >
                             <p class="text-center">Grievance Committee</p>
@@ -106,7 +106,7 @@
               <div class="lab_item">
               <div class="hexagon hexagon2">
                 <div class="hexagon-in1">
-                    <div class="hexagon-in2" >
+                    <div class="hexagon-in2" style="opacity: 0.85;">
                         <a class="hexLink" href="contact.html">
                             <img src="./assets/images/help-desk.png" class="img-fluid" alt="admin" width="110" height="100" >
                             <p class="text-center mt-1">Help </p>
@@ -118,7 +118,7 @@
               <div class="lab_item">
               <div class="hexagon hexagon2">
                 <div class="hexagon-in1">
-                    <div class="hexagon-in2" >
+                    <div class="hexagon-in2" style="opacity: 0.85;">
                         <a class="hexLink" href="contact.html">
                             <img src="./assets/images/agenda.png" class="img-fluid" alt="admin" width="110" height="100" >
                             <p class="text-center mt-1">Contact Us </p>
