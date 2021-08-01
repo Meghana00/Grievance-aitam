@@ -1,93 +1,91 @@
-
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
-<div class=" overview bg-light">
-        <h4 class="mt-5">Greivance Overview </h4> 
-   
-            <div class="container mt-3">
-                <div class="row">
-                    <div class="col-md-4 col-xl-3">
-                        <div class="card bg-c-blue order-card">
-                            <div class="card-block">
-                                <h6 class="m-b-20">Greivances Rejected</h6>
-                                <h2 class="order-card "><i class="fa fa-th-list" aria-hidden="true"></i><span class="f-right Rejected"></span></h2>
-                               
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4 col-xl-3">
-                        <div class="card bg-c-green order-card">
-                            <div class="card-block">
-                                <h6 class="m-b-20">Greivances Open</h6>
-                                <h2 class=" order-card"><i class="fa fa-th-list" aria-hidden="true"></i><span class="f-right Open" ></span></h2>
-                               
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4 col-xl-3">
-                        <div class="card bg-c-yellow order-card">
-                            <div class="card-block">
-                                <h6 class="m-b-20">Greivances Closed</h6>
-                                <h2 class=" order-card"><i class="fa fa-th-list" aria-hidden="true"></i><span class="f-right Closed"></span></h2>
-                               
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-md-4 col-xl-3">
-                        <div class="card bg-c-pink order-card">
-                            <div class="card-block">
-                                <h6 class="m-b-20">Greivances Reopened</h6>
-                                <h2 class=" order-card"><i class="fa fa-th-list" aria-hidden="true"></i><span class="f-right Reopened"></span></h2>
-                               
-                            </div>
-                        </div>
-                    </div>
+<div class="row justify-content-center">
+        <div class="col-sm-8  overview text-dark">
+          <div class="card bg-white text-success shadow">
+            <div class="card-header bg-white border-0">
+              <div class="row align-items-center">
+                <div class="col-8">
+                  <h3 class="mb-0 text-success fw-bold">Genrate Report</h3>
                 </div>
+              </div>
             </div>
-    </div>
-	<!-- table start -->
-<section class="">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-md-6 text-center mb-5">
-					<h2 class="heading-section">Grievence List</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-14">
-					<div class="table-wrap">
-                        <table class="table display" id="Grievances"  style="width: 100%;">
-						  <thead>
-						    <tr>
-						      <th>Slno</th>
-                              <th>GrievanceId</th>
-						      <th>Email</th>
-						      <th>Fullname</th>
-                              <th>Grievance</th>
-						      <th>Status</th>
-                              <th>Solution</th>  
-						      <th>Action</th>
-						    </tr>
-						  </thead>
-						  <tbody class="Grievance-response">
-						  </tbody>
-                          
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- table end-->
-    
+            <div class="card-body">
+              <form method="POST" action="pdf.php" target="_blank">
+                <h6 class="heading-small text-success fw-bold mb-4">Select Report Type</h6>
+                <div class="pl-lg-4">
+                  <div class="row">
+                    <div class="col-md-10 text-dark" id="repo">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="radiobtn" value="Short"  id="Short">
+                            <label class="form-check-label" for="radiobtn1">
+                                Short Report
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="radiobtn" value="Long"  id="Long">
+                            <label class="form-check-label" for="radiobtn2">
+                                Long Report
+                            </label>
+                        </div>
+                        <div class="mt-3 mb-3">
+                            <button class="btn btn-success" onclick="reporttype()" type="button">Submit</button>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="ReportType" name="ReportType" class="form-control form-control-alternative  border-success  shadow-none" >
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <hr class="my-2">
 
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script> 
-<script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
-<script>
-   $(document).ready(function() {
-    $('#Grievances').DataTable( {
-    } );
-} );
-</script>
+                <h6 class="heading-small text-success fw-bold mb-4">Select Period</h6>
+                <div class="pl-lg-4">
+                <div class="row">
+                    <div class="col-md-10">
+                      <div class="form-group">
+                        <label class="form-control-label">From</label>
+                        <input name="From" type="date" id="From" class="form-control form-control-alternative  border-success  shadow-none"   >
+                      </div>
+                    </div>
+                </div> 
+                <div class="row">
+                    <div class="col-md-10">
+                      <div class="form-group">
+                        <label class="form-control-label">To</label>
+                        <input name="To" type="date" id="To" class="form-control form-control-alternative  border-success  shadow-none"   >
+                      </div>
+                    </div>
+                </div> 
+              
+            </div>
+            <div class="row">
+            <div class=" text-success update-response"></div>
+            
+            </div>
+            <div class="row">
+              <div class="row mt-4">
+                
+                <div class="col-7 ">
+                  <input type="submit" name="Download" value="Download" class="btn btn-success update-btn shadow-none"></input>
+                </div>
+              </div>
+           </div>
+           </form>
+          
+        </div>
+    </div> 
+    <script>
+    function reporttype(){    
+    
+        var ele = document.getElementsByName('radiobtn');
+            
+        for(i = 0; i < ele.length; i++) {
+            if(ele[i].checked){
+                ReportType=  ele[i].value;
+            }
+        }
+    
+        var modalBodyInput = repo.querySelector('#ReportType')
+        modalBodyInput.value = ReportType;
+        
+    }
+    </script>

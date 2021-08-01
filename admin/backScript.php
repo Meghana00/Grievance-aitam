@@ -215,11 +215,17 @@ if (isset($_POST['memberslist']))
 }
 // Redressing the Complaint
 if (isset($_POST['Redress']))
-{
+{   $active_user = $_SESSION['sess_user'];
+    $sql1="SELECT * FROM `admin` WHERE `UserName` = '$active_user'";
+   
+    $query2=mysqli_query($conn,$sql1);
+    $row1=mysqli_fetch_array($query2);
+    $RedressedBy=$row1['FullName'];
+
     $GrievanceId=$_POST['GrievanceId'];
     $Solution=$_POST['Solution'];
     date_default_timezone_set("Asia/Calcutta");
-    $sql = "UPDATE  `grievances` SET `Solution` = '$Solution', `Status` = 'Closed', `SolDate` = '".date("d-m-Y H:i:s")."' WHERE GrievanceId='$GrievanceId'";
+    $sql = "UPDATE  `grievances` SET `Solution` = '$Solution', `Status` = 'Closed', `SolDate` = '".date("d-m-Y H:i:s")."', `RedressedBy`= '$RedressedBy' WHERE GrievanceId='$GrievanceId'";
     $query=mysqli_query($conn,$sql);
     if($query==true){
         echo "Action Taken";
@@ -396,4 +402,85 @@ if(isset($_POST['Updateadmin'])){
     }else{
       echo "Failed To Update Retry!!!";
     }
+  }
+
+  //////genrating the reports
+  if(isset($_POST['Download'])){
+    $From=$_POST['From'];
+    $To=$_POST['To'];
+    $ReportType=$_POST['ReportType'];
+    if($ReportType=='Short') {
+       if($From!='' && $To!=''){
+            $sql="SELECT * From `grievances` where `Status`!='Rejected' AND `Regdate` BETWEEN $From AND $To ";
+            $query=mysqli_query($conn,$sql);
+            
+
+       }else{
+           $sql="SELECT * FROM `grievances` where `Status`!='Rejected'";
+       }
+    }elseif($ReportType=='Long'){
+        if($From!='' && $To!=''){
+            $sql="SELECT * From `grievances` where `Status`!='Rejected' AND `Regdate` BETWEEN $From AND $To ";
+            $query=mysqli_query($conn,$sql);
+       }else{
+           $sql="SELECT * FROM `grievances` where `Status`!='Rejected'";
+           $query=mysqli_query($conn,$sql);
+       }
+
+       if(mysqli_num_rows($query)>0){
+            $html='<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+                    <div class="row">
+                    
+                    <div class="text-success fw-bold"><img src="../assets//images/aitamlogo.png" height="30px;" alt="aitam">  AITAM GRIEVANCE REDRESSAL PORTAL</div>
+                    </div>
+					<h2 class="heading-section">Grievence List</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-14">
+					<div class="table">
+                        <table class="table display" id="Grievances"  style="width: 100%;">
+						  <thead>
+						    <tr>
+						      <th>Slno</th>
+                              <th>GrievanceId</th>
+						      <th>Email</th>
+						      <th>Fullname</th>
+                              <th>Grievance</th>
+						      <th>Status</th>
+                              <th>GrievanceType</th>
+						    </tr>
+						  </thead>
+						  <tbody>';
+                          while($row = mysqli_fetch_array($query)){
+                           $html.= '<tr>
+                                <td>'.$row['SlNo'].'</td>
+                                <td>'.$row['GrievanceId'].'</td>
+                                <td>'.$row['Email'].'</td>
+                                <td>'.$row['FullName'].'</td>
+                                <td>'.$row['Grievance'].'</td>
+                                <td>'.$row['Status'].'</td>
+                                <td>'.$row['GrievanceType'].'</td>
+                                </tr>';
+                            }
+						  $html.='</tbody>
+                          
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>';
+        
+       }else{
+           $html ="no data found";
+       }
+       
+    }
+    require('vendor/autoload.php');
+        $mpdf=new \Mpdf\Mpdf();
+        $mpdf->WriteHTML('Hello world');
+        $file=time().'.pdf';
+        $mpdf->output($file,'I');
   }

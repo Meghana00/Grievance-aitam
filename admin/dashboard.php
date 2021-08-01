@@ -36,7 +36,7 @@ else
 
 <body oncontextmenu='return false' class='snippet-body body-pd'>
 <body id="body-pd" onload="ajaxProfilePageCall()">
-
+<img src="" alt="">
 
     <header class="header body-pd" id="header">
         <!-- <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div> -->

@@ -55,7 +55,7 @@ $row = mysqli_fetch_array($query);
 							   <h5 class="text-success fw-bold">Grievance <span>:<span></h5>
 						   </div>
 						   <div class="col-sm-3 col-md-3">
-						   <input type="text" class="form-control border-0  " value="<?php echo htmlentities($row['Grievance']) ?>">
+						   <?php echo htmlentities($row['Grievance'])?>
 						   </div>
 						   <div class="col-sm-3 col-md-3">
 							   <h5 class="text-success fw-bold">RegDate <span>:<span></h5>
@@ -100,8 +100,17 @@ $row = mysqli_fetch_array($query);
 							   <h5 class="text-success fw-bold">Solution <span>:<span></h5>
 							  
 						   </div>
-						   <div class="col-sm-9 col-md-9">
+						   <div class="col-sm-3 col-md-9">
 							   <input type="textarea" class="form-control border-0 " rows="4" cols="100" value="<?php echo htmlentities($row['Solution']) ?>">
+						   </div>
+					   </div>
+					   <div class="row mb-3">
+						   <div class="col-sm-3 col-md-3">
+							   <h5 class="text-success fw-bold">RedressedBy <span>:<span></h5>
+							  
+						   </div>
+						   <div class="col-sm-3 col-md-3">
+							   <input type="textarea" class="form-control border-0 " rows="4" cols="100" value="<?php echo htmlentities($row['RedressedBy']) ?>">
 						   </div>
 					   </div>
 					   <?php if ($row['Status'] == 'Open'||$row['Status'] == 'Reopened') {

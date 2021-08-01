@@ -76,10 +76,17 @@ if (isset($_POST['Grievancelist']))
 // Redressing the Complaint
 if (isset($_POST['Redress']))
 {
+    $active_user = $_SESSION['sess_user'];
+    $sql1="SELECT * FROM `committee` WHERE `UserName` = '$active_user'";
+   
+    $query2=mysqli_query($conn,$sql1);
+    $row1=mysqli_fetch_array($query2);
+    $RedressedBy=$row1['FullName'];
+
     $GrievanceId=$_POST['GrievanceId'];
     $Solution=$_POST['Solution'];
     date_default_timezone_set("Asia/Calcutta");
-    $sql = "UPDATE  `grievances` SET `Solution` = '$Solution', `Status` = 'Closed', `SolDate` = '".date("d-m-Y H:i:s")."' WHERE GrievanceId='$GrievanceId'";
+    $sql = "UPDATE  `grievances` SET `Solution` = '$Solution', `Status` = 'Closed', `SolDate` = '".date("d-m-Y H:i:s")."', `RedressedBy`= '$RedressedBy' WHERE GrievanceId='$GrievanceId'";
     $query=mysqli_query($conn,$sql);
     if($query==true){
         echo "Action Taken";

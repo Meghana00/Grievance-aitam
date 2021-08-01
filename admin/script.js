@@ -404,3 +404,21 @@ function updateprofile(){
     },
   });
 }
+
+// ///genrating report
+// function report(){
+//   var formData = {
+//     From :  $('#From').val(),
+//     To :  $('#To').val(),
+//     ReportType :  $('#ReportType').val(),
+//     Download :'Download',
+//   };
+//   $.ajax({
+//     type: 'POST',
+//     url: './pdf.php',
+//     data: formData,
+//     success: function (response) {
+//       window.open();
+//     },
+//   });
+// }
