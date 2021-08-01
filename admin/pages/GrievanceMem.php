@@ -158,7 +158,7 @@ for (var i=0, n=checkboxes.length;i<n;i++)
 {
     if (checkboxes[i].checked) 
     {
-        vals += ","+checkboxes[i].value;
+        vals +=",'"+checkboxes[i].value+"'";
     }
 }
 if (vals) vals = vals.substring(1);
