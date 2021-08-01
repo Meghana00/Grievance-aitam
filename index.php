@@ -16,7 +16,7 @@
 	<link href="./assets/css/mainstyle.css" rel="stylesheet"> </head>
 
 </head>
-<body style="background:url('./assets/images/bg2.jpg'); background-repeat:no-repeat;background-position:center ;background-size:cover;">
+<body style="background:url('./assets/images/aitam_ablock.jpg'); background-repeat:no-repeat;background-position:center ;background-size:cover;">
 <main>
         <nav class="navbar navbar-light bg-transparent">
     <div class="container-fluid">
@@ -137,10 +137,10 @@
     <!--end hex grid layout------------>
 
     <!-- Footer -->
-<footer class="text-center text-lg-start bg-light text-white">
+<footer class="text-center text-lg-start bg-light text-white fixed-bottom">
 
   <!-- Copyright -->
-  <div class="text-center p-4" style="background-color: #5cb85c;">
+  <div class="text-center p-1" style="background-color: #5cb85c;">
     © 2021 Copyright: designed and developed by
     <a class=" fw-bold text-danger" href="http://aitamsac.in/">DEVELOPER's CLUB</a>
   </div>
