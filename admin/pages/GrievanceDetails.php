@@ -13,107 +13,77 @@ $query= mysqli_query($conn,"SELECT * FROM `grievances` WHERE `GrievanceId` = $Gr
 $row = mysqli_fetch_array($query);
 ?>    
    <!--Grievance details--->
-
-   <div class="container mt-5">
-		   <div class="row">
-			   <div class="card mt-5 shadow rounded" >
-				   <div class="card-body" >
-					   <div class="row">
-						   <h2 class="mt-3 mb-5 text-center text-success fw-bold">Grievance Details</h2>
-						</div>
-					    <div class="row mb-3">
-						   <div class="col-sm-3 col-md-3">
-							   <h5 class="text-success fw-bold">Fullname <span>:<span></h5>
-						   </div>
-						   <div class="col-sm-3 col-md-3">
-						   <input type="text" class="form-control border-0  " value="<?php echo htmlentities($row['FullName']) ?>" >
-						   </div>
-						   <div class="col-sm-3 col-md-3">
-							   <h5 class="text-success fw-bold">Rollno <span>:<span></h5>
-						   </div>
-						   <div class="col-sm-3 col-md-3">
-						   <input type="text" class="form-control border-0  " value="<?php echo htmlentities($row['RollNo']) ?>">
-						   </div>
-					   </div>
-					   <div class="row mb-3">
-						   <div class="col-sm-3 col-md-3">
-							   <h5 class="text-success fw-bold">Gender <span>:<span></h5>
-						   </div>
-						   <div class="col-sm-3 col-md-3">
-						   <input type="text" class="form-control border-0  " value="<?php echo htmlentities($row['Gender']) ?>" >
-						   </div>
-						   <div class="col-sm-3 col-md-3">
-							   <h5 class="text-success fw-bold">Email <span>:<span></h5>
-						   </div>
-						   <div class="col-sm-3 col-md-3">
-						   <input type="text" class="form-control border-0  " value="<?php echo htmlentities($row['Email']) ?>" >
-						   </div>
-
-					   </div>
-					   <div class="row mb-3">
-						   <div class="col-sm-3 col-md-3">
-							   <h5 class="text-success fw-bold">Grievance <span>:<span></h5>
-						   </div>
-						   <div class="col-sm-3 col-md-3">
-						   <?php echo htmlentities($row['Grievance'])?>
-						   </div>
-						   <div class="col-sm-3 col-md-3">
-							   <h5 class="text-success fw-bold">RegDate <span>:<span></h5>
-						   </div>
-						   <div class="col-sm-3 col-md-3">
-						   <input type="text" class="form-control border-0  " value="<?php echo htmlentities($row['RegDate']) ?>" >
-						   </div>
-
-					   </div>
-					   <div class="row mb-3">
-						   <div class="col-sm-3 col-md-3">
-							   <h5 class="text-success fw-bold">Redressed On <span>:<span></h5>
-						   </div>
-						   <div class="col-sm-3 col-md-3">
-						   <input type="text" class="form-control border-0  " value="<?php echo htmlentities($row['SolDate']) ?>" >
-						   </div>
-						   <div class="col-sm-3 col-md-3">
-							   <h5 class="text-success fw-bold">Status <span>:<span></h5>
-						   </div>
-						   <div class="col-sm-3 col-md-3">
-						   <input type="text" class="form-control border-0  " value="<?php echo htmlentities($row['Status']) ?>" >
-						   </div>
-
-					   </div>
-					   <div class="row mb-3">
-						   <div class="col-sm-3 col-md-3">
-							   <h5 class="text-success fw-bold">GrievanceId <span>:<span></h5>
-						   </div>
-						   <div class="col-sm-3 col-md-3">
-						   <input type="text" class="form-control border-0  " value="<?php echo htmlentities($row['GrievanceId']) ?>" >
-						   </div>
-						   <div class="col-sm-3 col-md-3">
-							   <h5 class="text-success fw-bold">GrievanceType <span>:<span></h5>
-						   </div>
-						   <div class="col-sm-3 col-md-3">
-						   <input type="text" class="form-control border-0  " value="<?php echo htmlentities($row['GrievanceType']) ?>" >
-						   </div>
-
-					   </div>
-					   <div class="row mb-3">
-						   <div class="col-sm-3 col-md-3">
-							   <h5 class="text-success fw-bold">Solution <span>:<span></h5>
+    <!--Bootstrap Basic Table using .table class-->
+		<div class="container">
+			<div class="row mt-2">
+				<div class="card shadow rounded col-12">
+					<div class="card-body">
+						<h1 class=" text-success text-center">Grievance Details</h1>
+						<div class="table-responsive">
+						<table class="table  table-striped">  
 							  
-						   </div>
-						   <div class="col-sm-9 col-md-9">
-							   <input type="textarea" class="form-control border-0 " rows="4" cols="100" value="<?php echo htmlentities($row['Solution']) ?>">
-						   </div>
-					   </div>
-					   <?php if ($row['Status'] == 'Open'||$row['Status'] == 'Reopened') {
-					   ?>
-					   <div class="mb-3 mt-5">
-					   <button class="btn  btn-success " data-bs-toggle="modal" data-bs-target="#Redress">Take Action</button>
-					   <button class="btn  btn-danger "  data-bs-toggle="modal" data-bs-target="#rejectGrievance"> Reject </button>
-					   <?php } ?>
-				   </div>
-			   </div>
-		   </div>
-	   </div>
+							<tbody>  
+								<tr>
+									<td class="p-4 fw-bold "><span class="text-success">UserType</span></td>  
+									<td class="p-4 fw-bold"><?php echo htmlentities($row['UserType']) ?></td>  
+								</tr>
+								<tr >  
+									<td class="p-4 fw-bold"><span class="text-success">FullName</span></td>  
+									<td class="p-4 fw-bold"><?php echo htmlentities($row['FullName']) ?></td>  
+									<td class="p-4 fw-bold"><span  class="text-success">Roll no</span></td>  
+									<td class="p-4 fw-bold"><?php echo htmlentities($row['RollNo']) ?></td>  
+								</tr> 
+								<tr>  
+									<td class="p-4 fw-bold"><span class="text-success">Grivanceceld</span></td>  
+									<td class="p-4 fw-bold"><?php echo htmlentities($row['GrievanceId']) ?></td>  
+									<td class="p-4 fw-bold"><span  class="text-success">Email</span></td>  
+									<td class="p-4 fw-bold"><?php echo htmlentities($row['Email']) ?></td>  
+								</tr> 
+								<tr>  
+									<td class="p-4 fw-bold"><span class="text-success">Grievance</span></td>  
+									<td class="p-4 fw-bold"><?php echo htmlentities($row['Grievance'])?></td>  
+									<td class="p-4 fw-bold"><span  class="text-success">RegDate</span></td>  
+									<td class="p-4 fw-bold"><?php echo htmlentities($row['RegDate']) ?></td>  
+								</tr> 
+								
+								<tr>  
+									<td class="p-4 fw-bold"><span class="text-success">Gender</span></td>  
+									<td class="p-4 fw-bold"><?php echo htmlentities($row['Gender']) ?></td>  
+									<td class="p-4 fw-bold"><span  class="text-success">Grievence Type</span></td>  
+									<td class="p-4 fw-bold"><?php echo htmlentities($row['GrievanceType']) ?></td>  
+								</tr> 
+								<tr>  
+									<td class="p-4 fw-bold"><span class="text-success">Status</span></td>  
+									<td class="p-4 fw-bold"><?php echo htmlentities($row['Status']) ?></td>  
+									<td class="p-4 fw-bold"><span class="text-success">Solution</span></td>  
+									<td class="p-4 fw-bold"><?php echo htmlentities($row['Solution']) ?></td>   
+								</tr>   
+								<tr>  
+									<td class="p-4 fw-bold"><span class="text-success">Redressed On</span></td>  
+									<td class="p-4 fw-bold"><?php echo htmlentities($row['SolDate']) ?></td>  
+									<td class="p-4 fw-bold"><span  class="text-success">RedressedBy</span></td>  
+									<td class="p-4 fw-bold"><?php echo htmlentities($row['RedressedBy']) ?></td>  
+								</tr> 
+								
+							</tbody>  
+							<tfoot>
+							<tr>
+								<?php if ($row['Status'] == 'Open'||$row['Status'] == 'Reopened') {
+									?>
+									<button class="btn  btn-success " data-bs-toggle="modal" data-bs-target="#Redress">Take Action</button>
+									<button class="btn  btn-danger "  data-bs-toggle="modal" data-bs-target="#rejectGrievance"> Reject </button>
+									<?php } ?>
+								</tr>
+							</tfoot>
+						</table>
+						</div>  
+
+					</div>
+				</div>
+			</div>
+		</div>  
+
+  
 
 <!-- Modal -->
 <div class="modal fade" id="Redress" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

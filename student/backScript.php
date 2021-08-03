@@ -12,10 +12,11 @@ if(isset($_POST['RegisterGrievance'])){
     $RollNo=$conn -> real_escape_string($_POST['RollNo']);
     $Gender=$conn -> real_escape_string($_POST['Gender']);
     $Email=$conn -> real_escape_string($_POST['Email']);
+    $User=$conn -> real_escape_string($_POST['User']);
     $Grievance=$conn -> real_escape_string($_POST['Grievance']);
     $GrievanceType=$conn -> real_escape_string($_POST['GrievanceType']);
     $GrievanceId=rand(111111111,999999999);
-    $sql="INSERT INTO `grievances` (`FullName`,`RollNo`,`Gender`,`Email`,`Grievance`,`GrievanceType`,`GrievanceId`,`RegDate`) VALUES ('$FullName','$RollNo','$Gender','$Email','$Grievance','$GrievanceType','$GrievanceId','".date("Y-m-d H:i:s")."')";
+    $sql="INSERT INTO `grievances` (`FullName`,`RollNo`,`Gender`,`Email`,`UserType`,`Grievance`,`GrievanceType`,`GrievanceId`,`RegDate`) VALUES ('$FullName','$RollNo','$Gender','$Email','$User','$Grievance','$GrievanceType','$GrievanceId','".date("Y-m-d H:i:s")."')";
     $register= mysqli_query($conn,$sql);  
     if($register){
         echo " Your Grievance has been Registered Successfully !";

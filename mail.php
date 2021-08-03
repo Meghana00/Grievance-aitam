@@ -153,8 +153,8 @@ if(isset($_POST['Verify']))
 
 <!-- Copyright -->
 <div class="text-center p-1" style="background-color: #5cb85c;">
-  © 2021 Copyright: designed and developed by
-  <a class=" fw-bold text-danger" href="http://aitamsac.in/">DEVELOPER's CLUB</a>
+  © 2021 Copyright: Designed and Developed by Developers Club of 
+  <a class=" fw-bold text-danger" href="http://aitamsac.in/">AITAM SAC</a>
 </div>
 <!-- Copyright -->
 </footer>

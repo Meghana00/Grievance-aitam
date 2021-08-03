@@ -65,6 +65,7 @@ function RegisterGrievance() {
     RollNo: $('#RollNo').val(),
     Gender: $('#Gender').val(),
     Email: $('#Email').val(),
+    User: $('#User').val(),
     Grievance: $('#Grievance').val(),
     GrievanceType: $('#GrievanceType').val(),
     

@@ -173,11 +173,11 @@ if(isset($_POST['Register']))
 		<footer class="text-center text-lg-start bg-light text-white fixed-bottom">
 
   <!-- Copyright -->
-  <div class="text-center p-1" style="background-color: #5cb85c;">
-    © 2021 Copyright: designed and developed by
-    <a class=" fw-bold text-danger" href="http://aitamsac.in/">DEVELOPER's CLUB</a>
-  </div>
-  <!-- Copyright -->
+<div class="text-center p-1" style="background-color: #5cb85c;">
+  © 2021 Copyright: Designed and Developed by Developers Club of 
+  <a class=" fw-bold text-danger" href="http://aitamsac.in/">AITAM SAC</a>
+</div>
+<!-- Copyright -->
 </footer>
 		<!--end footer-->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

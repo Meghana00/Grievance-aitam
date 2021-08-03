@@ -58,9 +58,13 @@ else
                     <a href="#" onclick="ajaxReportsPageCall()" class="nav_link"> <i class='bx bx-bar-chart-alt-2 nav_icon'></i> <span class="nav_name">Reports</span> </a>
                     <a href="#" onclick="ajaxChangePassPageCall()" class="nav_link"> <i class='bx bx-key'></i> <span class="nav_name">Change Password</span> </a>
                 </div>
+                <!-- <a class=" fw-bold m-0 nav_link" href="http://aitamsac.in/"> © 2021 Copyright: <br> and Developed by Developers Club of <br>AITAM SAC</a> -->
             </div>
+           
             <a href="./../logout.php" class="nav_link"> <i class='bx bx-log-out nav_icon'></i> <span class="nav_name">SignOut</span> </a>
         </nav>
+       
+</div>
     </div>
     <!--Container Main start-->
     <!--Container Main end-->

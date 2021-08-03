@@ -92,8 +92,6 @@ function ajaxChangePassPageCall(){
 //inactive accounts response
 function accountactivationresponse() {
   var formData = {
-    From: $('#From').val(),
-    To: $('#To').val(),
     accountactivationresponse: 'accountactivationresponse',
   };
   $.ajax({
@@ -108,6 +106,7 @@ function accountactivationresponse() {
 
 //Toactivate and send mail
 function ActivateUser(){
+  $('.activate-response').html('Loading...');
   var formData = {
     Email: $('#Email').val(),
     Password: $('#Password').val(),

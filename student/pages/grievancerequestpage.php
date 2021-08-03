@@ -52,6 +52,12 @@ $query=mysqli_query($conn,$sql);
                                     <input type="email" class="form-control border-success  shadow-none " id="Email" name="Email" placeholder="youremail@domain.com" value="<?php echo htmlentities($usersrow['Email'])?>" readonly> 
                                 </div>
                             </div>
+                            <div class="col-sm-6">
+                                <div class=" mb-3 ">
+                                    <label for="email" class="form-label text-dark">UserType</label>
+                                    <input type="text" class="form-control border-success  shadow-none " id="User"  value="<?php echo htmlentities($usersrow['UserType'])?>" readonly> 
+                                </div>
+                            </div>
                       </div>
                       <div class="row">
                           <div class="mb-3 ">
@@ -71,7 +77,7 @@ $query=mysqli_query($conn,$sql);
                                 <textarea class="form-control border-success shadow-none " id="Grievance" name="Grievance" rows="5" placeholder="Give a brief note of your grievance"></textarea>
                             </div>
                         </div>
-                        <div class="row Register_response"></div>
+                        <div class="row Register_response text-danger"></div>
                         <div class="mb-3 text-center send-btn">
                             <button name="send" type="button" onclick="RegisterGrievance()"  class="btn  btn-success shadow-none border-light">Send</button>
                         </div>

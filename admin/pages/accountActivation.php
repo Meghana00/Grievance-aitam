@@ -2,7 +2,6 @@
 <section>
 <div class=" overview bg-light">
         <h4 class="mt-5">Greivance Overview </h4> 
-   
             <div class="container mt-3 mb-0">
                 <div class="row">
                     <div class="col-md-4 col-xl-3">
@@ -72,7 +71,7 @@
 							<label for="message-text" class="col-form-label">Password:</label>
 							<input type="password" class="form-control" id="Password" name="Password">
 						</div>
-						<div class="mb3 activate-response">Data
+						<div class="mb3 activate-response text-danger">
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
