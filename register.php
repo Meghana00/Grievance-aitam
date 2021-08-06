@@ -29,6 +29,7 @@ if(isset($_POST['Register']))
 			if(isset($query))
 			{	
 				$subject="Mail Verification";
+
 				$mailHtml="Please confirm your account registration by clicking the button or link below:<html><br> <a href='http://localhost/grievance-aitam/mailer.php?Email=$Email'>http://localhost/grievance-aitam/mailer.php?Email=$Email'</a></html>";
 
 				$mail= new PHPMailer();
@@ -69,7 +70,7 @@ if(isset($_POST['Register']))
 	<!--Favicon-->
 	<link rel="icon" href="../assets/images/aitamlogo.png" type="image/gif" sizes="16x16">
 	<!-- Page title -->
-	<title>Admin - Grievance Cell</title>
+	<title>Register - Grievance Cell</title>
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 	<!-- Bootstrap CSS -->
@@ -188,8 +189,7 @@ if(isset($_POST['Register']))
 
 	                           
 								
-								
-								
+
 								
 								
 								

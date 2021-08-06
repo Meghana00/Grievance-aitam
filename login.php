@@ -84,7 +84,7 @@ if(isset($_POST['login']))
 	<!--Favicon-->
 	<link rel="icon" href="../assets/images/aitamlogo.png" type="image/gif" sizes="16x16">
 	<!-- Page title -->
-	<title>Admin - Grievance Cell</title>
+	<title>Login - Grievance Cell</title>
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 	

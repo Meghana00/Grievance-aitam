@@ -7,7 +7,7 @@
     <!--Favicon-->
     <!-- Page title -->
     <link rel="icon" href="./assets/images/aitamlogo.png" type="image/gif" sizes="16x16">
-	<title>AITAM - Grievance Portal</title>
+	<title>Home - Grievance Portal</title>
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 	<!-- Bootstrap CSS -->

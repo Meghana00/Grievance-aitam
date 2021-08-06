@@ -68,11 +68,14 @@ $row = mysqli_fetch_array($query);
 							</tbody>  
 							<tfoot>
 							<tr>
+								<td>
 								<?php if ($row['Status'] == 'Open'||$row['Status'] == 'Reopened') {
 									?>
 									<button class="btn  btn-success " data-bs-toggle="modal" data-bs-target="#Redress">Take Action</button>
+								</td><td>
 									<button class="btn  btn-danger "  data-bs-toggle="modal" data-bs-target="#rejectGrievance"> Reject </button>
 									<?php } ?>
+									</td>
 								</tr>
 							</tfoot>
 						</table>
