@@ -1,4 +1,6 @@
-
+<html>
+<link rel="icon" href="./assets/images/aitamlogo.png" type="image/gif" sizes="16x16">
+</html>
 <?php
 require('vendor/autoload.php');
 include './../include/config.php';
@@ -87,9 +89,9 @@ if(isset($_POST['Download'])){
            <div class="col-md-6 text-center mb-5">
                <div class="heading">
                
-               <div><img src="../assets//images/aitamlogo.png"  alt="aitam" >  AITAM GRIEVANCE REDRESSAL PORTAL</div>
+               <div><img src="../assets//images/aitamlogo.png"  alt="aitam" >  AITAM GRIEVANCE REDRESSAL CELL</div>
                </div>
-               <h2 class="heading-section">Grievence List Short Report</h2>
+               <h2 class="heading-section">Grievance List Short Report</h2>
            </div>
        </div>';
                 if($From!='' && $To!=''){
@@ -171,9 +173,9 @@ if(isset($_POST['Download'])){
 				<div class="col-md-6 text-center mb-5">
                     <div class="heading">
                     
-                    <div><img src="../assets//images/aitamlogo.png"  alt="aitam" >  AITAM GRIEVANCE REDRESSAL PORTAL</div>
+                    <div><img src="../assets//images/aitamlogo.png"  alt="aitam" >  AITAM GRIEVANCE REDRESSAL CELL</div>
                     </div>
-					<h2 class="heading-section">Grievence List Long Report</h2>
+					<h2 class="heading-section">Grievance List Long Report</h2>
                 </div>
 			</div>';
                     if($From!='' && $To!=''){

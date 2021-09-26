@@ -14,7 +14,7 @@ else
 <head>
 <meta charset='utf-8'>
     <!--Favicon-->
-    <link rel="icon" href="./assets/images/aitamlogo.png" type="image/gif" sizes="16x16">
+    <link rel="icon" href="./../assets/images/aitamlogo.png" type="image/gif" sizes="16x16">
 	<meta name='viewport' content='width=device-width, initial-scale=1'>
 	<title>AdminDashBoard-Aitam</title>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">

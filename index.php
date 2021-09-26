@@ -7,7 +7,7 @@
     <!--Favicon-->
     <!-- Page title -->
     <link rel="icon" href="./assets/images/aitamlogo.png" type="image/gif" sizes="16x16">
-	<title>Home - Grievance Portal</title>
+	<title>Home - Grievance Cell</title>
 	<!-- Font awesome -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 	<!-- Bootstrap CSS -->
@@ -29,7 +29,7 @@
         
     </div>
        <div class="mx-auto ">
-        <h2 class=" header fw-normal">Grievance Redressal Portal</h2>
+        <h2 class=" header fw-normal">Grievance Redressal Cell</h2>
        </div>
    
        </nav>
