@@ -107,9 +107,9 @@
               <div class="hexagon hexagon2">
                 <div class="hexagon-in1">
                     <div class="hexagon-in2" style="opacity: 0.85;">
-                        <a class="hexLink" href="contact.html">
+                        <a class="hexLink" href="about.html">
                             <img src="./assets/images/help-desk.png" class="img-fluid" alt="admin" width="110" height="100" >
-                            <p class="text-center mt-1">Help </p>
+                            <p class="text-center mt-1">About</p>
                         </a>
                     </div>
                  </div>

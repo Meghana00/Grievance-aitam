@@ -108,7 +108,7 @@ if(isset($_POST['login']))
 				
 			</div>
 			<div class="mx-auto ">
-				<h2 class=" header  fw-normal">Grievance Redressal Portal</h2>
+				<h2 class=" header  fw-normal">Grievance Redressal Cell</h2>
 			   </div>
 		   
 			   </nav>
