@@ -81,10 +81,10 @@ if(isset($_POST['ActivateUser'])){
             $mail->SMTPAuth="true";
             $mail->SMTPSecure="tls";
             $mail->Port="587";
-            $mail->Username="dtearthmovers1026@gmail.com";
-            $mail->Password="anand@123";
+            $mail->Username="grievanceaitam@gmail.com";
+            $mail->Password="Qwerty@999";
             $mail->Subject=$subject;
-            $mail->setFrom("dtearthmovers1026@gmail.com");
+            $mail->setFrom("grievanceaitam@gmail.com");
             $mail->Body=$mailHtml;
             $mail->addAddress($Email);
             if($mail->send()){
@@ -273,10 +273,10 @@ if(isset($_POST['Addmember']))
             $mail->SMTPAuth="true";
             $mail->SMTPSecure="tls";
             $mail->Port="587";
-            $mail->Username="dtearthmovers1026@gmail.com";
-            $mail->Password="anand@123";
+            $mail->Username="grievanceaitam@gmail.com";
+            $mail->Password="Qwerty@999";
             $mail->Subject=$subject;
-            $mail->setFrom("dtearthmovers1026@gmail.com");
+            $mail->setFrom("grievanceaitam@gmail.com");
             $mail->Body=$mailHtml;
             $mail->addAddress($Email);
             if($mail->send()){
