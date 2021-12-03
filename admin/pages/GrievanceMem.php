@@ -164,7 +164,7 @@ for (var i=0, n=checkboxes.length;i<n;i++)
 if (vals) vals = vals.substring(1);
 var modalBodyInput = addUserModal.querySelector('#addDuty')
 modalBodyInput.value = vals;
- }
+}
  
 </script>
 

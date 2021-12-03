@@ -4,6 +4,7 @@ include('include\config.php');
 $error='';
 $msg='';
 $Logintype=mysqli_real_escape_string($conn,$_GET['Logintype']);
+
 if(isset($_POST['login']))
 {
 	$UserName = $_POST['UserName'];

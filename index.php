@@ -16,7 +16,7 @@
 	<link href="./assets/css/mainstyle.css" rel="stylesheet"> </head>
 
 </head>
-<body style="background:url('./assets/images/aitam_ablock.jpg'); background-repeat:no-repeat;background-position:center ;background-size:cover;">
+<body style="background:url('./assets/images/wall.jpg'); background-repeat:no-repeat;background-position:center ;background-size:cover;">
 <main>
         <nav class="navbar navbar-light bg-transparent">
     <div class="container-fluid">

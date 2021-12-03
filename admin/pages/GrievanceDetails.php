@@ -1,4 +1,3 @@
-
 <?PHP 
 session_start();
 include './../../include/config.php';
